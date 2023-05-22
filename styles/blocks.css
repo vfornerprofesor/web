@@ -1,0 +1,28 @@
+/* BLOCKS */ 
+  .jumbotron {
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+    border-radius: 0;
+  }
+
+  .block {
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer {
+    background-color: var(--main-color);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .block_color {
+    background-color: var(--main-color);
+    color: #fff;
+  }

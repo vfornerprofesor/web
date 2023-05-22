@@ -1,0 +1,10 @@
+/* GENERAL */
+
+:root {
+    --main-color: #6088f7;
+    --main-color-hover: #7ea1ff;
+  }
+
+  body {
+    background-color: #f8f9fa;
+  }

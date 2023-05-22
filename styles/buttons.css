@@ -1,0 +1,13 @@
+/* BUTTONS */
+
+  .btn-primary-inverse {
+    background-color: #fff;
+    color: var(--main-color);
+    border: none;
+  }
+
+  .btn-primary-inverse:hover {
+    background-color: var(--main-color-hover);
+    border: none;
+  }
+
