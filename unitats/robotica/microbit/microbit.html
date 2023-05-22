@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vicent Forner - Professor</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <div id="header"></div>
+  <script>
+  $(document).ready(function(){ 
+    $.get("../../../header.html", function(data) {
+      $("#header").html(data);
+    });
+  }); 
+  </script>
+
+</head>
+<body>
+<div id="menu"></div>
+  <script>
+  $(document).ready(function(){ 
+    $.get("menu.html", function(data) {
+      $("#menu").html(data);
+    });
+  }); 
+  </script>
+
+  <div class="jumbotron">
+    <h1 class="display-4">Microbit</h1>
+  </div>
+
+
+  <div id="footer"></div>
+  <script>
+  $(document).ready(function(){ 
+    $.get("footer.html", function(data) {
+      $("#footer").html(data);
+    });
+  }); 
+  </script>
+  
+</body>
+</html>
