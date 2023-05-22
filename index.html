@@ -7,24 +7,10 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <div id="header"></div>
-  <script>
-  $(document).ready(function(){ 
-    $.get("header.html", function(data) {
-      $("#header").html(data);
-    });
-  }); 
-  </script>
 
 </head>
 <body>
 <div id="menu"></div>
-  <script>
-  $(document).ready(function(){ 
-    $.get("menu.html", function(data) {
-      $("#menu").html(data);
-    });
-  }); 
-  </script>
 
   <div class="jumbotron">
     <h1 class="display-4">Vicent Forner</h1>
@@ -73,11 +59,12 @@
 
   <div id="footer"></div>
   <script>
-  $(document).ready(function(){ 
-    $.get("footer.html", function(data) {
-      $("#footer").html(data);
+  $(document).ready(function() {
+    $('#header').load('header.html');
+    $('#menu').load('menu.html');
+    $('#footer').load('footer.html');
     });
-  }); 
+
   </script>
   
 </body>
