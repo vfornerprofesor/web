@@ -8,10 +8,33 @@
     border-radius: 0;
   }
 
-  .block {
-    background-color: #fff;
+  .block, .block_colored, .block_black {
     padding: 1rem;
     margin-bottom: 1rem;
+  }
+
+  .block > h1, .block_colored > h1, .block_black > h1 {
+    text-align: center;
+  }
+
+  .block > h2, .block_colored > h2, .block_black > h2 {
+    padding-left: 30px;
+  }
+
+  .block {
+    background-color: #fff;
+  }
+
+  .block_colored {
+    background-color: var(--main-color);
+  }
+
+  .block_black {
+    background-color: #000;
+  }
+
+  .block_black > h1, .block_black > h2 {
+    color: #fff;
   }
 
   .footer {
