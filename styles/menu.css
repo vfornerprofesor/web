@@ -13,7 +13,7 @@
   }
 
   .nav-link:hover {
-    color: #000;
+    color: var(--black-color);
   }
 
   .navbar-toggler-icon {
@@ -26,5 +26,5 @@
   }
   .dropdown-menu:hover, .dropdown-item:hover{
     background-color: var(--main-color);
-    color: #000;
+    color: var(--black-color);
   }
