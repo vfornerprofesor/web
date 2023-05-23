@@ -18,8 +18,12 @@
   }
 
   .block {
-    background-color: #fff;
+    /*background-color: #fff;*/
   }
+
+  .block_h1 { margin-top: 3em; }
+  .block_h2 { margin-top: 2em; }
+  .block_h3 { margin-top: 1em; }
 
   .block_colored {
     background-color: var(--main-color);

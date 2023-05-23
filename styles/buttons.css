@@ -1,17 +1,17 @@
 /* BUTTONS */
 
-  .btn-primary-inverse {
-    background-color: #fff;
-    color: var(--main-color);
-    border: none;
-  }
+.btn-primary {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
 
-  .btn-primary-inverse:hover {
-    background-color: var(--main-color-hover);
-    border: none;
-  }
+.btn-primary-inverse {
+  background-color: #fff;
+  color: var(--main-color);
+  border: none;
+}
 
-  .btn-primary {
-    background-color: var(--main-color);
-    border-color: var(--main-color);
-  }
+.btn-primary-inverse:hover {
+  background-color: var(--main-color-hover);
+  border: none;
+}

@@ -1,6 +1,16 @@
   /* MENU */
   .navbar {
     background-color: var(--main-color);
+    
+  }
+
+  #menu {
+    background-color: var(--main-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
   }
 
   .navbar-brand {

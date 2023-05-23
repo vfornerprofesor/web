@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,27 +11,29 @@
 
 
 </head>
+
 <body>
-<div id="menu"></div>
+  <div id="menu"></div>
+  <div id="content">
 
-  <div id="blocks">
+    <div id="blocks">
 
-  </div>
+    </div>
 
-  <!--<div class="jumbotron">
+    <!--<div class="jumbotron">
     <h1 class="display-4">Unitats</h1>
   </div>
-
+  
   <div class="block_black">
     <h2>Programació</h2>
   </div>
-
   
-
+  
+  
   <div class="block_black">
     <h2>Robotica</h2>
   </div>
-
+  
   <div class="block">
     <div class="row">
         <div class="col">
@@ -43,24 +46,27 @@
         </div>
     </div>
   </div>
-
+  
   <div class="block_black">
     <h2>Intel·ligència artificial</h2>
   </div>-->
 
-  <div id="footer"></div>
+    <div id="footer"></div>
+  </div>
+
 
   <script>
-    $(document).ready(function() {
-      $('#header').load('header.html', function(responseTxt, statusTxt, xhr){
+    $(document).ready(function () {
+      $('#header').load('header.html', function (responseTxt, statusTxt, xhr) {
         loadBlocks('unitats', 'blocks');
       });
       $('#menu').load('menu.html');
       $('#footer').load('footer.html');
 
     });
-  
-    </script>
-  
+
+  </script>
+
 </body>
+
 </html>

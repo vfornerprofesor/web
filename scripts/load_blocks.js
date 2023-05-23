@@ -35,6 +35,7 @@ function createBlock(block, element) {
 function createBlockH1(block, element) {
     var div = document.createElement('div');
     div.classList.add('jumbotron');
+    div.classList.add('block_h1'); 
     var th1 = document.createElement('h1');
     th1.classList.add('display-4');
     th1.textContent = block[1];
@@ -48,6 +49,7 @@ function createBlockH1(block, element) {
 function createBlockH2(block, element) {
     var div = document.createElement('div');
     div.classList.add('block_colored');
+    div.classList.add('block_h2');
     var th2 = document.createElement('h2');
     th2.textContent = block[1];
 
@@ -60,6 +62,7 @@ function createBlockH2(block, element) {
 function createBlockH3(block, element) {
     var div = document.createElement('div');
     div.classList.add('block_black');
+    div.classList.add('block_h3');
     var th3 = document.createElement('h3');
     th3.textContent = block[1];
 
