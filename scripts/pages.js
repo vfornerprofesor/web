@@ -74,5 +74,25 @@ const pages = {
                 ]
             ]
         ],
+        ['block_h3', 'Activitats'],
+        ['block_content', [
+            'h4', "Activitat 1"
+            ], [
+            'text', "Fes que el robot Maqueen es moga avant 2 segons, després enrere 2 segons. A continuació 3 segons avant, que gire 180º i que torne 3 segons cap a la posició inicial. Després que gire i que faça un quadrat com el de la imatge."
+            ], [
+            'cols',
+                [['img_center', "img/robotica/microbit/04.png"]],
+                [['img_center', "img/robotica/microbit/05.png"]],
+                [['img_center', "img/robotica/microbit/06.png"]]
+            ]
+        ],
+        ['block_content', [
+            'h4', "Activitat 2"
+            ], [
+            'text', "Fes que el robot Maqueen realitze el següent cami esquivant objectes:"
+            ], [
+            'img_center', "img/robotica/microbit/07.png"
+            ]
+        ],
     ]
 };

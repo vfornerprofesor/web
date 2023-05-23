@@ -145,10 +145,19 @@ function createElementByName(name, block) {
         case 'list_group':
             new_element = createElementListGroup(block);
             break;
+        case 'h4':
+            new_element = createElementH4(block);
+            break;
         default:
             break;
     }
     return new_element;
+}
+
+function createElementH4(block) {
+    var th4 = document.createElement('h4');
+    th4.textContent = block[1];
+    return th4;
 }
 
 function createElementListGroup(block) {
@@ -167,7 +176,6 @@ function createElementListGroup(block) {
 
 
 function createElementCols(block) {
-    debugger;
     var row = document.createElement('div');
     row.classList.add('row');
 
