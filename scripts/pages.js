@@ -73,7 +73,7 @@ const pages = {
         "text_simple",
         "A continuació podrem veure tots els sensors i actuadors que té el robot:",
       ],
-      ["img_center", "img/robotica/microbit/maqueen.png"],
+      ["img_center", "img/unitats/robotica/microbit/maqueen.png"],
     ],
     ["block_h2", "Motors"],
     [
@@ -89,14 +89,14 @@ const pages = {
       ],
       [
         "cols",
-        [["img_center", "img/robotica/microbit/01.png"]],
-        [["img_center", "img/robotica/microbit/02.png"]],
+        [["img_center", "img/unitats/robotica/microbit/01.png"]],
+        [["img_center", "img/unitats/robotica/microbit/02.png"]],
       ],
       [
         "text_simple",
         "Des d'aleshores tindrem un apartat anomenat Maqueen que tindrà tots els blocs per controlar el robot, tant per rebre informació dels sensors com per enviar-li informació perquè realitze alguna cosa.",
       ],
-      ["img_center", "img/robotica/microbit/03.png"],
+      ["img_center", "img/unitats/robotica/microbit/03.png"],
       [
         "text_simple",
         "El bloc motor ens permet moure o un dels dos motors o els dos a la vegada. A més ens indica si volem avançar o tirar enrere i la velocitat a la que ho volem fer. La velocitat pot tindre un valor entre 0 i 255.",
@@ -129,9 +129,9 @@ const pages = {
       ],
       [
         "cols",
-        [["img_center", "img/robotica/microbit/04.png"]],
-        [["img_center", "img/robotica/microbit/05.png"]],
-        [["img_center", "img/robotica/microbit/06.png"]],
+        [["img_center", "img/unitats/robotica/microbit/04.png"]],
+        [["img_center", "img/unitats/robotica/microbit/05.png"]],
+        [["img_center", "img/unitats/robotica/microbit/06.png"]],
       ],
     ],
     [
@@ -141,7 +141,7 @@ const pages = {
         "text_simple",
         "Fes que el robot Maqueen realitze el següent cami esquivant objectes:",
       ],
-      ["img_center", "img/robotica/microbit/07.png"],
+      ["img_center", "img/unitats/robotica/microbit/07.png"],
     ],
   ],
   python: [
