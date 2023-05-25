@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vicent Forner - Professor</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <div id="header"></div>
+
+</head>
+
+<body>
+  <!--<div id="menu"></div>
+  <div id="content">
+    <div id="footer"></div>
+  </div>-->
+  <div class="spinner-container">
+    <div class="spinner"></div>
+  </div>
+  <style>
+    .spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f1f1f1;
+}
+
+.spinner {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 6px solid #333;
+  border-top-color: #ff6c00;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+  </style>
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Remover el spinner una vez que la página haya cargado
+  var spinner = document.querySelector(".spinner");
+  //spinner.style.display = "none";
+});
+
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $('#header').load('header.html');
+      //$('#menu').load('menu.html');
+      //$('#footer').load('footer.html');
+    });
+
+  </script>
+
+</body>
+
+</html>

@@ -35,11 +35,11 @@ const pages = {
         ],
         ['block_h2', 'Què és?'],
         ['block_content', [
-            'text', "La tarjeta microbit és una placa que es pot programar perquè execute instruccions i realitze tasques. A més, es pot connectar al robot Maqueen per tal d'ampliar funcionalitat i donar-li mobilitat",
+            'text_simple', "La tarjeta microbit és una placa que es pot programar perquè execute instruccions i realitze tasques. A més, es pot connectar al robot Maqueen per tal d'ampliar funcionalitat i donar-li mobilitat",
             ],[
             'img_center', 'img/microbit.jpg'  
             ], [
-            'text', "A continuació podrem veure tots els sensors i actuadors que té el robot:"
+            'text_simple', "A continuació podrem veure tots els sensors i actuadors que té el robot:"
             ],[
             'img_center', 'img/robotica/microbit/maqueen.png'  
             ]
@@ -50,21 +50,25 @@ const pages = {
                 ['text', "Per començar a programar hem d'accedir a"],
                 ['link', 'https://makecode.microbit.org/', 'Makecode'],
             ], [
-            'text', "Allí afegirem l'extensió Maqueen des de l'apartat Extensions, on buscarem Maqueen"
+            'text_simple', "Allí afegirem l'extensió Maqueen des de l'apartat Extensions, on buscarem Maqueen"
             ], [
             'cols',
-                [['img_center', "img/robotica/microbit/01.png"]],
-                [['img_center', "img/robotica/microbit/02.png"]]
+                [
+                    ['img_center', "img/robotica/microbit/01.png"]
+                ],
+                [
+                    ['img_center', "img/robotica/microbit/02.png"]
+                ]
             ], [
-            'text', "Des d'aleshores tindrem un apartat anomenat Maqueen que tindrà tots els blocs per controlar el robot, tant per rebre informació dels sensors com per enviar-li informació perquè realitze alguna cosa."
+            'text_simple', "Des d'aleshores tindrem un apartat anomenat Maqueen que tindrà tots els blocs per controlar el robot, tant per rebre informació dels sensors com per enviar-li informació perquè realitze alguna cosa."
             ],[
             'img_center', 'img/robotica/microbit/03.png'  
             ], [
-            'text', "El bloc motor ens permet moure o un dels dos motors o els dos a la vegada. A més ens indica si volem avançar o tirar enrere i la velocitat a la que ho volem fer. La velocitat pot tindre un valor entre 0 i 255."
+            'text_simple', "El bloc motor ens permet moure o un dels dos motors o els dos a la vegada. A més ens indica si volem avançar o tirar enrere i la velocitat a la que ho volem fer. La velocitat pot tindre un valor entre 0 i 255."
             ], [
-            'text', "A més, el bloc Parar ens permetrà para un o els dos motors del robot."
+            'text_simple', "A més, el bloc Parar ens permetrà para un o els dos motors del robot."
             ], [
-            'text', "Amb tot açò podem fer diferents accions:"
+            'text_simple', "Amb tot açò podem fer diferents accions:"
             ], [
             'list_group', [
                 ['text', "Moure avant: posar els dos motors en marxa"],
@@ -78,21 +82,44 @@ const pages = {
         ['block_content', [
             'h4', "Activitat 1"
             ], [
-            'text', "Fes que el robot Maqueen es moga avant 2 segons, després enrere 2 segons. A continuació 3 segons avant, que gire 180º i que torne 3 segons cap a la posició inicial. Després que gire i que faça un quadrat com el de la imatge."
+            'text_simple', "Fes que el robot Maqueen es moga avant 2 segons, després enrere 2 segons. A continuació 3 segons avant, que gire 180º i que torne 3 segons cap a la posició inicial. Després que gire i que faça un quadrat com el de la imatge."
             ], [
             'cols',
-                [['img_center', "img/robotica/microbit/04.png"]],
-                [['img_center', "img/robotica/microbit/05.png"]],
-                [['img_center', "img/robotica/microbit/06.png"]]
+                [
+                    ['img_center', "img/robotica/microbit/04.png"]
+                ],
+                [
+                    ['img_center', "img/robotica/microbit/05.png"]
+                ],
+                [
+                    ['img_center', "img/robotica/microbit/06.png"]
+                ]
             ]
         ],
         ['block_content', [
             'h4', "Activitat 2"
             ], [
-            'text', "Fes que el robot Maqueen realitze el següent cami esquivant objectes:"
+            'text_simple', "Fes que el robot Maqueen realitze el següent cami esquivant objectes:"
             ], [
             'img_center', "img/robotica/microbit/07.png"
             ]
         ],
+    ],
+    'test':[
+        [
+            "block_h1",
+            "asdf"
+        ],
+        [
+            "block_content",
+            [
+                "text_simple",
+                "as"
+            ],
+            [
+                "text_simple",
+                "df"
+            ]
+        ]
     ]
 };

@@ -1,52 +1,61 @@
 function loadBlocks(page, element) {
+    var el = document.getElementById(element);
+    //AÑADIR SPINNER?
+
     let blocks = pages[page];
 
+    var blocks_list = [];
     for (let i = 0; i < blocks.length; i++) {
         console.log(blocks[i]);
-        createBlock(blocks[i], element);
+        blocks_list.push(createBlock(blocks[i]));
+    }
+
+    //QUITAR SPINNER?
+
+    for (let i = 0; i < blocks_list.length; i++) {
+        el.appendChild(blocks_list[i]);
     }
 }
 
-function createBlock(block, element) {
+function createBlock(block) {
     switch (block[0]) {
         case 'block_h1':
-            createBlockH1(block, element);
+            return createBlockH1(block);
             break;
         case 'block_h2':
-            createBlockH2(block, element);
+            return createBlockH2(block);
             break;
         case 'block_h3':
-            createBlockH3(block, element);
+            return createBlockH3(block);
             break;
         case 'block_h4':
             //createBlockH1(block, element);
             break;
         case 'block_unit':
-            createBlockUnit(block, element);
+            return createBlockUnit(block);
             break;
         case 'block_content':
-            createBlockContent(block, element);
+            return createBlockContent(block);
             break;
         default:
             break;
     }
 }
 
-function createBlockH1(block, element) {
+function createBlockH1(block) {
     var div = document.createElement('div');
     div.classList.add('jumbotron');
-    div.classList.add('block_h1'); 
+    div.classList.add('block_h1');
     var th1 = document.createElement('h1');
     th1.classList.add('display-4');
     th1.textContent = block[1];
 
     div.appendChild(th1);
 
-    var el = document.getElementById(element);
-    el.appendChild(div);
+    return div;
 }
 
-function createBlockH2(block, element) {
+function createBlockH2(block) {
     var div = document.createElement('div');
     div.classList.add('block_colored');
     div.classList.add('block_h2');
@@ -55,11 +64,10 @@ function createBlockH2(block, element) {
 
     div.appendChild(th2);
 
-    var el = document.getElementById(element);
-    el.appendChild(div);
+    return div;
 }
 
-function createBlockH3(block, element) {
+function createBlockH3(block) {
     var div = document.createElement('div');
     div.classList.add('block_black');
     div.classList.add('block_h3');
@@ -68,11 +76,10 @@ function createBlockH3(block, element) {
 
     div.appendChild(th3);
 
-    var el = document.getElementById(element);
-    el.appendChild(div);
+    return div;
 }
 
-function createBlockUnit(block, element) {
+function createBlockUnit(block) {
 
     var div_b = document.createElement('div');
     div_b.classList.add('block');
@@ -115,28 +122,26 @@ function createBlockUnit(block, element) {
 
     div_b.appendChild(div_r);
 
-    var el = document.getElementById(element);
-    el.appendChild(div_b);
+    return div_b;
 }
 
-function createBlockContent(block, element) {
-    var el = document.getElementById(element);
+function createBlockContent(block) {
     var div = document.createElement('div');
     div.classList.add('block');
     for (let i = 1; i < block.length; i++) {
         var new_element = createElementByName(block[i][0], block[i]);
         div.appendChild(new_element);
     }
-    el.appendChild(div);
+    return div;
 }
 
 function createElementByName(name, block) {
-    var new_element; 
+    var new_element;
     switch (name) {
         case 'text_complex':
             new_element = createElementTextComplex(block);
             break;
-        case 'text':
+        case 'text_simple':
             new_element = createElementText(block);
             break;
         case 'img_center':
@@ -144,6 +149,12 @@ function createElementByName(name, block) {
             break;
         case 'cols':
             new_element = createElementCols(block);
+            break;
+        case 'ulist':
+            new_element = createElementUList(block);
+            break;
+        case 'olist':
+            new_element = createElementOList(block);
             break;
         case 'list_group':
             new_element = createElementListGroup(block);
@@ -177,6 +188,26 @@ function createElementListGroup(block) {
     return ul;
 }
 
+function createElementUList(block) {
+    var ul = document.createElement('ul');
+    for (var i = 0; i < block[1].length; i++) {
+        var li = document.createElement('li');
+        li.textContent = block[1][i][1];
+        ul.appendChild(li);
+    }
+    return ul;
+}
+
+function createElementOList(block) {
+    var ol = document.createElement('ol');
+    for (var i = 0; i < block[1].length; i++) {
+        var li = document.createElement('li');
+        li.textContent = block[1][i][1];
+        ol.appendChild(li);
+    }
+    return ol;
+}
+
 
 function createElementCols(block) {
     var row = document.createElement('div');
@@ -188,7 +219,7 @@ function createElementCols(block) {
 
         for (var j = 0; j < block[i].length; j++) {
             var new_element = createElementByName(block[i][j][0], block[i][j]);
-            
+
             col.appendChild(new_element);
         }
         row.appendChild(col);
@@ -221,6 +252,10 @@ function createElementTextComplex(block) {
                 break;
             case 'link':
                 p.innerHTML += ' <a href="' + block[j][1] + '">' + block[j][2] + '</a>';
+                break;
+            case 'bold':
+                p.innerHTML += ' <bold>' + block[j][1] + '</bold>';
+                break;
             default:
                 break;
         }
