@@ -476,7 +476,7 @@ function createDataContent(id_block, el) {
 
 function createDataCols(child) {
   let data = [];
-  data[0] = child.block_type;
+  data[0] = {type:child.block_type};
   let children = child.children;
   let pos = 1;
 
@@ -491,27 +491,27 @@ function createDataCols(child) {
     }
   }
   //Elimina els buits
-  data = data.filter(n => n[0]);
+  data.filter(n => n[0] || n['type'])
   return data;
 }
 
 function createDataTextSimple(child) {
   let data = [];
-  data[0] = child.block_type;
+  data[0] = {type:child.block_type};
   data[1] = child.getElementsByTagName("input")[0].value;
   return data;
 }
 
 function createDataImgCenter(child) {
   let data = [];
-  data[0] = child.block_type;
+  data[0] = {type:child.block_type};
   data[1] = child.getElementsByTagName("input")[0].value;
   return data;
 }
 
 function createDataBtn(child) {
   let data = [];
-  data[0] = child.block_type;
+  data[0] = {type:child.block_type};
   data[1] = child.getElementsByTagName("input")[0].value;
   data[2] = child.getElementsByTagName("input")[1].value;
   return data;
@@ -519,14 +519,14 @@ function createDataBtn(child) {
 
 function createDataH4(child) {
   let data = [];
-  data[0] = child.block_type;
+  data[0] = {type:child.block_type};
   data[1] = child.getElementsByTagName("input")[0].value;
   return data;
 }
 
 function createDataList(child) {
   let data = [];
-  data[0] = child.block_type;
+  data[0] = {type:child.block_type};
   let ta = child.getElementsByTagName("textarea")[0];
   let ta_data = ta.value.split("\n");
   data[1] = [];
@@ -538,7 +538,7 @@ function createDataList(child) {
 
 function createDataCode(child) {
   let data = [];
-  data[0] = child.block_type;
+  data[0] = {type:child.block_type};
   let text_code = child.getElementsByTagName("textarea")[0].value;
   data[1] = text_code;
   return data;
@@ -546,7 +546,7 @@ function createDataCode(child) {
 
 function createDataTextComplex(child) {
   let data = [];
-  data[0] = child.block_type;
+  data[0] = {type:child.block_type};
   let ta = child.getElementsByTagName("textarea")[0];
   let ta_data = ta.value.split("\n");
   let index_element = 1;

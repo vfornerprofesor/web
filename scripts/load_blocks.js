@@ -127,7 +127,7 @@ function createBlockContent(block) {
   var div = document.createElement("div");
   div.classList.add("block");
   for (let i = 1; i < block.length; i++) {
-    var new_element = createElementByName(block[i][0], block[i]);
+    var new_element = createElementByName(block[i][0]['type'], block[i]);
     div.appendChild(new_element);
   }
   return div;
@@ -192,7 +192,7 @@ function createElementListGroup(block) {
   return ul;
 }
 function countLevelLi(li_text) {
-  var level = 0;
+  var level = 1;
   for (var i = 0; i < li_text.length; i++) {
     if (li_text[i] == '-') {
       level++;
@@ -208,7 +208,7 @@ function createElementUList(block) {
 
   for (var i = 0; i < block[1].length; i++) {
     var level_li = countLevelLi(block[1][i][1]);
-    var text_li = block[1][i][1].substring(level_li);
+    var text_li = block[1][i][1].substring(level_li-1);
     if (level_li > level) {
       level = level_li;
       ul_html += '<ul>';
@@ -234,7 +234,7 @@ function createElementOList(block) {
 
   for (var i = 0; i < block[1].length; i++) {
     var level_li = countLevelLi(block[1][i][1]);
-    var text_li = block[1][i][1].substring(level_li);
+    var text_li = block[1][i][1].substring(level_li-1);
     if (level_li > level) {
       level = level_li;
       ul_html += '<ol>';
@@ -261,7 +261,8 @@ function createElementCols(block) {
     col.classList.add("col");
 
     for (var j = 0; j < block[i].length; j++) {
-      var new_element = createElementByName(block[i][j][0], block[i][j]);
+      var name = block[i][j][0]['type'];
+      var new_element = createElementByName(name, block[i][j]);
 
       col.appendChild(new_element);
     }
@@ -306,7 +307,8 @@ function createElementTextComplex(block) {
   var p = document.createElement("p");
   p.innerHTML = "";
   for (let j = 1; j < block.length; j++) {
-    switch (block[j][0]) {
+    var type = block[j][0]['type'];
+    switch (type) {
       case "text":
         p.innerHTML += " " + block[j][1];
         break;

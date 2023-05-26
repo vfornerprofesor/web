@@ -51,69 +51,69 @@ const pages = {
     [
       "block_content",
       [
-        "text_complex",
-        ["text", "Curs extret del"],
+        { type: "text_complex" },
+        [{ type: "text" }, "Curs extret del"],
         [
-          "link",
+          { type: "link" },
           "https://sites.google.com/site/migueltecnologia/1%C2%BA-eso/computaci%C3%B3n-y-rob%C3%B3tica-1/tema-4-rob%C3%B3tica-con-maqueen",
           "material",
         ],
-        ["text", "de Miguel Tecnologia de l'IES José Saramargo"],
+        [{ type: "text" }, "de Miguel Tecnologia de l'IES José Saramargo"],
       ],
     ],
     ["block_h2", "Què és?"],
     [
       "block_content",
       [
-        "text_simple",
+        { type: "text_simple" },
         "La tarjeta microbit és una placa que es pot programar perquè execute instruccions i realitze tasques. A més, es pot connectar al robot Maqueen per tal d'ampliar funcionalitat i donar-li mobilitat",
       ],
-      ["img_center", "img/microbit.jpg"],
+      [{ type: "img_center" }, "img/microbit.jpg"],
       [
-        "text_simple",
+        { type: "text_simple" },
         "A continuació podrem veure tots els sensors i actuadors que té el robot:",
       ],
-      ["img_center", "img/unitats/robotica/microbit/maqueen.png"],
+      [{ type: "img_center" }, "img/unitats/robotica/microbit/maqueen.png"],
     ],
     ["block_h2", "Motors"],
     [
       "block_content",
       [
-        "text_complex",
-        ["text", "Per començar a programar hem d'accedir a"],
-        ["link", "https://makecode.microbit.org/", "Makecode"],
+        { type: "text_complex" },
+        [{ type: "text" }, "Per començar a programar hem d'accedir a"],
+        [{ type: "link" }, "https://makecode.microbit.org/", "Makecode"],
       ],
       [
-        "text_simple",
+        { type: "text_simple" },
         "Allí afegirem l'extensió Maqueen des de l'apartat Extensions, on buscarem Maqueen",
       ],
       [
-        "cols",
-        [["img_center", "img/unitats/robotica/microbit/01.png"]],
-        [["img_center", "img/unitats/robotica/microbit/02.png"]],
+        {type:"cols"},
+        [[{ type: "img_center" }, "img/unitats/robotica/microbit/01.png"]],
+        [[{ type: "img_center" }, "img/unitats/robotica/microbit/02.png"]],
       ],
       [
-        "text_simple",
+        { type: "text_simple" },
         "Des d'aleshores tindrem un apartat anomenat Maqueen que tindrà tots els blocs per controlar el robot, tant per rebre informació dels sensors com per enviar-li informació perquè realitze alguna cosa.",
       ],
-      ["img_center", "img/unitats/robotica/microbit/03.png"],
+      [{ type: "img_center" }, "img/unitats/robotica/microbit/03.png"],
       [
-        "text_simple",
+        { type: "text_simple" },
         "El bloc motor ens permet moure o un dels dos motors o els dos a la vegada. A més ens indica si volem avançar o tirar enrere i la velocitat a la que ho volem fer. La velocitat pot tindre un valor entre 0 i 255.",
       ],
       [
-        "text_simple",
+        { type: "text_simple" },
         "A més, el bloc Parar ens permetrà para un o els dos motors del robot.",
       ],
-      ["text_simple", "Amb tot açò podem fer diferents accions:"],
+      [{ type: "text_simple" }, "Amb tot açò podem fer diferents accions:"],
       [
-        "list_group",
+        { type: "list_group" },
         [
-          ["text", "Moure avant: posar els dos motors en marxa"],
-          ["text", "Tirar enrere: posar els dos motors en marxa cap enrere"],
-          ["text", "Parar: posar els dos motors en pausa"],
+          [{ type: "text" }, "Moure avant: posar els dos motors en marxa"],
+          [{ type: "text" }, "Tirar enrere: posar els dos motors en marxa cap enrere"],
+          [{ type: "text" }, "Parar: posar els dos motors en pausa"],
           [
-            "text",
+            { type: "text" },
             "Girar: podem posar només un motor en marxa o un en marxa cap endavant i l'altre cap enrere",
           ],
         ],
@@ -122,26 +122,26 @@ const pages = {
     ["block_h3", "Activitats"],
     [
       "block_content",
-      ["h4", "Activitat 1"],
+      [{ type: "h4" }, "Activitat 1"],
       [
-        "text_simple",
+        { type: "text_simple" },
         "Fes que el robot Maqueen es moga avant 2 segons, després enrere 2 segons. A continuació 3 segons avant, que gire 180º i que torne 3 segons cap a la posició inicial. Després que gire i que faça un quadrat com el de la imatge.",
       ],
       [
-        "cols",
-        [["img_center", "img/unitats/robotica/microbit/04.png"]],
-        [["img_center", "img/unitats/robotica/microbit/05.png"]],
-        [["img_center", "img/unitats/robotica/microbit/06.png"]],
+        {type:"cols"},
+        [[{ type: "img_center" }, "img/unitats/robotica/microbit/04.png"]],
+        [[{ type: "img_center" }, "img/unitats/robotica/microbit/05.png"]],
+        [[{ type: "img_center" }, "img/unitats/robotica/microbit/06.png"]],
       ],
     ],
     [
       "block_content",
-      ["h4", "Activitat 2"],
+      [{ type: "h4" }, "Activitat 2"],
       [
-        "text_simple",
+        { type: "text_simple" },
         "Fes que el robot Maqueen realitze el següent cami esquivant objectes:",
       ],
-      ["img_center", "img/unitats/robotica/microbit/07.png"],
+      [{ type: "img_center" }, "img/unitats/robotica/microbit/07.png"],
     ],
   ],
   python: [
@@ -149,51 +149,51 @@ const pages = {
     [
       "block_content",
       [
-        "cols",
+        {type:"cols"},
         [
-          ["img_center", "img/python.png"],
-          ["btn", "unitats/programacio/python/py-00-xuleta.html", "Xuleta"],
+          [{ type: "img_center" }, "img/python.png"],
+          [{type:"btn"}, "unitats/programacio/python/py-00-xuleta.html", "Xuleta"],
         ],
         [
           [
-            "btn",
+            {type:"btn"},
             "unitats/programacio/python/py-01-algoritmes.html",
             "01 - Algoritmes",
           ],
           [
-            "btn",
+            {type:"btn"},
             "unitats/programacio/python/py-02-variables.html",
             "02 - Variables",
           ],
           [
-            "btn",
+            {type:"btn"},
             "unitats/programacio/python/py-03-operacions-text.html",
             "03 - Operacions amb text",
           ],
           [
-            "btn",
+            {type:"btn"},
             "unitats/programacio/python/py-04-llistes.html",
             "04 - Llistes",
           ],
         ],
         [
           [
-            "btn",
+            {type:"btn"},
             "unitats/programacio/python/py-05-interaccio.html",
             "05 - Interacció amb l'usuari",
           ],
           [
-            "btn",
+            {type:"btn"},
             "unitats/programacio/python/py-06-condicionals.html",
             "06 - Condicionals",
           ],
           [
-            "btn",
+            {type:"btn"},
             "unitats/programacio/python/py-07-bucles.html",
             "07 - Bucles",
           ],
           [
-            "btn",
+            {type:"btn"},
             "unitats/programacio/python/py-08-projectes.html",
             "PROJECTES",
           ],
@@ -207,60 +207,60 @@ const pages = {
     [
       "block_content",
       [
-        "text_complex",
-        ["text", "Un"],
-        ["bold", "programa informàtic"],
+        { type: "text_complex" },
+        [{ type: "text" }, "Un"],
+        [{ type: "bold" }, "programa informàtic"],
         [
-          "text",
+          { type: "text" },
           "és aquell text que inclou les instruccions necessàries perquè un ordinador execute una tasca o resolga un problema. Estos programes informàtics formen el",
         ],
-        ["bold", "software"],
-        ["text", "d'un ordinador."],
+        [{ type: "bold" }, "software"],
+        [{ type: "text" }, "d'un ordinador."],
       ],
       [
-        "text_complex",
-        ["text", "Els programes informàtics estan formats per"],
-        ["bold", "algoritmes"],
+        { type: "text_complex" },
+        [{ type: "text" }, "Els programes informàtics estan formats per"],
+        [{ type: "bold" }, "algoritmes"],
         [
-          "text",
+          { type: "text" },
           "que són els passos concrets que s'han de seguir per realitzar una tasca concreta. Les característiques dels algoritmes són les següents:",
         ],
       ],
       [
-        "ulist",
+        { type: "ulist" },
         [
           [
-            "text",
+            { type: "text" },
             "Descripció no ambigua: les instruccions no han de presentar diferents sentits, han de ser clares",
           ],
           [
-            "text",
+            { type: "text" },
             "S'han de definir les entrades del programa, és a dir, els valors que necessita el programa per treballar",
           ],
           [
-            "text",
+            { type: "text" },
             "S'han de definir les eixides del programa, és a dir, els valors finals que s'han d'obtindre",
           ],
-          ["text", "No ha de donar mai error"],
+          [{ type: "text" }, "No ha de donar mai error"],
         ],
       ],
       [
-        "text_simple",
+        { type: "text_simple" },
         "Exemple d'algoritme: donada una llista de números positius, s'ha de tornar el major.",
       ],
       [
-        "ulist",
+        { type: "ulist" },
         [
-          ["text", "-Entrada: Llista L amb els números positius"],
-          ["text", "-Eixida: Una caixa que s'anomene max"],
-          ["text", "-Algoritme:"],
-          ["text", "--max serà 0"],
-          ["text", "--Recorrer la llista"],
+          [{ type: "text" }, "-Entrada: Llista L amb els números positius"],
+          [{ type: "text" }, "-Eixida: Una caixa que s'anomene max"],
+          [{ type: "text" }, "-Algoritme:"],
+          [{ type: "text" }, "--max serà 0"],
+          [{ type: "text" }, "--Recorrer la llista"],
           [
-            "text",
+            { type: "text" },
             "---Si el número que estem llegint és major que max, assignem a max el valor del número",
           ],
-          ["text", "--Mostrar per pantalla el contingut de la variable max"],
+          [{ type: "text" }, "--Mostrar per pantalla el contingut de la variable max"],
         ],
       ],
     ],
@@ -268,112 +268,112 @@ const pages = {
     [
       "block_content",
       [
-        "cols",
-        [["img_center", "img/unitats/programacio/python/algoritmes01.png"]],
-        [["img_center", "img/unitats/programacio/python/algoritmes02.png"]]
+        {type:"cols"},
+        [[{ type: "img_center" }, "img/unitats/programacio/python/algoritmes01.png"]],
+        [[{ type: "img_center" }, "img/unitats/programacio/python/algoritmes02.png"]]
       ],
     ],
     [
       "block_content",
       [
-        "text_simple",
+        { type: "text_simple" },
         "Un diagrama de flux és la representació gràfica d'un algoritme a través de símbols.",
       ],
       [
-        "text_simple",
+        { type: "text_simple" },
         "Ens permeten crear l'estructura de l'algoritme i interpretar-la de manera fàcil. A més, és el primer pas abans d'escriure un algoritme en un llenguatge de programació que interprete l'ordinador.",
       ],
-      ["text_simple", "Els principals elements d'un diagrama de flux són:"],
+      [{ type: "text_simple" }, "Els principals elements d'un diagrama de flux són:"],
     ],
     [
       "block_content",
       [
-        "cols",
+        {type:"cols"},
         [
-          ["h4", "Terminal"],
+          [{ type: "h4" }, "Terminal"],
           [
-            "text_simple",
+            { type: "text_simple" },
             "S'utilitza per indicar l'inici i el final de l'algoritme",
           ],
         ],
-        [["img_center", "img/unitats/programacio/python/algoritmes03.png"]]
+        [[{ type: "img_center" }, "img/unitats/programacio/python/algoritmes03.png"]]
       ],
     ],
     [
       "block_content",
       [
-        "cols",
+        {type:"cols"},
         [
-          ["h4", "Entrada i eixida de dades"],
+          [{ type: "h4" }, "Entrada i eixida de dades"],
           [
-            "text_simple",
+            { type: "text_simple" },
             "S'utilitza per aportar-li dades a l'algoritme perquè puga treballar i executar les instruccions i també per mostrar el resultat final del programa. Es pot diferenciar per colors l'entrada i l'eixida",
           ],
         ],
-        [["img_center", "img/unitats/programacio/python/algoritmes04.png"]]
+        [[{ type: "img_center" }, "img/unitats/programacio/python/algoritmes04.png"]]
       ],
     ],
     [
       "block_content",
       [
-        "cols",
+        {type:"cols"},
         [
-          ["h4", "Procés"],
+          [{ type: "h4" }, "Procés"],
           [
-            "text_simple",
+            { type: "text_simple" },
             "Executa una ordre, assignació, calcular una operació o un altre tipus d'instrucció.",
           ],
         ],
-        [["img_center", "img/unitats/programacio/python/algoritmes05.png"]]
+        [[{ type: "img_center" }, "img/unitats/programacio/python/algoritmes05.png"]]
       ],
     ],
     [
       "block_content",
       [
-        "cols",
+        {type:"cols"},
         [
-          ["h4", "Decisió"],
+          [{ type: "h4" }, "Decisió"],
           [
-            "text_simple",
+            { type: "text_simple" },
             "Serveix perquè partint d'una condició puga'm fer que isquen diferents camins, un positiu i un negatiu.",
           ],
         ],
-        [["img_center", "img/unitats/programacio/python/algoritmes06.png"]]
+        [[{ type: "img_center" }, "img/unitats/programacio/python/algoritmes06.png"]]
       ],
     ],
     [
       "block_content",
       [
-        "cols",
+        {type:"cols"},
         [
-          ["h4", "Línies o fletxes"],
-          ["text_simple", "Serveixen per unir tots els anteriors elements"],
+          [{ type: "h4" }, "Línies o fletxes"],
+          [{ type: "text_simple" }, "Serveixen per unir tots els anteriors elements"],
         ],
-        [["img_center", "img/unitats/programacio/python/algoritmes07.png"]]
+        [[{ type: "img_center" }, "img/unitats/programacio/python/algoritmes07.png"]]
       ],
     ],
     ["block_h3", "Característiques dels diagrames de flux"],
     [
       "block_content",
-      ["text_simple", "Tot diagrama de flux ha de seguir les següents regles:"],
+      [{ type: "text_simple" }, "Tot diagrama de flux ha de seguir les següents regles:"],
       [
-        "olist",
+        { type: "olist" },
         [
-          ["text", "-Ha de tindre un inici i un final"],
-          ["text", "-Tots els símbols han d'estar connectats"],
-          ["text", "-A un procés pot arribar-li varies linies"],
+          [{ type: "text" }, "-Ha de tindre un inici i un final"],
+          [{ type: "text" }, "-Tots els símbols han d'estar connectats"],
+          [{ type: "text" }, "-A un procés pot arribar-li varies linies"],
           [
-            "text",
+            { type: "text" },
             "-A un símbol de desició poden arribar-li varies linies però només eixiran 2, Si o No",
           ],
-          ["text", "-A un símbol d'inici mai li arriben linies"],
-          ["text", "-D'un símbol de final mai eixiran linies"],
+          [{ type: "text" }, "-A un símbol d'inici mai li arriben linies"],
+          [{ type: "text" }, "-D'un símbol de final mai eixiran linies"],
           [
-            "text",
+            { type: "text" },
             "-Les linies de connexió són rectes verticals o horitzontals",
           ],
           [
-            "text",
+            { type: "text" },
             "-Per dibuixar els símbols es comença de dalt a l'esquerra cap a baix a la dreta",
           ],
         ],
@@ -383,124 +383,124 @@ const pages = {
     [
       "block_content",
       [
-        "cols",
+        {type:"cols"},
         [
           [
-            "text_complex",
-            ["bold", "Algoritme per cuinar un ou per a una altra persona."],
+            { type: "text_complex" },
+            [{ type: "bold" }, "Algoritme per cuinar un ou per a una altra persona."],
           ],
           [
-            "olist",
+            { type: "olist" },
             [
-              ["text", "Pregunte si el vol fregit."],
-              ["text", "Si diu que si, es frig, sinó es bull."],
-              ["text", "Preguntar si vol sal."],
-              ["text", "Si vol sal, tirar-ne, sinó res."],
-              ["text", "Servir-lo al plat."],
+              [{ type: "text" }, "Pregunte si el vol fregit."],
+              [{ type: "text" }, "Si diu que si, es frig, sinó es bull."],
+              [{ type: "text" }, "Preguntar si vol sal."],
+              [{ type: "text" }, "Si vol sal, tirar-ne, sinó res."],
+              [{ type: "text" }, "Servir-lo al plat."],
             ],
           ],
         ],
         [
-          ["img_center", "img/unitats/programacio/python/algoritmes08.png"],
+          [{ type: "img_center" }, "img/unitats/programacio/python/algoritmes08.png"],
         ],
       ],
     ],
     [
       "block_content",
       [
-        "cols",
+        {type:"cols"},
         [
           [
-            "text_complex",
-            ["bold", "Algoritme que sume dos números i mostre el resultat."],
+            { type: "text_complex" },
+            [{ type: "bold" }, "Algoritme que sume dos números i mostre el resultat."],
           ],
           [
-            "olist",
+            { type: "olist" },
             [
-              ["text", "Llegir el primer número en la variable A"],
-              ["text", "Llegir el segon número en la variable B"],
-              ["text", "Calcular suma de A i B i guardar-ho en SUMA"],
+              [{ type: "text" }, "Llegir el primer número en la variable A"],
+              [{ type: "text" }, "Llegir el segon número en la variable B"],
+              [{ type: "text" }, "Calcular suma de A i B i guardar-ho en SUMA"],
               [
-                "text",
+                { type: "text" },
                 'Mostrar "El resultat és " i el valor de la variable SUMA',
               ],
             ],
           ],
         ],
-        [["img_center", "img/unitats/programacio/python/algoritmes09.png"]]
+        [[{ type: "img_center" }, "img/unitats/programacio/python/algoritmes09.png"]]
       ],
     ],
     [
       "block_content",
       [
-        "cols",
+        {type:"cols"},
         [
           [
-            "text_complex",
+            { type: "text_complex" },
             [
-              "bold",
+              { type: "bold" },
               "Algoritme que comprova si has d'eixir de festa el cap de setmana o quedar-te estudiant.",
             ],
           ],
         ],
-        [["img_center", "img/unitats/programacio/python/algoritmes10.png"]]
+        [[{ type: "img_center" }, "img/unitats/programacio/python/algoritmes10.png"]]
       ],
     ],
     ["block_h2", "Activitats"],
     [
       "block_content",
       [
-        "text_complex",
-        ["text", "Utilitzarem la ferramenta"],
-        ["link", "https://draw.io", "draw.io"],
+        { type: "text_complex" },
+        [{ type: "text" }, "Utilitzarem la ferramenta"],
+        [{ type: "link" }, "https://draw.io", "draw.io"],
         [
-          "text",
+          { type: "text" },
           "per representar els algoritmes dels exercicis. Després, recorda pujar-los a aules.",
         ],
       ],
       [
-        "text_complex",
-        ["bold", "Exercici 1:"],
-        ["text", "Mostra el resultat de l'àrea d'un triangle per pantalla"],
+        { type: "text_complex" },
+        [{ type: "bold" }, "Exercici 1:"],
+        [{ type: "text" }, "Mostra el resultat de l'àrea d'un triangle per pantalla"],
       ],
       [
-        "text_complex",
-        ["bold", "Exercici 2:"],
-        ["text", "Indica si un número que s'indica és parell o imparell"],
+        { type: "text_complex" },
+        [{ type: "bold" }, "Exercici 2:"],
+        [{ type: "text" }, "Indica si un número que s'indica és parell o imparell"],
       ],
       [
-        "text_complex",
-        ["bold", "Exercici 3:"],
-        ["text", "Mostra la suma dels 50 primers números positius (inclou la REPETICIÓ, és a dir, ha de tornar enrere amb fletxes)"],
-      ],[
-        "text_complex",
-        ["bold", "Exercici 4:"],
-        ["text", "Escriu un programa que obtinga una llista de números i diga quin és el major"],
-      ],[
-        "text_complex",
-        ["bold", "Exercici 5:"],
-        ["text", "Escriu un algoritme que llija 100 números i que mostre la suma"],
-      ],[
-        "text_complex",
-        ["bold", "Exercici 6:"],
-        ["text", "Escriu un programa que simule el funcionament d'un rellotge"],
-      ],[
-        "text_complex",
-        ["bold", "Exercici 7:"],
-        ["text", "Escriu un programa que comprove si un any que escriu l'usuari és bisiest:"],
+        { type: "text_complex" },
+        [{ type: "bold" }, "Exercici 3:"],
+        [{ type: "text" }, "Mostra la suma dels 50 primers números positius (inclou la REPETICIÓ, és a dir, ha de tornar enrere amb fletxes)"],
+      ], [
+        { type: "text_complex" },
+        [{ type: "bold" }, "Exercici 4:"],
+        [{ type: "text" }, "Escriu un programa que obtinga una llista de números i diga quin és el major"],
+      ], [
+        { type: "text_complex" },
+        [{ type: "bold" }, "Exercici 5:"],
+        [{ type: "text" }, "Escriu un algoritme que llija 100 números i que mostre la suma"],
+      ], [
+        { type: "text_complex" },
+        [{ type: "bold" }, "Exercici 6:"],
+        [{ type: "text" }, "Escriu un programa que simule el funcionament d'un rellotge"],
+      ], [
+        { type: "text_complex" },
+        [{ type: "bold" }, "Exercici 7:"],
+        [{ type: "text" }, "Escriu un programa que comprove si un any que escriu l'usuari és bisiest:"],
       ],
       [
-        "ulist",
+        { type: "ulist" },
         [
-          ["text", "-Un any és bisiest si:"],
-          ["text", "--És múltiple de 4 però no de 100 ni de 400"],
-          ["text", "--És múltiple de 4 i també de 100 i de 400"],
-          ["text", "-No serà bisiest si:"],
-          ["text", "--No és múltiple de 4"],
-          ["text", "--És múltiple de 4 i de 100 però no de 400"],
+          [{ type: "text" }, "-Un any és bisiest si:"],
+          [{ type: "text" }, "--És múltiple de 4 però no de 100 ni de 400"],
+          [{ type: "text" }, "--És múltiple de 4 i també de 100 i de 400"],
+          [{ type: "text" }, "-No serà bisiest si:"],
+          [{ type: "text" }, "--No és múltiple de 4"],
+          [{ type: "text" }, "--És múltiple de 4 i de 100 però no de 400"],
         ],
       ],
     ],
   ],
-  test:[["block_content",["code","function createElementCode(block) {\n var p = document.createElement(\"code\");\n p.innerHTML = block[1];\n return p;\n}"],["code","a = 2;\nb=3\nprint(a+b)"]]]
+  'test':[["block_h1","titol1"],["block_h2","titol2"],["block_h3","titol3"],["block_unit",["microbit","microbit","MICROGIT"]],["block_content",[{"type":"text_simple"},"texto 1"],[{"type":"text_complex"},["text","texto1"],["link","www.google.es","Google"]],[{"type":"code"},"var a = 3;\nvar b = 4;\nconsole.log(a+b);"],[{"type":"img_center"},"img/microbit.jpg"],[{"type":"cols"},[[{"type":"text_simple"},"col1"]],[[{"type":"text_simple"},"col2"]]],[{"type":"ulist"},[["text","1"],["text","2"],["text","3"]]],[{"type":"olist"},[["text","a"],["text","b"],["text","c"]]],[{"type":"list_group"},[["text","asdf"],["text","asdff"],["text","asdfff"]]],[{"type":"h4"},"titol5"],[{"type":"btn"},"unitats/programacio/python/python.html","Python"]]]
 };
