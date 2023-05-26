@@ -295,9 +295,11 @@ function createElementText(block) {
 function createElementCode(block) {
   var span = document.createElement('span');
   span.innerHTML = `
+  <xmp>
   <pre>
     <code>${block[1]}</code>
   </pre>
+  </xmp>
   `;
   
   return span;

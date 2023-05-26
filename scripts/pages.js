@@ -88,7 +88,7 @@ const pages = {
         "Allí afegirem l'extensió Maqueen des de l'apartat Extensions, on buscarem Maqueen",
       ],
       [
-        {type:"cols"},
+        { type: "cols" },
         [[{ type: "img_center" }, "img/unitats/robotica/microbit/01.png"]],
         [[{ type: "img_center" }, "img/unitats/robotica/microbit/02.png"]],
       ],
@@ -128,7 +128,7 @@ const pages = {
         "Fes que el robot Maqueen es moga avant 2 segons, després enrere 2 segons. A continuació 3 segons avant, que gire 180º i que torne 3 segons cap a la posició inicial. Després que gire i que faça un quadrat com el de la imatge.",
       ],
       [
-        {type:"cols"},
+        { type: "cols" },
         [[{ type: "img_center" }, "img/unitats/robotica/microbit/04.png"]],
         [[{ type: "img_center" }, "img/unitats/robotica/microbit/05.png"]],
         [[{ type: "img_center" }, "img/unitats/robotica/microbit/06.png"]],
@@ -149,51 +149,51 @@ const pages = {
     [
       "block_content",
       [
-        {type:"cols"},
+        { type: "cols" },
         [
           [{ type: "img_center" }, "img/python.png"],
-          [{type:"btn"}, "unitats/programacio/python/py-00-xuleta.html", "Xuleta"],
+          [{ type: "btn" }, "unitats/programacio/python/py-00-xuleta.html", "Xuleta"],
         ],
         [
           [
-            {type:"btn"},
+            { type: "btn" },
             "unitats/programacio/python/py-01-algoritmes.html",
             "01 - Algoritmes",
           ],
           [
-            {type:"btn"},
+            { type: "btn" },
             "unitats/programacio/python/py-02-variables.html",
             "02 - Variables",
           ],
           [
-            {type:"btn"},
+            { type: "btn" },
             "unitats/programacio/python/py-03-operacions-text.html",
             "03 - Operacions amb text",
           ],
           [
-            {type:"btn"},
+            { type: "btn" },
             "unitats/programacio/python/py-04-llistes.html",
             "04 - Llistes",
           ],
         ],
         [
           [
-            {type:"btn"},
+            { type: "btn" },
             "unitats/programacio/python/py-05-interaccio.html",
             "05 - Interacció amb l'usuari",
           ],
           [
-            {type:"btn"},
+            { type: "btn" },
             "unitats/programacio/python/py-06-condicionals.html",
             "06 - Condicionals",
           ],
           [
-            {type:"btn"},
+            { type: "btn" },
             "unitats/programacio/python/py-07-bucles.html",
             "07 - Bucles",
           ],
           [
-            {type:"btn"},
+            { type: "btn" },
             "unitats/programacio/python/py-08-projectes.html",
             "PROJECTES",
           ],
@@ -268,7 +268,7 @@ const pages = {
     [
       "block_content",
       [
-        {type:"cols"},
+        { type: "cols" },
         [[{ type: "img_center" }, "img/unitats/programacio/python/algoritmes01.png"]],
         [[{ type: "img_center" }, "img/unitats/programacio/python/algoritmes02.png"]]
       ],
@@ -288,7 +288,7 @@ const pages = {
     [
       "block_content",
       [
-        {type:"cols"},
+        { type: "cols" },
         [
           [{ type: "h4" }, "Terminal"],
           [
@@ -302,7 +302,7 @@ const pages = {
     [
       "block_content",
       [
-        {type:"cols"},
+        { type: "cols" },
         [
           [{ type: "h4" }, "Entrada i eixida de dades"],
           [
@@ -316,7 +316,7 @@ const pages = {
     [
       "block_content",
       [
-        {type:"cols"},
+        { type: "cols" },
         [
           [{ type: "h4" }, "Procés"],
           [
@@ -330,7 +330,7 @@ const pages = {
     [
       "block_content",
       [
-        {type:"cols"},
+        { type: "cols" },
         [
           [{ type: "h4" }, "Decisió"],
           [
@@ -344,7 +344,7 @@ const pages = {
     [
       "block_content",
       [
-        {type:"cols"},
+        { type: "cols" },
         [
           [{ type: "h4" }, "Línies o fletxes"],
           [{ type: "text_simple" }, "Serveixen per unir tots els anteriors elements"],
@@ -383,7 +383,7 @@ const pages = {
     [
       "block_content",
       [
-        {type:"cols"},
+        { type: "cols" },
         [
           [
             { type: "text_complex" },
@@ -408,7 +408,7 @@ const pages = {
     [
       "block_content",
       [
-        {type:"cols"},
+        { type: "cols" },
         [
           [
             { type: "text_complex" },
@@ -433,7 +433,7 @@ const pages = {
     [
       "block_content",
       [
-        {type:"cols"},
+        { type: "cols" },
         [
           [
             { type: "text_complex" },
@@ -502,5 +502,140 @@ const pages = {
       ],
     ],
   ],
-  'test':[["block_h1","titol1"],["block_h2","titol2"],["block_h3","titol3"],["block_unit",["microbit","microbit","MICROGIT"]],["block_content",[{"type":"text_simple"},"texto 1"],[{"type":"text_complex"},["text","texto1"],["link","www.google.es","Google"]],[{"type":"code"},"var a = 3;\nvar b = 4;\nconsole.log(a+b);"],[{"type":"img_center"},"img/microbit.jpg"],[{"type":"cols"},[[{"type":"text_simple"},"col1"]],[[{"type":"text_simple"},"col2"]]],[{"type":"ulist"},[["text","1"],["text","2"],["text","3"]]],[{"type":"olist"},[["text","a"],["text","b"],["text","c"]]],[{"type":"list_group"},[["text","asdf"],["text","asdff"],["text","asdfff"]]],[{"type":"h4"},"titol5"],[{"type":"btn"},"unitats/programacio/python/python.html","Python"]]]
+  php: [],
+  'php-01-basic-concepts': [
+    ["block_h1", "PHP Basic concepts"],
+    ["block_h2", "Including PHP code in a PHP file"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, "One of the key features of PHP is its ability to be embedded directly into HTML code. This means that you can include PHP code directly in your HTML files, which allows you to easily add dynamic content to your web pages. In this tutorial, we will explore how to include PHP code in a PHP file using simple examples."],
+      [{
+        "type": "text_simple"
+      }, "Example code:"],
+      [{
+        "type": "code"
+      }, "<?php\n// This is a PHP file\n\n// Here is some PHP code that will output a message\n$message = \"Hello, World!\";\necho $message;\n\n// You can also include HTML code in a PHP file\n?>\n<!DOCTYPE html>\n<html>\n <head>\n <title>My PHP Web Page</title>\n </head>\n <body>\n <h1><?php echo $message; ?></h1>\n <p>This is a paragraph of text.</p>\n </body>\n</html>"],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "To include PHP code in a PHP file, you simply need to open a PHP tag ("],
+      ["bold", "<?php"],
+      ["text", ") and write your PHP code inside it. In the example code above, we define a variable "],
+      ["bold", "$message"],
+      ["text", "that contains the string \"Hello, World!\", and then use the"],
+      ["bold", "echo"],
+      ["text", "statement to output the message to the webpage."]
+      ],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "In addition to PHP code, you can also include HTML code in a PHP file. To do this, you simply close the PHP tag ("],
+      ["bold", "?>"],
+      ["text", ") and write your HTML code like you would normally. When you want to include PHP code within your HTML code, you just need to open another PHP tag ("],
+      ["bold", "<?php"],
+      ["text", ") and write your PHP code, and then close it again with "],
+      ["bold", "?>."]
+      ],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "In the example code above, we use this technique to include the variable"],
+      ["bold", "$message"],
+      ["text", "in an HTML heading element ("],
+      ["bold", "<h1>"],
+      ["text", "), which will output the message \"Hello, World!\" as the page heading. We also include a paragraph element ("],
+      ["bold", "<p>"],
+      ["text", ") to demonstrate how you can mix HTML and PHP code in the same file."]
+      ],
+      [{
+        "type": "text_complex"
+      }]
+    ],
+    ["block_h2", "Writing comments in PHP"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, "Comments are lines of code that are not executed by the PHP engine, but are instead used to document the code and provide context for other developers. In this tutorial, we will explore how to write comments in PHP using examples."],
+      [{
+        "type": "text_simple"
+      }, "Example code:"],
+      [{
+        "type": "code"
+      }, "<?php\n// This is a single-line comment\n\n/*\nThis is a multi-line comment\nIt can span multiple lines\n*/\n\n# This is another way to write a single-line comment\n\n// The following line of code will output \"Hello, World!\"\necho \"Hello, World!\";\n?>"],
+      [{
+        "type": "text_simple"
+      }, "In PHP, there are two types of comments: single-line comments and multi-line comments."],
+      [{
+        "type": "text_simple"
+      }, "Single-line comments start with two forward slashes (//) and can be used to comment out a single line of code. In the example code above, the first line of code is a single-line comment that explains what the comment is."],
+      [{
+        "type": "text_simple"
+      }, "Multi-line comments start with /* and end with */. They can be used to comment out multiple lines of code. In the example code above, we use a multi-line comment to comment out three lines of code."],
+      [{
+        "type": "text_simple"
+      }, "In addition to these two types of comments, there is also a third way to write comments in PHP, which is the hash symbol (#). This is similar to a single-line comment, but starts with a hash symbol instead of two forward slashes."],
+      [{
+        "type": "text_simple"
+      }, "Comments are useful for documenting your code and providing context for other developers who may be working with your code. They can also be used to temporarily disable lines of code while you're testing or debugging your code."],
+      [{
+        "type": "text_simple"
+      }, "In the example code above, we use comments to explain what the code is doing and to provide context for other developers who may be looking at the code. The last line of code is not commented out, so it will be executed by the PHP engine and output \"Hello, World!\" to the webpage."]
+    ],
+    ["block_h2", "Outputting data in PHP"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, "One of the most common tasks in PHP is outputting data to the webpage. In this tutorial, we will explore how to output data in PHP using examples."],
+      [{
+        "type": "text_simple"
+      }, "Example code:"],
+      [{
+        "type": "code"
+      }, "<?php\n// This is a variable containing some data\n$name = \"John Doe\";\n\n// This will output the data\necho \"Hello, \" . $name . \"!\";\n\n// You can also output data using the print statement\nprint \"Welcome to my website, \" . $name . \"!\";\n?>"],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "In PHP, there are several ways to output data to the webpage. The most common way is to use the "],
+      ["bold", "echo"],
+      ["text", "statement, which allows you to output a string of text to the webpage."]
+      ],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "In the example code above, we first define a variable"],
+      ["bold", "$name"],
+      ["text", "that contains the string \"John Doe\". We then use the"],
+      ["bold", "echo"],
+      ["text", "statement to output a greeting message that includes the value of the"],
+      ["bold", "$name"],
+      ["text", "variable."]
+      ],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "You can also use the "],
+      ["bold", "print"],
+      ["text", "statement to output data in PHP. The syntax for the print statement is similar to that of the"],
+      ["bold", "echo"],
+      ["text", "statement, and both are used for the same purpose of outputting data to the webpage."]
+      ],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "In the example code above, we use the"],
+      ["bold", "print"],
+      ["text", "statement to output a welcome message that includes the value of the "],
+      ["bold", "$name"],
+      ["text", "variable."]
+      ],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "Overall, outputting data in PHP is a simple task that allows you to display dynamic content on your web pages. By using variables and the"],
+      ["bold", "echo"],
+      ["text", "or"],
+      ["bold", "print"],
+      ["text", "statement, you can easily output data to the webpage and create engaging user experiences."]
+      ]
+    ]
+  ],
+  'test': [["block_h1", "titol1"], ["block_h2", "titol2"], ["block_h3", "titol3"], ["block_unit", ["microbit", "microbit", "MICROGIT"]], ["block_content", [{ "type": "text_simple" }, "texto 1"], [{ "type": "text_complex" }, ["text", "texto1"], ["link", "www.google.es", "Google"]], [{ "type": "code" }, "var a = 3;\nvar b = 4;\nconsole.log(a+b);"], [{ "type": "img_center" }, "img/microbit.jpg"], [{ "type": "cols" }, [[{ "type": "text_simple" }, "col1"]], [[{ "type": "text_simple" }, "col2"]]], [{ "type": "ulist" }, [["text", "1"], ["text", "2"], ["text", "3"]]], [{ "type": "olist" }, [["text", "a"], ["text", "b"], ["text", "c"]]], [{ "type": "list_group" }, [["text", "asdf"], ["text", "asdff"], ["text", "asdfff"]]], [{ "type": "h4" }, "titol5"], [{ "type": "btn" }, "unitats/programacio/python/python.html", "Python"]]]
 };

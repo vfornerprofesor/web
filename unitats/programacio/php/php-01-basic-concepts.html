@@ -2,40 +2,37 @@
 <html lang="en">
 
 <head>
+  <base href="../../../">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vicent Forner - Professor</title>
-  
-  <base href="../">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <div id="header"></div>
-  
-  
+
 
 </head>
 
 <body>
-  <div contenteditable="true">
-    <!-- This is where the user can type and format their content -->
-  </div>
-  <pre><code class="javascript">
-    var hola = 'hola';  
-  </code></pre>
-
+  <div id="menu"></div>
+  
+ 
     <div id="blocks">
-  
+         
     </div>
-   
   
+  
+    <div id="footer"></div>
   </div>
 
   <script>
     $(document).ready(function () {
       $('#header').load('header.html', function(responseTxt, statusTxt, xhr){
-        loadBlocks('test', 'blocks');
+        loadBlocks('php-01-basic-concepts', 'blocks');
         hljs.highlightAll();
       });
-    
+      $('#menu').load('menu.html');
+      $('#footer').load('footer.html');
     });
 
   </script>
