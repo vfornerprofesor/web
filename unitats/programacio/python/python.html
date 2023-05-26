@@ -29,6 +29,7 @@
     $(document).ready(function () {
       $('#header').load('header.html', function(responseTxt, statusTxt, xhr){
         loadBlocks('python', 'blocks');
+        hljs.highlightAll();
       });
       $('#menu').load('menu.html');
       $('#footer').load('footer.html');

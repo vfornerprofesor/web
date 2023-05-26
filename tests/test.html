@@ -1,125 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<style>
-  .container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vicent Forner - Professor</title>
+  
+  <base href="../">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <div id="header"></div>
+  
+  
 
-.element {
-  margin-bottom: 20px;
-}
-
-.input-field {
-  margin-bottom: 10px;
-}
-
-.input-field input {
-  width: 100%;
-  padding: 5px;
-}
-
-.select-field {
-  margin-top: 10px;
-}
-
-.select-field select {
-  width: 100%;
-  padding: 5px;
-}
-
-</style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="element">
-      <select id="element-selector">
-        <option value="block_h1">H1</option>
-        <option value="block_h2">H2</option>
-        <option value="block_h3">H3</option>
-        <option value="block_unit">Unit</option>
-        <option value="block_content">Content</option>
-      </select>
-      <div id="input-container"></div>
+  <
+  <pre><code class="javascript">
+    var hola = 'hola';  
+  </code></pre>
+
+    <div id="blocks">
+  
     </div>
+   
+  
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-  const elementSelector = document.getElementById("element-selector");
-  const inputContainer = document.getElementById("input-container");
-
-  elementSelector.addEventListener("change", function() {
-    inputContainer.innerHTML = "";
-
-    const selectedOption = elementSelector.value;
-
-    if (selectedOption === "block_h1" || selectedOption === "block_h2" || selectedOption === "block_h3") {
-      const inputField = document.createElement("div");
-      inputField.classList.add("input-field");
-      inputField.innerHTML = '<input type="text" placeholder="titulo">';
-      inputContainer.appendChild(inputField);
-    } else if (selectedOption === "block_unit") {
-      for (let i = 1; i <= 3; i++) {
-        const inputField = document.createElement("div");
-        inputField.classList.add("input-field");
-        inputField.innerHTML = `<input type="text" placeholder="campo ${i}">`;
-        inputContainer.appendChild(inputField);
-      }
-    } else if (selectedOption === "block_content") {
-      const selectField = document.createElement("div");
-      selectField.classList.add("select-field");
-      selectField.innerHTML = `
-        <select>
-          <option value="text_complex">Text Complex</option>
-          <option value="text_simple">Text Simple</option>
-          <option value="img_center">Image Center</option>
-          <option value="cols">Columns</option>
-          <option value="ulist">Unordered List</option>
-          <option value="olist">Ordered List</option>
-          <option value="list_group">List Group</option>
-          <option value="h4">H4</option>
-        </select>
-      `;
-      inputContainer.appendChild(selectField);
-
-      const innerSelect = selectField.querySelector("select");
-      innerSelect.addEventListener("change", function() {
-        const innerSelectedOption = innerSelect.value;
-        const innerInputContainer = document.createElement("div");
-        innerInputContainer.classList.add("input-field");
-
-        if (innerSelectedOption === "text_complex") {
-          const textComplexSelect = document.createElement("select");
-          textComplexSelect.innerHTML = `
-            <option value="text">Text</option>
-            <option value="link">Link</option>
-            <option value="bold">Bold</option>
-          `;
-          innerInputContainer.appendChild(textComplexSelect);
-
-          textComplexSelect.addEventListener("change", function() {
-            const textComplexSelectedOption = textComplexSelect.value;
-            const textComplexInput = document.createElement("input");
-            textComplexInput.type = "text";
-            textComplexInput.placeholder = textComplexSelectedOption;
-            innerInputContainer.appendChild(textComplexInput);
-          });
-        } else if (innerSelectedOption === "text_simple" || innerSelectedOption === "img_center") {
-          const textSimpleInput = document.createElement("input");
-          textSimpleInput.type = "text";
-          textSimpleInput.placeholder = "texto";
-          innerInputContainer.appendChild(textSimpleInput);
-        }
-
-        inputContainer.appendChild(innerInputContainer);
+    $(document).ready(function () {
+      $('#header').load('header.html', function(responseTxt, statusTxt, xhr){
+        loadBlocks('test', 'blocks');
+        hljs.highlightAll();
       });
-    }
-  });
-});
+    
+    });
 
   </script>
+
 </body>
+
 </html>

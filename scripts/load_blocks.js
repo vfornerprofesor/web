@@ -142,6 +142,9 @@ function createElementByName(name, block) {
     case "text_simple":
       new_element = createElementText(block);
       break;
+    case "code":
+      new_element = createElementCode(block);
+      break;
     case "img_center":
       new_element = createElementImg(block);
       break;
@@ -189,16 +192,16 @@ function createElementListGroup(block) {
   return ul;
 }
 function countLevelLi(li_text) {
-    var level = 0;
-    for(var i = 0; i < li_text.length; i++) {
-        if(li_text[i] == '-') {
-            level++;
-        } else{ break;}
-    }
-    return level;
+  var level = 0;
+  for (var i = 0; i < li_text.length; i++) {
+    if (li_text[i] == '-') {
+      level++;
+    } else { break; }
+  }
+  return level;
 }
 function createElementUList(block) {
-    debugger;
+  debugger;
   var level = 1;
   var ul = document.createElement("span");
   var ul_html = '<ul>';
@@ -206,14 +209,14 @@ function createElementUList(block) {
   for (var i = 0; i < block[1].length; i++) {
     var level_li = countLevelLi(block[1][i][1]);
     var text_li = block[1][i][1].substring(level_li);
-    if(level_li > level) {
-        level = level_li;
-        ul_html += '<ul>';
+    if (level_li > level) {
+      level = level_li;
+      ul_html += '<ul>';
     } else {
-        if(level_li < level) {
-            level = level_li;
-            ul_html += '</ul>';
-        }
+      if (level_li < level) {
+        level = level_li;
+        ul_html += '</ul>';
+      }
     }
     ul_html += '<li>' + text_li + '</li>';
   }
@@ -224,29 +227,29 @@ function createElementUList(block) {
 }
 
 function createElementOList(block) {
-    debugger;
-    var level = 1;
-    var ul = document.createElement("span");
-    var ul_html = '<ol>';
-  
-    for (var i = 0; i < block[1].length; i++) {
-      var level_li = countLevelLi(block[1][i][1]);
-      var text_li = block[1][i][1].substring(level_li);
-      if(level_li > level) {
-          level = level_li;
-          ul_html += '<ol>';
-      } else {
-          if(level_li < level) {
-              level = level_li;
-              ul_html += '</ol>';
-          }
+  debugger;
+  var level = 1;
+  var ul = document.createElement("span");
+  var ul_html = '<ol>';
+
+  for (var i = 0; i < block[1].length; i++) {
+    var level_li = countLevelLi(block[1][i][1]);
+    var text_li = block[1][i][1].substring(level_li);
+    if (level_li > level) {
+      level = level_li;
+      ul_html += '<ol>';
+    } else {
+      if (level_li < level) {
+        level = level_li;
+        ul_html += '</ol>';
       }
-      ul_html += '<li>' + text_li + '</li>';
     }
-  
-    ul_html += '</ol>';
-    ul.innerHTML = ul_html;
-    return ul;
+    ul_html += '<li>' + text_li + '</li>';
+  }
+
+  ul_html += '</ol>';
+  ul.innerHTML = ul_html;
+  return ul;
 }
 
 function createElementCols(block) {
@@ -277,15 +280,26 @@ function createElementImg(block) {
 }
 
 function createElementBtn(block) {
-    var p = document.createElement('p');
-    p.innerHTML += ' <a href="' + block[1] + '" class="btn btn-primary">' + block[2] + "</a>";
-    return p;
+  var p = document.createElement('p');
+  p.innerHTML += ' <a href="' + block[1] + '" class="btn btn-primary">' + block[2] + "</a>";
+  return p;
 }
 
 function createElementText(block) {
   var p = document.createElement("p");
   p.innerHTML = block[1];
   return p;
+}
+
+function createElementCode(block) {
+  var span = document.createElement('span');
+  span.innerHTML = `
+  <pre>
+    <code>${block[1]}</code>
+  </pre>
+  `;
+  
+  return span;
 }
 
 function createElementTextComplex(block) {
@@ -297,7 +311,7 @@ function createElementTextComplex(block) {
         p.innerHTML += " " + block[j][1];
         break;
       case "link":
-        p.innerHTML += ' <a href="' + block[j][1] + '">' + block[j][2] + "</a>";
+        p.innerHTML += ' <a href="' + block[j][1] + '" target="_blank">' + block[j][2] + "</a>";
         break;
       case "bold":
         p.innerHTML += " <b>" + block[j][1] + "</b>";

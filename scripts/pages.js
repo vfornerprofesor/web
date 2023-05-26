@@ -502,22 +502,5 @@ const pages = {
       ],
     ],
   ],
-  test: [
-    ["block_h1", "TEST"],
-    ["block_h2", "Subtitol"],
-    ["block_unit", ["microbit", "microbit", "Microbit"]],
-    [
-      "block_content",
-      ["text_simple", "Este es un paràgraf"],
-      [
-        "olist",
-        [
-          ["text", "1"],
-          ["text", "2"],
-          ["text", "3"],
-        ],
-      ],
-      ["img_center", "img/microbit.jpg"],
-    ],
-  ],
+  test:[["block_content",["code","function createElementCode(block) {\n var p = document.createElement(\"code\");\n p.innerHTML = block[1];\n return p;\n}"],["code","a = 2;\nb=3\nprint(a+b)"]]]
 };

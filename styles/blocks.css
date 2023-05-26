@@ -72,3 +72,12 @@
     .unit-link:link,  .unit-link:visited,  .unit-link:hover,  .unit-link:active {
     text-decoration: none;
   }
+
+  .code {
+    white-space: break-spaces;
+    background-color: #3d3d3d;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+
+  }

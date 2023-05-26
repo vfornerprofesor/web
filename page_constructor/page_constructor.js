@@ -37,6 +37,9 @@ function addElementContent(id_content) {
     case "text_complex":
       content.appendChild(createContentTextComplex(id_content));
       break;
+    case "code":
+      content.appendChild(createContentCode(id_content));
+      break;
     case "text_simple":
       content.appendChild(createContentTextSimple(id_content));
       break;
@@ -133,6 +136,22 @@ function createContentOList(id_content) {
   );
 }
 
+function createContentCode(id_content) {
+  var id_block_content = id_content + "-" + content_ids[id_content];
+  var div = createDiv("code", id_block_content);
+
+  var p = createParagraph("Code:");
+  div.appendChild(p);
+
+  var input = createTextArea();
+  div.appendChild(input);
+
+  var btn_delete = createButtonDelete(id_block_content);
+  div.appendChild(btn_delete);
+
+  return div;
+}
+
 function createContentTextComplex(id_content) {
   var id_block_content = id_content + "-" + content_ids[id_content];
   var div = createDiv("text_complex", id_block_content);
@@ -175,7 +194,7 @@ function createContentBtn(id_content) {
   div.appendChild(input);
   var input2 = createInput("text", "Nom botó");
   div.appendChild(input2);
-  
+
   var btn_delete = createButtonDelete(id_block_content);
   div.appendChild(btn_delete);
 
@@ -227,6 +246,7 @@ function createBlockContent(id_block) {
     `">
           <option value="text_simple">Text Simple</option>
           <option value="text_complex">Text Complex</option>
+          <option value="code">Code</option>
           <option value="img_center">Image Center</option>
           <option value="cols">Columns</option>
           <option value="ulist">Unordered List</option>
@@ -284,10 +304,12 @@ function createBlockUnit(id_block) {
     var img_input = createInput("text", "Imatge");
     var url_input = createInput("text", "URL");
     var btn_input = createInput("text", "Text botó");
+    var br = document.createElement('br');
 
     div.appendChild(img_input);
     div.appendChild(url_input);
     div.appendChild(btn_input);
+    div.appendChild(br);
   }
 
   var btn = createButtonDelete(id_block);
@@ -418,6 +440,9 @@ function createDataContent(id_block, el) {
         case "text_complex":
           child_list = createDataTextComplex(child);
           break;
+        case "code":
+          child_list = createDataCode(child);
+          break;
         case "list_group":
           child_list = createDataList(child);
           break;
@@ -445,6 +470,7 @@ function createDataContent(id_block, el) {
       new_element[j + 1] = child_list;
     }
   }
+  new_element = new_element.filter(n => n);
   return new_element;
 }
 
@@ -464,6 +490,8 @@ function createDataCols(child) {
       pos++;
     }
   }
+  //Elimina els buits
+  data = data.filter(n => n[0]);
   return data;
 }
 
@@ -505,6 +533,14 @@ function createDataList(child) {
   for (const td of ta_data) {
     data[1].push(["text", td]);
   }
+  return data;
+}
+
+function createDataCode(child) {
+  let data = [];
+  data[0] = child.block_type;
+  let text_code = child.getElementsByTagName("textarea")[0].value;
+  data[1] = text_code;
   return data;
 }
 
