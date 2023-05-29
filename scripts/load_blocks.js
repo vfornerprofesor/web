@@ -135,6 +135,7 @@ function createBlockContent(block) {
 
 function createElementByName(name, block) {
   var new_element;
+  
   switch (name) {
     case "text_complex":
       new_element = createElementTextComplex(block);
@@ -185,7 +186,7 @@ function createElementListGroup(block) {
     var li = document.createElement("li");
     li.classList.add("list-group-item");
     //var new_element = createElementByName(block[1][i][0], block[1][i]);
-    li.textContent = block[1][i][1];
+    li.textContent = updateTextChangingLessThanAndGreaterThanSigns(block[1][i][1]);
     //li.appendChild(new_element);
     ul.appendChild(li);
   }
@@ -208,7 +209,7 @@ function createElementUList(block) {
 
   for (var i = 0; i < block[1].length; i++) {
     var level_li = countLevelLi(block[1][i][1]);
-    var text_li = block[1][i][1].substring(level_li-1);
+    var text_li = updateTextChangingLessThanAndGreaterThanSigns(block[1][i][1].substring(level_li-1));
     if (level_li > level) {
       level = level_li;
       ul_html += '<ul>';
@@ -234,7 +235,7 @@ function createElementOList(block) {
 
   for (var i = 0; i < block[1].length; i++) {
     var level_li = countLevelLi(block[1][i][1]);
-    var text_li = block[1][i][1].substring(level_li-1);
+    var text_li = updateTextChangingLessThanAndGreaterThanSigns(block[1][i][1].substring(level_li-1));
     if (level_li > level) {
       level = level_li;
       ul_html += '<ol>';
@@ -288,17 +289,22 @@ function createElementBtn(block) {
 
 function createElementText(block) {
   var p = document.createElement("p");
-  p.innerHTML = block[1];
+  p.innerHTML = updateTextChangingLessThanAndGreaterThanSigns(block[1]);
   return p;
+}
+
+function updateTextChangingLessThanAndGreaterThanSigns(text) {
+  text = text.replaceAll('<', '&lt;');
+  text = text.replaceAll('>', '&gt;');
+  return text;
 }
 
 function createElementCode(block) {
   var code = block[1];
-  code = code.replaceAll('<', '&lt;');
-  code = code.replaceAll('>', '&gt;');
+  code = updateTextChangingLessThanAndGreaterThanSigns(code);
   var span = document.createElement('span');
   var language = block[0]['language'];
-  var text_language = language ? ' class="language-' + language + '" ' : ' ';
+  var text_language = language ? ' class="' + language + '" ' : ' ';
   span.innerHTML = `
   <pre>
     <code ` + text_language + `>` + code + `</code>
@@ -312,16 +318,16 @@ function createElementTextComplex(block) {
   var p = document.createElement("p");
   p.innerHTML = "";
   for (let j = 1; j < block.length; j++) {
-    var type = block[j][0]['type'];
+    var type = block[j][0];
     switch (type) {
       case "text":
-        p.innerHTML += " " + block[j][1];
+        p.innerHTML += " " + updateTextChangingLessThanAndGreaterThanSigns(block[j][1]);
         break;
       case "link":
-        p.innerHTML += ' <a href="' + block[j][1] + '" target="_blank">' + block[j][2] + "</a>";
+        p.innerHTML += ' <a href="' + block[j][1] + '" target="_blank">' + updateTextChangingLessThanAndGreaterThanSigns(block[j][2]) + "</a>";
         break;
       case "bold":
-        p.innerHTML += " <b>" + block[j][1] + "</b>";
+        p.innerHTML += " <b>" + updateTextChangingLessThanAndGreaterThanSigns(block[j][1]) + "</b>";
         break;
       default:
         break;

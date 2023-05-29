@@ -502,7 +502,48 @@ const pages = {
       ],
     ],
   ],
-  php: [],
+  'php': [
+    ["block_h1", "PHP"],
+    ["block_content", [{
+      "type": "cols"
+    },
+    [
+      [{
+        "type": "h4"
+      }, "PHP Basic concepts"],
+      [{
+        "type": "text_simple"
+      }, "Including PHP code in a PHP file"],
+      [{
+        "type": "text_simple"
+      }, "Writing comments in PHP"],
+      [{
+        "type": "text_simple"
+      }, "Outputting data in PHP"],
+      [{
+        "type": "btn"
+      }, "unitats/programacio/php/php-01-basic-concepts.html", "Get it!"]
+    ],
+    [
+      [{
+        "type": "h4"
+      }, "Variables"],
+      [{
+        "type": "text_simple"
+      }, "Introduction to PHP Variables"],
+      [{
+        "type": "text_simple"
+      }, "Manipulating String Variables in PHP"],
+      [{
+        "type": "text_simple"
+      }, "Working with Arrays in PHP"],
+      [{
+        "type": "btn"
+      }, "unitats/programacio/php/php-02-variables.html", "Get it!"]
+    ],
+    []
+    ]]
+  ],
   'php-01-basic-concepts': [
     ["block_h1", "PHP Basic concepts"],
     ["block_h2", "Including PHP code in a PHP file"],
@@ -637,6 +678,94 @@ const pages = {
       ["text", "or"],
       ["bold", "print"],
       ["text", "statement, you can easily output data to the webpage and create engaging user experiences."]
+      ]
+    ]
+  ],
+  'php-02-variables': [
+    ["block_h1", "Variables"],
+    ["block_h2", "Introduction to PHP Variables"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, "In this lesson, we will explore the fundamentals of PHP variables. Variables are essential elements in programming that allow us to store and manipulate data. In PHP, we have various types of variables, including strings, integers, floats, and booleans. We will cover how to declare variables, assign values to them, and perform basic operations using these variable types. Let's dive in and start harnessing the power of variables in PHP!"],
+      [{
+        "type": "text_simple"
+      }, "Example Code:"],
+      [{
+        "type": "code",
+        "language": "language-php"
+      }, "<?php\n// String Variable\n$name = \"John Doe\";\necho \"Name: \" . $name . \"<br>\";\n\n// Integer Variable\n$age = 25;\necho \"Age: \" . $age . \"<br>\";\n\n// Float Variable\n$price = 9.99;\necho \"Price: $\" . $price . \"<br>\";\n\n// Boolean Variable\n$isLogged = true;\necho \"Logged in: \" . ($isLogged ? 'Yes' : 'No') . \"<br>\";\n\n// Basic Operations\n$num1 = 10;\n$num2 = 5;\n\n$sum = $num1 + $num2;\necho \"Sum: \" . $sum . \"<br>\";\n\n$diff = $num1 - $num2;\necho \"Difference: \" . $diff . \"<br>\";\n\n$product = $num1 * $num2;\necho \"Product: \" . $product . \"<br>\";\n\n$quotient = $num1 / $num2;\necho \"Quotient: \" . $quotient . \"<br>\";\n\n$remainder = $num1 % $num2;\necho \"Remainder: \" . $remainder . \"<br>\";\n?>\n"],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "In this example, we start by declaring and assigning values to variables of different types: string, integer, float, and boolean. We then demonstrate how to perform basic operations using these variables, such as addition, subtraction, multiplication, division, and finding the remainder. The results are displayed using the "],
+      ["bold", "echo"],
+      ["text", "statement. Feel free to modify the values and experiment with different operations to deepen your understanding of PHP variables."]
+      ]
+    ],
+    ["block_h2", "Manipulating String Variables in PHP"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, "In this lesson, we will explore the world of string variables and learn how to manipulate them using various operations in PHP. Strings are a fundamental data type in programming that represent text and are used for storing and manipulating textual data. In PHP, we have a rich set of functions and operations to work with strings. We will cover how to declare string variables, concatenate them, find their length, extract substrings, convert cases, and more. Let's dive in and unleash the power of string manipulation in PHP!"],
+      [{
+        "type": "text_simple"
+      }, "Example Code:"],
+      [{
+        "type": "code",
+        "language": "language-php"
+      }, "<?php\n// String Variable\n$greeting = \"Hello,\";\n$name = \"John\";\n\n// Concatenation\n$fullGreeting = $greeting . \" \" . $name;\necho $fullGreeting . \"<br>\";\n\n// Length of a String\n$length = strlen($fullGreeting);\necho \"Length: \" . $length . \"<br>\";\n\n// Extracting Substrings\n$substring = substr($fullGreeting, 7, 4);\necho \"Substring: \" . $substring . \"<br>\";\n\n// Converting Case\n$lowercase = strtolower($fullGreeting);\necho \"Lowercase: \" . $lowercase . \"<br>\";\n\n$uppercase = strtoupper($fullGreeting);\necho \"Uppercase: \" . $uppercase . \"<br>\";\n\n// Replacing Text\n$replaced = str_replace(\"John\", \"Jane\", $fullGreeting);\necho \"Replaced: \" . $replaced . \"<br>\";\n\n// Finding Position\n$position = strpos($fullGreeting, \"John\");\necho \"Position: \" . $position . \"<br>\";\n?>\n"],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "In this example, we begin by declaring two string variables,"],
+      ["bold", "$greeting"],
+      ["text", "and"],
+      ["bold", "$name"],
+      ["text", ", and then concatenate them to form the "],
+      ["bold", "$fullGreeting"],
+      ["text", ". We demonstrate how to find the length of a string using the "],
+      ["bold", "strlen()"],
+      ["text", "function and extract a substring using the"],
+      ["bold", "substr()"],
+      ["text", "function. We also showcase converting the string to lowercase and uppercase using the"],
+      ["bold", "strtolower()"],
+      ["text", "and"],
+      ["bold", "strtoupper()"],
+      ["text", "functions respectively. Furthermore, we learn how to replace specific text within a string using the"],
+      ["bold", "str_replace()"],
+      ["text", "function and find the position of a substring using the"],
+      ["bold", "strpos()"],
+      ["text", "function. Modify the variables and explore other string functions to expand your understanding of string manipulation in PHP. "]
+      ]
+    ],
+    ["block_h2", "Working with Arrays in PHP"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, "In this lesson, we will explore the concept of arrays and how to work with them in PHP. Arrays are powerful data structures that allow us to store and organize multiple values under a single variable. In PHP, arrays can hold elements of different types, such as strings, integers, floats, and even other arrays. We will cover how to declare arrays, access their elements, add and remove elements, iterate over them, and perform essential operations like sorting and searching. Let's dive in and master the art of array manipulation in PHP!"],
+      [{
+        "type": "text_simple"
+      }, "Example Code:"],
+      [{
+        "type": "code",
+        "language": "language-php"
+      }, "<?php\n// Numeric Array\n$numbers = [1, 2, 3, 4, 5];\n\n// Accessing Array Elements\necho \"First Element: \" . $numbers[0] . \"<br>\";\necho \"Second Element: \" . $numbers[1] . \"<br>\";\n\n// Associative Array\n$person = [\n \"name\" => \"John Doe\",\n \"age\" => 25,\n \"email\" => \"johndoe@example.com\"\n];\n\n// Accessing Associative Array Elements\necho \"Name: \" . $person[\"name\"] . \"<br>\";\necho \"Age: \" . $person[\"age\"] . \"<br>\";\n\n// Adding Elements to an Array\n$fruits = [\"apple\", \"banana\"];\n$fruits[] = \"orange\";\necho \"Fruits: \" . implode(\", \", $fruits) . \"<br>\";\n\n// Removing Elements from an Array\nunset($fruits[1]);\necho \"Updated Fruits: \" . implode(\", \", $fruits) . \"<br>\";\n\n// Looping through an Array\nforeach ($fruits as $fruit) {\n echo $fruit . \"<br>\";\n}\n\n// Array Operations\n$numbers = [4, 2, 1, 5, 3];\n\n// Sorting\nsort($numbers);\necho \"Sorted Numbers: \" . implode(\", \", $numbers) . \"<br>\";\n\n// Searching\n$index = array_search(3, $numbers);\necho \"Index of 3: \" . $index . \"<br>\";\n?>\n"],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "In this example, we start by declaring a numeric array,"],
+      ["bold", "$numbers"],
+      ["text", ", and an associative array,"],
+      ["bold", "$person"],
+      ["text", ". We demonstrate how to access elements in both types of arrays using their indices or keys. Next, we explore adding elements to an array using the "],
+      ["bold", "[]"],
+      ["text", "syntax and removing elements using the"],
+      ["bold", "unset()"],
+      ["text", "function. We then showcase how to iterate over an array using the"],
+      ["bold", "foreach"],
+      ["text", "loop. Furthermore, we perform common array operations, such as sorting the elements using the"],
+      ["bold", "sort()"],
+      ["text", "function and searching for a specific value using the"],
+      ["bold", "array_search()"],
+      ["text", "function. Modify the arrays and experiment with different array operations to enhance your understanding of array manipulation in PHP."]
       ]
     ]
   ],
