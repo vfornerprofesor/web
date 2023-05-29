@@ -541,7 +541,23 @@ const pages = {
         "type": "btn"
       }, "unitats/programacio/php/php-02-variables.html", "Get it!"]
     ],
-    []
+    [
+      [{
+        "type": "h4"
+      }, "Operators"],
+      [{
+        "type": "text_simple"
+      }, "Arithmetic operators"],
+      [{
+        "type": "text_simple"
+      }, "Comparison operators"],
+      [{
+        "type": "text_simple"
+      }, "Logical operators"],
+      [{
+        "type": "btn"
+      }, "unitats/programacio/php/php-03-operators.html", "Get it!"]
+    ]
     ]]
   ],
   'php-01-basic-concepts': [
@@ -766,6 +782,122 @@ const pages = {
       ["text", "function and searching for a specific value using the"],
       ["bold", "array_search()"],
       ["text", "function. Modify the arrays and experiment with different array operations to enhance your understanding of array manipulation in PHP."]
+      ]
+    ]
+  ],
+  'php-03-operators': [
+    ["block_h1", "Operators"],
+    ["block_h2", "Arithmetic Operators"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, "In this lesson, we will explore arithmetic operators in PHP. Arithmetic operators are fundamental tools for performing mathematical calculations in your PHP code. We will cover various arithmetic operators, including addition, subtraction, multiplication, division, and modulo. We will provide examples and explain the functionality of each operator."],
+      [{
+        "type": "text_simple"
+      }, "Example Code:"],
+      [{
+        "type": "code",
+        "language": "language-php"
+      }, "<?php\n$num1 = 10;\n$num2 = 5;\n\n// Addition\n$sum = $num1 + $num2;\necho \"Sum: \" . $sum . \"<br>\";\n\n// Subtraction\n$diff = $num1 - $num2;\necho \"Difference: \" . $diff . \"<br>\";\n\n// Multiplication\n$product = $num1 * $num2;\necho \"Product: \" . $product . \"<br>\";\n\n// Division\n$quotient = $num1 / $num2;\necho \"Quotient: \" . $quotient . \"<br>\";\n\n// Modulo\n$remainder = $num1 % $num2;\necho \"Remainder: \" . $remainder . \"<br>\";\n?>\n"],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "In this example, we showcase the usage of arithmetic operators in PHP. We start with addition ("],
+      ["bold", "+"],
+      ["text", "), where the"],
+      ["bold", "$num1"],
+      ["text", "and"],
+      ["bold", "$num2"],
+      ["text", "are added together to calculate the sum. Then, we demonstrate subtraction ("],
+      ["bold", "-"],
+      ["text", "), multiplication ("],
+      ["bold", "*"],
+      ["text", "), division ("],
+      ["bold", "/"],
+      ["text", "), and modulo ("],
+      ["bold", "%"],
+      ["text", "). The difference, product, quotient, and remainder are calculated and displayed using the echo statement."]
+      ]
+    ],
+    ["block_h2", "Comparison operators"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, "In this lesson, we will explore comparison operators in PHP. Comparison operators allow us to compare values and evaluate conditions in our PHP code. We will cover various comparison operators, including greater than, less than, equal to, not equal to, greater than or equal to, and less than or equal to. We will provide examples and explain the functionality of each operator."],
+      [{
+        "type": "text_simple"
+      }, "Example Code:"],
+      [{
+        "type": "code",
+        "language": "languaje-php"
+      }, "<?php\n$num1 = 10;\n$num2 = 5;\n\n// Greater Than\n$isGreater = ($num1 > $num2);\necho \"Is num1 greater than num2? \" . ($isGreater ? 'Yes' : 'No') . \"<br>\";\n\n// Less Than\n$isLess = ($num1 < $num2);\necho \"Is num1 less than num2? \" . ($isLess ? 'Yes' : 'No') . \"<br>\";\n\n// Equal To\n$isEqual = ($num1 == $num2);\necho \"Are num1 and num2 equal? \" . ($isEqual ? 'Yes' : 'No') . \"<br>\";\n\n// Not Equal To\n$isNotEqual = ($num1 != $num2);\necho \"Are num1 and num2 not equal? \" . ($isNotEqual ? 'Yes' : 'No') . \"<br>\";\n\n// Greater Than or Equal To\n$isGreaterOrEqual = ($num1 >= $num2);\necho \"Is num1 greater than or equal to num2? \" . ($isGreaterOrEqual ? 'Yes' : 'No') . \"<br>\";\n\n// Less Than or Equal To\n$isLessOrEqual = ($num1 <= $num2);\necho \"Is num1 less than or equal to num2? \" . ($isLessOrEqual ? 'Yes' : 'No') . \"<br>\";\n?>\n"],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "In this example, we showcase the usage of comparison operators in PHP. We start with the greater than ("],
+      ["bold", ">"],
+      ["text", "), less than ("],
+      ["bold", "<"],
+      ["text", "), equal to ("],
+      ["bold", "=="],
+      ["text", "), and not equal to ("],
+      ["bold", "!="],
+      ["text", ") operators to compare the values of"],
+      ["bold", "$num1"],
+      ["text", "and"],
+      ["bold", "$num2"],
+      ["text", ". The results of the comparisons are stored in variables ("],
+      ["bold", "$isGreater, $isLess, $isEqual, $isNotEqual"],
+      ["text", ") and displayed using the echo statement. Additionally, we demonstrate the greater than or equal to ("],
+      ["bold", ">="],
+      ["text", ") and less than or equal to ("],
+      ["bold", "<="],
+      ["text", ") operators to check if a value is greater than or equal to another value, and if a value is less than or equal to another value, respectively."]
+      ],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "Feel free to modify the values of "],
+      ["bold", "$num1"],
+      ["text", "and"],
+      ["bold", "$num2"]
+      ]
+    ],
+    ["block_h2", "Logical Operators"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, "In this lesson, we will explore logical operators in PHP. Logical operators allow us to combine and negate conditions in our PHP code. We will cover three main logical operators: logical AND, logical OR, and logical NOT. We will provide examples and explain the functionality of each operator."],
+      [{
+        "type": "text_simple"
+      }, "Example Code:"],
+      [{
+        "type": "code",
+        "language": "languaje-php"
+      }, "<?php\n$isTrue = true;\n$isFalse = false;\n\n// Logical AND\n$logicalAnd = $isTrue && $isFalse;\necho \"Logical AND: \" . ($logicalAnd ? 'True' : 'False') . \"<br>\";\n\n// Logical OR\n$logicalOr = $isTrue || $isFalse;\necho \"Logical OR: \" . ($logicalOr ? 'True' : 'False') . \"<br>\";\n\n// Logical NOT\n$logicalNot = !$isTrue;\necho \"Logical NOT: \" . ($logicalNot ? 'True' : 'False') . \"<br>\";\n?>\n"],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "In this example, we showcase the usage of logical operators in PHP. We start with the logical AND ("],
+      ["bold", "&&"],
+      ["text", ") operator, which evaluates to true if both conditions on either side of the operator are true. We demonstrate the logical OR ("],
+      ["bold", "||"],
+      ["text", ") operator, which evaluates to true if at least one of the conditions on either side of the operator is true. Finally, we explore the logical NOT ("],
+      ["bold", "!"],
+      ["text", ") operator, which negates a condition."]
+      ],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "The results of the logical operations are stored in variables ("],
+      ["bold", "$logicalAnd, $logicalOr, $logicalNot"],
+      ["text", ") and displayed using the echo statement."]
+      ],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "Feel free to modify the values of"],
+      ["bold", "$isTrue"],
+      ["text", "and"],
+      ["bold", "$isFalse"],
+      ["text", "and experiment with different combinations of logical operators to deepen your understanding of logical operators in PHP. Logical operators are essential for combining conditions and making complex decisions in your PHP code."]
       ]
     ]
   ],
