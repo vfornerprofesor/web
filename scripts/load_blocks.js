@@ -293,13 +293,16 @@ function createElementText(block) {
 }
 
 function createElementCode(block) {
+  var code = block[1];
+  code = code.replaceAll('<', '&lt;');
+  code = code.replaceAll('>', '&gt;');
   var span = document.createElement('span');
+  var language = block[0]['language'];
+  var text_language = language ? ' class="language-' + language + '" ' : ' ';
   span.innerHTML = `
-  <xmp>
   <pre>
-    <code>${block[1]}</code>
+    <code ` + text_language + `>` + code + `</code>
   </pre>
-  </xmp>
   `;
   
   return span;

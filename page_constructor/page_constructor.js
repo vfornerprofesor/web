@@ -143,6 +143,9 @@ function createContentCode(id_content) {
   var p = createParagraph("Code:");
   div.appendChild(p);
 
+  var input_lang = createInput('text', 'Language');
+  div.appendChild(input_lang);
+
   var input = createTextArea();
   div.appendChild(input);
 
@@ -539,6 +542,10 @@ function createDataList(child) {
 function createDataCode(child) {
   let data = [];
   data[0] = {type:child.block_type};
+  let language = child.getElementsByTagName('input')[0].value;
+  if(language) {
+    data[0]['language'] = language;
+  }
   let text_code = child.getElementsByTagName("textarea")[0].value;
   data[1] = text_code;
   return data;

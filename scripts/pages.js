@@ -513,7 +513,8 @@ const pages = {
         "type": "text_simple"
       }, "Example code:"],
       [{
-        "type": "code"
+        "type": "code",
+        "language": "php",
       }, "<?php\n// This is a PHP file\n\n// Here is some PHP code that will output a message\n$message = \"Hello, World!\";\necho $message;\n\n// You can also include HTML code in a PHP file\n?>\n<!DOCTYPE html>\n<html>\n <head>\n <title>My PHP Web Page</title>\n </head>\n <body>\n <h1><?php echo $message; ?></h1>\n <p>This is a paragraph of text.</p>\n </body>\n</html>"],
       [{
         "type": "text_complex"
@@ -559,7 +560,8 @@ const pages = {
         "type": "text_simple"
       }, "Example code:"],
       [{
-        "type": "code"
+        "type": "code",
+        "language": "php",
       }, "<?php\n// This is a single-line comment\n\n/*\nThis is a multi-line comment\nIt can span multiple lines\n*/\n\n# This is another way to write a single-line comment\n\n// The following line of code will output \"Hello, World!\"\necho \"Hello, World!\";\n?>"],
       [{
         "type": "text_simple"
@@ -588,7 +590,8 @@ const pages = {
         "type": "text_simple"
       }, "Example code:"],
       [{
-        "type": "code"
+        "type": "code",
+        "language": "php",
       }, "<?php\n// This is a variable containing some data\n$name = \"John Doe\";\n\n// This will output the data\necho \"Hello, \" . $name . \"!\";\n\n// You can also output data using the print statement\nprint \"Welcome to my website, \" . $name . \"!\";\n?>"],
       [{
         "type": "text_complex"
