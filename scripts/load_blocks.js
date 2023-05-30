@@ -267,6 +267,7 @@ function createElementOList(block) {
 }
 
 function createElementCols(block) {
+  debugger;
   var row = document.createElement("div");
   row.classList.add("row");
 
@@ -276,9 +277,11 @@ function createElementCols(block) {
 
     for (var j = 0; j < block[i].length; j++) {
       var name = block[i][j][0]['type'];
-      var new_element = createElementByName(name, block[i][j]);
+      if(name != 'blank') {
+        var new_element = createElementByName(name, block[i][j]);
+        col.appendChild(new_element);
+      }
 
-      col.appendChild(new_element);
     }
     row.appendChild(col);
   }

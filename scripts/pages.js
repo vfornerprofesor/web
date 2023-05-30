@@ -578,40 +578,14 @@ const pages = {
       [{
         "type": "btn"
       }, "unitats/programacio/php/php-04-control-structures.html", "Get it!"]
-    ],
-    [
+    ],[
+      [{
+      "type": "h4"
+    }]
+    ],[
       [{
         "type": "h4"
-      }, "Variables"],
-      [{
-        "type": "text_simple"
-      }, "Introduction to PHP Variables"],
-      [{
-        "type": "text_simple"
-      }, "Manipulating String Variables in PHP"],
-      [{
-        "type": "text_simple"
-      }, "Working with Arrays in PHP"],
-      [{
-        "type": "btn"
-      }, "unitats/programacio/php/php-02-variables.html", "Get it!"]
-    ],
-    [
-      [{
-        "type": "h4"
-      }, "Operators"],
-      [{
-        "type": "text_simple"
-      }, "Arithmetic operators"],
-      [{
-        "type": "text_simple"
-      }, "Comparison operators"],
-      [{
-        "type": "text_simple"
-      }, "Logical operators"],
-      [{
-        "type": "btn"
-      }, "unitats/programacio/php/php-03-operators.html", "Get it!"]
+      }]
     ]
     ]]
   ],
