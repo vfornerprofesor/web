@@ -558,6 +558,58 @@ const pages = {
         "type": "btn"
       }, "unitats/programacio/php/php-03-operators.html", "Get it!"]
     ]
+    ]],
+    ["block_content", [{
+      "type": "cols"
+    },
+    [
+      [{
+        "type": "h4"
+      }, "PHP Control structures"],
+      [{
+        "type": "text_simple"
+      }, "Conditional sentences"],
+      [{
+        "type": "text_simple"
+      }, "Loops"],
+      [{
+        "type": "btn"
+      }, "unitats/programacio/php/php-04-control-structures.html", "Get it!"]
+    ],
+    [
+      [{
+        "type": "h4"
+      }, "Variables"],
+      [{
+        "type": "text_simple"
+      }, "Introduction to PHP Variables"],
+      [{
+        "type": "text_simple"
+      }, "Manipulating String Variables in PHP"],
+      [{
+        "type": "text_simple"
+      }, "Working with Arrays in PHP"],
+      [{
+        "type": "btn"
+      }, "unitats/programacio/php/php-02-variables.html", "Get it!"]
+    ],
+    [
+      [{
+        "type": "h4"
+      }, "Operators"],
+      [{
+        "type": "text_simple"
+      }, "Arithmetic operators"],
+      [{
+        "type": "text_simple"
+      }, "Comparison operators"],
+      [{
+        "type": "text_simple"
+      }, "Logical operators"],
+      [{
+        "type": "btn"
+      }, "unitats/programacio/php/php-03-operators.html", "Get it!"]
+    ]
     ]]
   ],
   'php-01-basic-concepts': [
@@ -702,7 +754,7 @@ const pages = {
     ["block_h2", "Introduction to PHP Variables"],
     ["block_content", [{
       "type": "text_simple"
-    }, "In this lesson, we will explore the fundamentals of PHP variables. Variables are essential elements in programming that allow us to store and manipulate data. In PHP, we have various types of variables, including strings, integers, floats, and booleans. We will cover how to declare variables, assign values to them, and perform basic operations using these variable types. Let's dive in and start harnessing the power of variables in PHP!"],
+    }, "In this lesson, we will explore the fundamentals of PHP variables. Variables are essential elements in programming that allow us to store and manipulate data. In PHP, we have various types of variables, including strings, integers, floats, and booleans. We will cover how to declare variables, assign values to them, and perform basic operations using these variable types. "],
       [{
         "type": "text_simple"
       }, "Example Code:"],
@@ -721,7 +773,7 @@ const pages = {
     ["block_h2", "Manipulating String Variables in PHP"],
     ["block_content", [{
       "type": "text_simple"
-    }, "In this lesson, we will explore the world of string variables and learn how to manipulate them using various operations in PHP. Strings are a fundamental data type in programming that represent text and are used for storing and manipulating textual data. In PHP, we have a rich set of functions and operations to work with strings. We will cover how to declare string variables, concatenate them, find their length, extract substrings, convert cases, and more. Let's dive in and unleash the power of string manipulation in PHP!"],
+    }, "In this lesson, we will explore the world of string variables and learn how to manipulate them using various operations in PHP. Strings are a fundamental data type in programming that represent text and are used for storing and manipulating textual data. In PHP, we have a rich set of functions and operations to work with strings. We will cover how to declare string variables, concatenate them, find their length, extract substrings, convert cases, and more. "],
       [{
         "type": "text_simple"
       }, "Example Code:"],
@@ -756,7 +808,7 @@ const pages = {
     ["block_h2", "Working with Arrays in PHP"],
     ["block_content", [{
       "type": "text_simple"
-    }, "In this lesson, we will explore the concept of arrays and how to work with them in PHP. Arrays are powerful data structures that allow us to store and organize multiple values under a single variable. In PHP, arrays can hold elements of different types, such as strings, integers, floats, and even other arrays. We will cover how to declare arrays, access their elements, add and remove elements, iterate over them, and perform essential operations like sorting and searching. Let's dive in and master the art of array manipulation in PHP!"],
+    }, "In this lesson, we will explore the concept of arrays and how to work with them in PHP. Arrays are powerful data structures that allow us to store and organize multiple values under a single variable. In PHP, arrays can hold elements of different types, such as strings, integers, floats, and even other arrays. We will cover how to declare arrays, access their elements, add and remove elements, iterate over them, and perform essential operations like sorting and searching. "],
       [{
         "type": "text_simple"
       }, "Example Code:"],
@@ -899,6 +951,93 @@ const pages = {
       ["bold", "$isFalse"],
       ["text", "and experiment with different combinations of logical operators to deepen your understanding of logical operators in PHP. Logical operators are essential for combining conditions and making complex decisions in your PHP code."]
       ]
+    ]
+  ],
+  'php-04-control-structures': [
+    ["block_h1", "Control structures"],
+    ["block_h2", "Conditional Statements"],
+    ["block_content", [{
+      "type": "text_complex"
+    },
+    ["text", "In this lesson, we will explore conditional statements and their usage in PHP. Conditional statements allow us to make decisions and execute different blocks of code based on certain conditions. In PHP, we have several conditional statements, including "],
+    ["bold", "if, if-else, if-elseif-else"],
+    ["text", ",and the switch statement. We will cover the syntax and usage of these statements, provide examples, and explain their functionality."]
+    ],
+      [{
+        "type": "text_simple"
+      }, "Example Code:"],
+      [{
+        "type": "code",
+        "language": "languaje-php"
+      }, "<?php\n// If Statement\n$temperature = 25;\n\nif ($temperature > 30) {\n echo \"It's a hot day!\";\n}\n\n// If-Else Statement\n$isRaining = true;\n\nif ($isRaining) {\n echo \"Remember to take an umbrella.\";\n} else {\n echo \"No need for an umbrella.\";\n}\n\n// If-Elseif-Else Statement\n$time = 13;\n\nif ($time < 12) {\n echo \"Good morning!\";\n} elseif ($time < 18) {\n echo \"Good afternoon!\";\n} else {\n echo \"Good evening!\";\n}\n\n// Switch Statement\n$dayOfWeek = \"Monday\";\n\nswitch ($dayOfWeek) {\n case \"Monday\":\n echo \"It's Monday!\";\n break;\n case \"Tuesday\":\n echo \"It's Tuesday!\";\n break;\n case \"Wednesday\":\n echo \"It's Wednesday!\";\n break;\n default:\n echo \"It's another day of the week.\";\n break;\n}\n?>\n"],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "In this example, we provide examples of different conditional statements in PHP. We start with the "],
+      ["bold", "if"],
+      ["text", "statement, which executes a block of code if the given condition is true. Next, we demonstrate the"],
+      ["bold", "if-else"],
+      ["text", "statement, where one block of code is executed if the condition is true and another block is executed if the condition is false. Following that, we showcase the"],
+      ["bold", "if-elseif-else"],
+      ["text", "statement, which allows for multiple conditions to be checked sequentially. Finally, we present the"],
+      ["bold", "switch"],
+      ["text", "statement, which provides an alternative way to handle multiple conditions based on different cases. Each case is checked, and the corresponding block of code is executed. The"],
+      ["bold", "break"],
+      ["text", "statement is used to exit the switch block after a case is matched."]
+      ],
+      [{
+        "type": "text_simple"
+      }, "Feel free to modify the conditions and statements to experiment with different scenarios. Conditional statements are essential tools for controlling the flow of your program based on specific conditions."]
+    ],
+    ["block_h2", "Loops"],
+    ["block_content", [{
+      "type": "text_complex"
+    },
+    ["text", "In this lesson, we will explore loops in PHP. Loops allow us to execute a block of code repeatedly based on certain conditions. They are essential for performing repetitive tasks and iterating over collections of data. In PHP, we have different types of loops, including the"],
+    ["bold", "for"],
+    ["text", "loop, the"],
+    ["bold", "while"],
+    ["text", "loop, and the"],
+    ["bold", "foreach"],
+    ["text", "loop. We will provide examples and explain the functionality of each loop. "]
+    ],
+      [{
+        "type": "text_simple"
+      }, "Example Code:"],
+      [{
+        "type": "code",
+        "language": "languaje-php"
+      }, "<?php\n// For Loop\necho \"For Loop: \";\nfor ($i = 1; $i <= 5; $i++) {\n echo $i . \" \";\n}\necho \"<br>\";\n\n// While Loop\necho \"While Loop: \";\n$j = 1;\nwhile ($j <= 5) {\n echo $j . \" \";\n $j++;\n}\necho \"<br>\";\n\n// Foreach Loop\necho \"Foreach Loop: \";\n$fruits = [\"Apple\", \"Banana\", \"Orange\"];\nforeach ($fruits as $fruit) {\n echo $fruit . \" \";\n}\n?>\n"],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "In this example, we showcase the usage of different types of loops in PHP. We start with the"],
+      ["bold", "for"],
+      ["text", "loop, which allows us to specify an initialization, a condition, and an increment/decrement. The loop will execute the block of code as long as the condition is true. In the example, we use a"],
+      ["bold", "for"],
+      ["text", "loop to display numbers from 1 to 5."]
+      ],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "Next, we demonstrate the"],
+      ["bold", "while"],
+      ["text", "loop, which executes the block of code as long as the condition is true. We initialize a variable outside the loop, and within the loop, we update the variable. In the example, we use a"],
+      ["bold", "while"],
+      ["text", "loop to display numbers from 1 to 5."]
+      ],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "Lastly, we explore the"],
+      ["bold", "foreach"],
+      ["text", "loop, which is used specifically for iterating over arrays or other iterable objects. It allows us to iterate through each element in the array and perform operations on them. In the example, we use a"],
+      ["bold", "foreach"],
+      ["text", "loop to iterate over an array of fruits and display each fruit."]
+      ],
+      [{
+        "type": "text_complex"
+      }]
     ]
   ],
   'test': [["block_h1", "titol1"], ["block_h2", "titol2"], ["block_h3", "titol3"], ["block_unit", ["microbit", "microbit", "MICROGIT"]], ["block_content", [{ "type": "text_simple" }, "texto 1"], [{ "type": "text_complex" }, ["text", "texto1"], ["link", "www.google.es", "Google"]], [{ "type": "code" }, "var a = 3;\nvar b = 4;\nconsole.log(a+b);"], [{ "type": "img_center" }, "img/microbit.jpg"], [{ "type": "cols" }, [[{ "type": "text_simple" }, "col1"]], [[{ "type": "text_simple" }, "col2"]]], [{ "type": "ulist" }, [["text", "1"], ["text", "2"], ["text", "3"]]], [{ "type": "olist" }, [["text", "a"], ["text", "b"], ["text", "c"]]], [{ "type": "list_group" }, [["text", "asdf"], ["text", "asdff"], ["text", "asdfff"]]], [{ "type": "h4" }, "titol5"], [{ "type": "btn" }, "unitats/programacio/python/python.html", "Python"]]]
