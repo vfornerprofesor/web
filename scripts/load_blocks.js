@@ -26,6 +26,9 @@ function loadBlocks(page, element) {
     for (let i = 0; i < blocks_list.length; i++) {
       el.appendChild(blocks_list[i]);
     }
+
+    //Pintar tots els codis
+    hljs.highlightAll();
   }, wait_time);
 
 }

@@ -737,7 +737,7 @@ const pages = {
       }, "Example Code:"],
       [{
         "type": "code",
-        "language": "language-php"
+        "language": "php"
       }, "<?php\n// String Variable\n$name = \"John Doe\";\necho \"Name: \" . $name . \"<br>\";\n\n// Integer Variable\n$age = 25;\necho \"Age: \" . $age . \"<br>\";\n\n// Float Variable\n$price = 9.99;\necho \"Price: $\" . $price . \"<br>\";\n\n// Boolean Variable\n$isLogged = true;\necho \"Logged in: \" . ($isLogged ? 'Yes' : 'No') . \"<br>\";\n\n// Basic Operations\n$num1 = 10;\n$num2 = 5;\n\n$sum = $num1 + $num2;\necho \"Sum: \" . $sum . \"<br>\";\n\n$diff = $num1 - $num2;\necho \"Difference: \" . $diff . \"<br>\";\n\n$product = $num1 * $num2;\necho \"Product: \" . $product . \"<br>\";\n\n$quotient = $num1 / $num2;\necho \"Quotient: \" . $quotient . \"<br>\";\n\n$remainder = $num1 % $num2;\necho \"Remainder: \" . $remainder . \"<br>\";\n?>\n"],
       [{
         "type": "text_complex"
@@ -756,7 +756,7 @@ const pages = {
       }, "Example Code:"],
       [{
         "type": "code",
-        "language": "language-php"
+        "language": "php"
       }, "<?php\n// String Variable\n$greeting = \"Hello,\";\n$name = \"John\";\n\n// Concatenation\n$fullGreeting = $greeting . \" \" . $name;\necho $fullGreeting . \"<br>\";\n\n// Length of a String\n$length = strlen($fullGreeting);\necho \"Length: \" . $length . \"<br>\";\n\n// Extracting Substrings\n$substring = substr($fullGreeting, 7, 4);\necho \"Substring: \" . $substring . \"<br>\";\n\n// Converting Case\n$lowercase = strtolower($fullGreeting);\necho \"Lowercase: \" . $lowercase . \"<br>\";\n\n$uppercase = strtoupper($fullGreeting);\necho \"Uppercase: \" . $uppercase . \"<br>\";\n\n// Replacing Text\n$replaced = str_replace(\"John\", \"Jane\", $fullGreeting);\necho \"Replaced: \" . $replaced . \"<br>\";\n\n// Finding Position\n$position = strpos($fullGreeting, \"John\");\necho \"Position: \" . $position . \"<br>\";\n?>\n"],
       [{
         "type": "text_complex"
@@ -791,7 +791,7 @@ const pages = {
       }, "Example Code:"],
       [{
         "type": "code",
-        "language": "language-php"
+        "language": "php"
       }, "<?php\n// Numeric Array\n$numbers = [1, 2, 3, 4, 5];\n\n// Accessing Array Elements\necho \"First Element: \" . $numbers[0] . \"<br>\";\necho \"Second Element: \" . $numbers[1] . \"<br>\";\n\n// Associative Array\n$person = [\n \"name\" => \"John Doe\",\n \"age\" => 25,\n \"email\" => \"johndoe@example.com\"\n];\n\n// Accessing Associative Array Elements\necho \"Name: \" . $person[\"name\"] . \"<br>\";\necho \"Age: \" . $person[\"age\"] . \"<br>\";\n\n// Adding Elements to an Array\n$fruits = [\"apple\", \"banana\"];\n$fruits[] = \"orange\";\necho \"Fruits: \" . implode(\", \", $fruits) . \"<br>\";\n\n// Removing Elements from an Array\nunset($fruits[1]);\necho \"Updated Fruits: \" . implode(\", \", $fruits) . \"<br>\";\n\n// Looping through an Array\nforeach ($fruits as $fruit) {\n echo $fruit . \"<br>\";\n}\n\n// Array Operations\n$numbers = [4, 2, 1, 5, 3];\n\n// Sorting\nsort($numbers);\necho \"Sorted Numbers: \" . implode(\", \", $numbers) . \"<br>\";\n\n// Searching\n$index = array_search(3, $numbers);\necho \"Index of 3: \" . $index . \"<br>\";\n?>\n"],
       [{
         "type": "text_complex"
@@ -825,7 +825,7 @@ const pages = {
       }, "Example Code:"],
       [{
         "type": "code",
-        "language": "language-php"
+        "language": "php"
       }, "<?php\n$num1 = 10;\n$num2 = 5;\n\n// Addition\n$sum = $num1 + $num2;\necho \"Sum: \" . $sum . \"<br>\";\n\n// Subtraction\n$diff = $num1 - $num2;\necho \"Difference: \" . $diff . \"<br>\";\n\n// Multiplication\n$product = $num1 * $num2;\necho \"Product: \" . $product . \"<br>\";\n\n// Division\n$quotient = $num1 / $num2;\necho \"Quotient: \" . $quotient . \"<br>\";\n\n// Modulo\n$remainder = $num1 % $num2;\necho \"Remainder: \" . $remainder . \"<br>\";\n?>\n"],
       [{
         "type": "text_complex"
@@ -856,7 +856,7 @@ const pages = {
       }, "Example Code:"],
       [{
         "type": "code",
-        "language": "languaje-php"
+        "language": "php"
       }, "<?php\n$num1 = 10;\n$num2 = 5;\n\n// Greater Than\n$isGreater = ($num1 > $num2);\necho \"Is num1 greater than num2? \" . ($isGreater ? 'Yes' : 'No') . \"<br>\";\n\n// Less Than\n$isLess = ($num1 < $num2);\necho \"Is num1 less than num2? \" . ($isLess ? 'Yes' : 'No') . \"<br>\";\n\n// Equal To\n$isEqual = ($num1 == $num2);\necho \"Are num1 and num2 equal? \" . ($isEqual ? 'Yes' : 'No') . \"<br>\";\n\n// Not Equal To\n$isNotEqual = ($num1 != $num2);\necho \"Are num1 and num2 not equal? \" . ($isNotEqual ? 'Yes' : 'No') . \"<br>\";\n\n// Greater Than or Equal To\n$isGreaterOrEqual = ($num1 >= $num2);\necho \"Is num1 greater than or equal to num2? \" . ($isGreaterOrEqual ? 'Yes' : 'No') . \"<br>\";\n\n// Less Than or Equal To\n$isLessOrEqual = ($num1 <= $num2);\necho \"Is num1 less than or equal to num2? \" . ($isLessOrEqual ? 'Yes' : 'No') . \"<br>\";\n?>\n"],
       [{
         "type": "text_complex"
@@ -899,7 +899,7 @@ const pages = {
       }, "Example Code:"],
       [{
         "type": "code",
-        "language": "languaje-php"
+        "language": "php"
       }, "<?php\n$isTrue = true;\n$isFalse = false;\n\n// Logical AND\n$logicalAnd = $isTrue && $isFalse;\necho \"Logical AND: \" . ($logicalAnd ? 'True' : 'False') . \"<br>\";\n\n// Logical OR\n$logicalOr = $isTrue || $isFalse;\necho \"Logical OR: \" . ($logicalOr ? 'True' : 'False') . \"<br>\";\n\n// Logical NOT\n$logicalNot = !$isTrue;\necho \"Logical NOT: \" . ($logicalNot ? 'True' : 'False') . \"<br>\";\n?>\n"],
       [{
         "type": "text_complex"
@@ -945,7 +945,7 @@ const pages = {
       }, "Example Code:"],
       [{
         "type": "code",
-        "language": "languaje-php"
+        "language": "php"
       }, "<?php\n// If Statement\n$temperature = 25;\n\nif ($temperature > 30) {\n echo \"It's a hot day!\";\n}\n\n// If-Else Statement\n$isRaining = true;\n\nif ($isRaining) {\n echo \"Remember to take an umbrella.\";\n} else {\n echo \"No need for an umbrella.\";\n}\n\n// If-Elseif-Else Statement\n$time = 13;\n\nif ($time < 12) {\n echo \"Good morning!\";\n} elseif ($time < 18) {\n echo \"Good afternoon!\";\n} else {\n echo \"Good evening!\";\n}\n\n// Switch Statement\n$dayOfWeek = \"Monday\";\n\nswitch ($dayOfWeek) {\n case \"Monday\":\n echo \"It's Monday!\";\n break;\n case \"Tuesday\":\n echo \"It's Tuesday!\";\n break;\n case \"Wednesday\":\n echo \"It's Wednesday!\";\n break;\n default:\n echo \"It's another day of the week.\";\n break;\n}\n?>\n"],
       [{
         "type": "text_complex"
@@ -983,7 +983,7 @@ const pages = {
       }, "Example Code:"],
       [{
         "type": "code",
-        "language": "languaje-php"
+        "language": "php"
       }, "<?php\n// For Loop\necho \"For Loop: \";\nfor ($i = 1; $i <= 5; $i++) {\n echo $i . \" \";\n}\necho \"<br>\";\n\n// While Loop\necho \"While Loop: \";\n$j = 1;\nwhile ($j <= 5) {\n echo $j . \" \";\n $j++;\n}\necho \"<br>\";\n\n// Foreach Loop\necho \"Foreach Loop: \";\n$fruits = [\"Apple\", \"Banana\", \"Orange\"];\nforeach ($fruits as $fruit) {\n echo $fruit . \" \";\n}\n?>\n"],
       [{
         "type": "text_complex"
@@ -1024,7 +1024,7 @@ const pages = {
       }, "Example Code:"],
       [{
         "type": "code",
-        "language": "languaje-php"
+        "language": "php"
       }, "<?php\n// User-defined Function\nfunction greet() {\n echo \"Hello, welcome to our website!\";\n}\n\n// Function Call\ngreet();\n\n// Function with Parameters\nfunction add($num1, $num2) {\n $sum = $num1 + $num2;\n return $sum;\n}\n\n// Function Call with Arguments\n$result = add(5, 3);\necho \"Sum: \" . $result;\n?>\n"],
       [{
         "type": "text_complex"
