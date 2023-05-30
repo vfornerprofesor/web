@@ -3,7 +3,7 @@ var elements = [];
 let id = 0;
 let content_ids = {};
 
-function addElement() {
+/*function addElement() {
   var seleccio = document.getElementById("element-selector").value;
   var content = document.getElementById("content");
   var id_new = id;
@@ -27,13 +27,38 @@ function addElement() {
       break;
   }
   id++;
+}*/
+
+function addElement(type) {
+  var content = document.getElementById("content");
+  var id_new = id;
+  switch (type) {
+    case "block_h1":
+      content.appendChild(createBlockH1(id_new));
+      break;
+    case "block_h2":
+      content.appendChild(createBlockH2(id_new));
+      break;
+    case "block_h3":
+      content.appendChild(createBlockH3(id_new));
+      break;
+    case "block_unit":
+      content.appendChild(createBlockUnit(id_new));
+      break;
+    case "block_content":
+      content.appendChild(createBlockContent(id_new));
+      break;
+    default:
+      break;
+  }
+  id++;
 }
 
-function addElementContent(id_content) {
+function addElementContent(id_content, type) {
   if (!content_ids[id_content]) content_ids[id_content] = 0;
-  var seleccio = document.getElementById("element-selector" + id_content).value;
+
   var content = document.getElementById(id_content);
-  switch (seleccio) {
+  switch (type) {
     case "text_complex":
       content.appendChild(createContentTextComplex(id_content));
       break;
@@ -159,7 +184,7 @@ function createContentTextComplex(id_content) {
   var id_block_content = id_content + "-" + content_ids[id_content];
   var div = createDiv("text_complex", id_block_content);
 
-  var p = createParagraph("Text complex - t:text - url:url-->nom - n:negrita");
+  var p = createParagraph("Text complex /// **negreta**  ///  {{enllaç|nom}}");
   div.appendChild(p);
 
   var input = createTextArea();
@@ -241,6 +266,35 @@ function createBlockContent(id_block) {
   div.appendChild(p);
 
   var selector = document.createElement("div");
+  var textHtml = '<button onclick="addElementContent(' + "'" + id_block + "', 'text_simple')" + '"' + ">Text simple</button>";
+  textHtml += '<button onclick="addElementContent(' + "'" + id_block + "', 'text_complex')" + '"' + ">Text complex</button>";
+  textHtml += '<button onclick="addElementContent(' + "'" + id_block + "', 'code')" + '"' + ">Codi</button>";
+  textHtml += '<button onclick="addElementContent(' + "'" + id_block + "', 'img_center')" + '"' + ">Imatge centrada</button>";
+  textHtml += '<button onclick="addElementContent(' + "'" + id_block + "', 'cols')" + '"' + ">Columnes</button>";
+  textHtml += '<button onclick="addElementContent(' + "'" + id_block + "', 'ulist')" + '"' + ">Llista no ordenada</button>";
+  textHtml += '<button onclick="addElementContent(' + "'" + id_block + "', 'olist')" + '"' + ">Llista ordenada</button>";
+  textHtml += '<button onclick="addElementContent(' + "'" + id_block + "', 'list_group')" + '"' + ">List group</button>";
+  textHtml += '<button onclick="addElementContent(' + "'" + id_block + "', 'h4')" + '"' + ">Títol h4</button>";
+  textHtml += '<button onclick="addElementContent(' + "'" + id_block + "', 'btn')" + '"' + ">Botó</button>";
+  selector.innerHTML = textHtml;
+
+  div.appendChild(selector);
+
+  var br = document.createElement("br");
+  div.appendChild(br);
+
+  var btnBorrar = createButtonDelete(id_block);
+  div.appendChild(btnBorrar);
+  return div;
+}
+
+/*function createBlockContent(id_block) {
+  var div = createDiv("block_content", id_block);
+
+  var p = createParagraph("Contingut");
+  div.appendChild(p);
+
+  var selector = document.createElement("div");
   selector.classList.add("select-field");
   selector.innerHTML =
     `
@@ -274,7 +328,7 @@ function createBlockContent(id_block) {
   var btnBorrar = createButtonDelete(id_block);
   div.appendChild(btnBorrar);
   return div;
-}
+}*/
 
 function createDiv(block_type, id_block) {
   var div = document.createElement("div");
@@ -479,7 +533,7 @@ function createDataContent(id_block, el) {
 
 function createDataCols(child) {
   let data = [];
-  data[0] = {type:child.block_type};
+  data[0] = { type: child.block_type };
   let children = child.children;
   let pos = 1;
 
@@ -500,21 +554,21 @@ function createDataCols(child) {
 
 function createDataTextSimple(child) {
   let data = [];
-  data[0] = {type:child.block_type};
+  data[0] = { type: child.block_type };
   data[1] = child.getElementsByTagName("input")[0].value;
   return data;
 }
 
 function createDataImgCenter(child) {
   let data = [];
-  data[0] = {type:child.block_type};
+  data[0] = { type: child.block_type };
   data[1] = child.getElementsByTagName("input")[0].value;
   return data;
 }
 
 function createDataBtn(child) {
   let data = [];
-  data[0] = {type:child.block_type};
+  data[0] = { type: child.block_type };
   data[1] = child.getElementsByTagName("input")[0].value;
   data[2] = child.getElementsByTagName("input")[1].value;
   return data;
@@ -522,14 +576,14 @@ function createDataBtn(child) {
 
 function createDataH4(child) {
   let data = [];
-  data[0] = {type:child.block_type};
+  data[0] = { type: child.block_type };
   data[1] = child.getElementsByTagName("input")[0].value;
   return data;
 }
 
 function createDataList(child) {
   let data = [];
-  data[0] = {type:child.block_type};
+  data[0] = { type: child.block_type };
   let ta = child.getElementsByTagName("textarea")[0];
   let ta_data = ta.value.split("\n");
   data[1] = [];
@@ -541,9 +595,9 @@ function createDataList(child) {
 
 function createDataCode(child) {
   let data = [];
-  data[0] = {type:child.block_type};
+  data[0] = { type: child.block_type };
   let language = child.getElementsByTagName('input')[0].value;
-  if(language) {
+  if (language) {
     data[0]['language'] = language;
   }
   let text_code = child.getElementsByTagName("textarea")[0].value;
@@ -552,6 +606,52 @@ function createDataCode(child) {
 }
 
 function createDataTextComplex(child) {
+  let data = [];
+  data[0] = { type: child.block_type };
+  let ta = child.getElementsByTagName("textarea")[0];
+  let ta_data = ta.value;
+  let negrita = 0;
+  let url = 0;
+  let text_actual = "";
+  let index_element = 1;
+  for (let i = 0; i < ta_data.length; i++) {
+
+    if (ta_data[i] == '*' && ta_data.length >= (i + 1) && ta_data[i + 1] == '*') {
+      //Afegir actual
+      if (text_actual != "") {
+        data[index_element] = ['text', text_actual];
+        text_actual = "";
+        index_element++;
+      }
+      data[index_element] = ['bold', ta_data.substring(i + 2).split('**')[0]];
+      i = i + data[index_element][1].length + 4; //4 per els asteriscs
+      index_element++;
+    } else {
+      if (ta_data[i] == '{' && ta_data.length >= (i + 1) && ta_data[i + 1] == '{') {
+        //Afegir actual
+        if (text_actual != "") {
+          data[index_element] = ['text', text_actual];
+          text_actual = "";
+          index_element++;
+        }
+        let tota_url = ta_data.substring(i+2).split('}}')[0];
+        tota_url = tota_url.split('|');
+        data[index_element] = ["link", tota_url[0], tota_url[1]];
+        i = i + ta_data.substring(i+2).split('}}')[0].length + 4; //4 per els asteriscs
+        index_element++;
+
+      } else {
+        text_actual += ta_data[i];
+      }
+    }
+  }
+  if (text_actual != "") {
+    data[index_element] = ['text', text_actual];
+  }
+  return data;
+}
+
+/*function createDataTextComplex(child) {
   let data = [];
   data[0] = {type:child.block_type};
   let ta = child.getElementsByTagName("textarea")[0];
@@ -571,4 +671,4 @@ function createDataTextComplex(child) {
     index_element++;
   }
   return data;
-}
+}*/

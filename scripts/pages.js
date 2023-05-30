@@ -573,6 +573,9 @@ const pages = {
         "type": "text_simple"
       }, "Loops"],
       [{
+        "type": "text_simple"
+      }, "Functions"],
+      [{
         "type": "btn"
       }, "unitats/programacio/php/php-04-control-structures.html", "Get it!"]
     ],
@@ -1038,7 +1041,51 @@ const pages = {
       [{
         "type": "text_complex"
       }]
+    ],
+    ["block_h2", "Functions"], ["block_content", [{
+      "type": "text_simple"
+    }, "In this lesson, we will explore functions in PHP. Functions are reusable blocks of code that perform specific tasks. They allow us to organize our code, improve code reusability, and make our programs more modular. In PHP, we can define our own functions and also use built-in functions provided by PHP. We will provide examples and explain the functionality of functions."],
+      [{
+        "type": "text_simple"
+      }, "Example Code:"],
+      [{
+        "type": "code",
+        "language": "languaje-php"
+      }, "<?php\n// User-defined Function\nfunction greet() {\n echo \"Hello, welcome to our website!\";\n}\n\n// Function Call\ngreet();\n\n// Function with Parameters\nfunction add($num1, $num2) {\n $sum = $num1 + $num2;\n return $sum;\n}\n\n// Function Call with Arguments\n$result = add(5, 3);\necho \"Sum: \" . $result;\n?>\n"],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "In this example, we showcase the usage of functions in PHP. We start with a user-defined function called "],
+      ["bold", "greet()"],
+      ["text", " which simply echoes a greeting message. We then call the "],
+      ["bold", "greet()"],
+      ["text", "function to execute the code inside it and display the greeting message."]
+      ],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "Next, we demonstrate a function called "],
+      ["bold", "add()"],
+      ["text", "that takes two parameters, "],
+      ["bold", "$num1"],
+      ["text", "and "],
+      ["bold", "$num2"],
+      ["text", " adds them together, and returns the sum. We call the "],
+      ["bold", "add()"],
+      ["text", "function with arguments "],
+      ["bold", "(5, 3)"],
+      ["text", "to perform the addition and store the result in the variable "],
+      ["bold", "$result"],
+      ["text", " We then display the result using the "],
+      ["bold", "echo"],
+      ["text", "statement.\n\n"]
+      ],
+      [{
+        "type": "text_simple"
+      }, "Feel free to define your own functions and call them with different arguments to suit your specific needs. Functions are essential for code organization, reusability, and modularization in PHP."]
     ]
   ],
-  'test': [["block_h1", "titol1"], ["block_h2", "titol2"], ["block_h3", "titol3"], ["block_unit", ["microbit", "microbit", "MICROGIT"]], ["block_content", [{ "type": "text_simple" }, "texto 1"], [{ "type": "text_complex" }, ["text", "texto1"], ["link", "www.google.es", "Google"]], [{ "type": "code" }, "var a = 3;\nvar b = 4;\nconsole.log(a+b);"], [{ "type": "img_center" }, "img/microbit.jpg"], [{ "type": "cols" }, [[{ "type": "text_simple" }, "col1"]], [[{ "type": "text_simple" }, "col2"]]], [{ "type": "ulist" }, [["text", "1"], ["text", "2"], ["text", "3"]]], [{ "type": "olist" }, [["text", "a"], ["text", "b"], ["text", "c"]]], [{ "type": "list_group" }, [["text", "asdf"], ["text", "asdff"], ["text", "asdfff"]]], [{ "type": "h4" }, "titol5"], [{ "type": "btn" }, "unitats/programacio/python/python.html", "Python"]]]
+  'test': [
+    ["block_h1", "titol1"], ["block_h2", "titol2"], ["block_h3", "titol3"], ["block_unit", ["microbit", "microbit", "MICROGIT"]], ["block_content", [{ "type": "text_simple" }, "texto 1"], [{ "type": "text_complex" }, ["text", "texto1"], ["link", "www.google.es", "Google"]], [{ "type": "code" }, "var a = 3;\nvar b = 4;\nconsole.log(a+b);"], [{ "type": "img_center" }, "img/microbit.jpg"], [{ "type": "cols" }, [[{ "type": "text_simple" }, "col1"]], [[{ "type": "text_simple" }, "col2"]]], [{ "type": "ulist" }, [["text", "1"], ["text", "2"], ["text", "3"]]], [{ "type": "olist" }, [["text", "a"], ["text", "b"], ["text", "c"]]], [{ "type": "list_group" }, [["text", "asdf"], ["text", "asdff"], ["text", "asdfff"]]], [{ "type": "h4" }, "titol5"], [{ "type": "btn" }, "unitats/programacio/python/python.html", "Python"]], ["block_content", [{ "type": "text_complex" }, ["text", "hola esto es un text en "], ["bold", "negreta"], ["text", "i segueix i té una altra "], ["bold", "negreta2 amb espais"], ["text", "i també un enllaç "], ["link", "www.google.es", "google"], ["text", "i acaba"]]]
+  ]
 };
