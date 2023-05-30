@@ -20,3 +20,35 @@
   #content {
     margin-top: 5em;
   }
+
+
+  /* SPINNER */
+  .spinner-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+  }
+  
+  .spinner {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 6px solid var(--main-color);
+    border-top-color: var(--black-color);
+    animation: spin 1s infinite linear;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

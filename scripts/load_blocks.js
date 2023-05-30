@@ -1,6 +1,11 @@
+
+
 function loadBlocks(page, element) {
   var el = document.getElementById(element);
-  //AÑADIR SPINNER?
+
+  startSpinner(el);
+
+  var time = new Date();
 
   let blocks = pages[page];
 
@@ -10,11 +15,19 @@ function loadBlocks(page, element) {
     blocks_list.push(createBlock(blocks[i]));
   }
 
-  //QUITAR SPINNER?
-
-  for (let i = 0; i < blocks_list.length; i++) {
-    el.appendChild(blocks_list[i]);
+  var time2 = new Date();
+  wait_time = 150;
+  if(time2 - time > 1000) {
+    wait_time = 0;
   }
+
+  setTimeout(function () {
+    destroySpinner();
+    for (let i = 0; i < blocks_list.length; i++) {
+      el.appendChild(blocks_list[i]);
+    }
+  }, wait_time);
+
 }
 
 function createBlock(block) {
@@ -135,7 +148,7 @@ function createBlockContent(block) {
 
 function createElementByName(name, block) {
   var new_element;
-  
+
   switch (name) {
     case "text_complex":
       new_element = createElementTextComplex(block);
@@ -209,7 +222,7 @@ function createElementUList(block) {
 
   for (var i = 0; i < block[1].length; i++) {
     var level_li = countLevelLi(block[1][i][1]);
-    var text_li = updateTextChangingLessThanAndGreaterThanSigns(block[1][i][1].substring(level_li-1));
+    var text_li = updateTextChangingLessThanAndGreaterThanSigns(block[1][i][1].substring(level_li - 1));
     if (level_li > level) {
       level = level_li;
       ul_html += '<ul>';
@@ -235,7 +248,7 @@ function createElementOList(block) {
 
   for (var i = 0; i < block[1].length; i++) {
     var level_li = countLevelLi(block[1][i][1]);
-    var text_li = updateTextChangingLessThanAndGreaterThanSigns(block[1][i][1].substring(level_li-1));
+    var text_li = updateTextChangingLessThanAndGreaterThanSigns(block[1][i][1].substring(level_li - 1));
     if (level_li > level) {
       level = level_li;
       ul_html += '<ol>';
@@ -310,7 +323,7 @@ function createElementCode(block) {
     <code ` + text_language + `>` + code + `</code>
   </pre>
   `;
-  
+
   return span;
 }
 

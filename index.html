@@ -14,6 +14,10 @@
 <body>
   <div id="menu"></div>
   <div id="content">
+    <script>
+      var content = document.getElementById('content');
+      content.style.display = 'none';
+    </script>
 
     <div class="jumbotron">
       <h1 class="display-4">Vicent Forner</h1>
@@ -66,7 +70,17 @@
   </div>
   <script>
     $(document).ready(function () {
-      $('#header').load('header.html');
+      $('#header').load('header.html', function(responseTxt, statusTxt, xhr){
+        startSpinner(document.body);
+        setTimeout(function () {
+          destroySpinner();
+          var content = document.getElementById('content');
+          content.style.display = 'block';
+      }, 150);
+      });
+
+
+
       $('#menu').load('menu.html');
       $('#footer').load('footer.html');
     });
