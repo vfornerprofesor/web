@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <base href="../">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vicent Forner - Professor</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <div id="header"></div>
+
+</head>
+
+<body>
+  <div id="menu"></div>
+  <div id="content">
+    <script>
+      var content = document.getElementById('content');
+      content.style.display = 'none';
+    </script>
+
+
+    <div class="jumbotron">
+      <h1 class="display-4">Sorteig</h1>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <div class="row" style="text-align: center;">
+      <div class="col">
+        <h4>Participants</h4>
+        <textarea rows="4" cols="50" id="participants" placeholder="Indica els participants"></textarea>
+      </div>
+      <div class="col">
+        <h4>Premis</h4>
+        <textarea rows="4" cols="50" id="premis" placeholder="Indica els premis (un número)"></textarea>
+      </div>
+    </div>
+    <p class="error" id="error" style="text-align: center"></p>
+    <button id="generar" class="btn btn-primary" onclick="generarSorgeig()">Generar</button>
+    <div id="div_resultat">
+      <h2 id="titol_resultat"></h2>
+      <pre id="resultat"></pre>
+    </div>
+    <script>
+
+      function generarSorgeig() {
+        var error = document.getElementById('error');
+        var titol_resultat = document.getElementById('titol_resultat');
+        titol_resultat.setContent = '';
+        var resultat = document.getElementById('resultat');
+        error.textContent = '';
+        resultat.textContent = '';
+        var participants_textarea = document.getElementById('participants');
+        var participants = participants_textarea.value.split('\n');
+
+        var premis_textarea = document.getElementById('premis');
+        if (isNumeric(premis_textarea.value)) {
+          var num_premis = parseInt(premis_textarea.value);
+          if (num_premis > participants.length) {
+            error.textContent = "Hi ha massa premis per als participants que hi ha";
+          } else {
+            shuffle(participants);
+            titol_resultat.textContent = 'PREMIATS';
+            for (var i = 0; i < num_premis; i++) {
+              console.log(resultat.textContent);
+              console.log(participants[i]);
+              resultat.textContent = resultat.textContent + (i + 1) + ': ' + participants[i] + '\n';
+            }
+          }
+        } else {
+          error.textContent = "Al camp premis s'ha d'indicar un número";
+        }
+      }
+
+      function isNumeric(str) {
+        if (typeof str != "string") return false // we only process strings!  
+        return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
+          !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+      }
+
+
+      function shuffle(array) {
+        var currentIndex = array.length, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+
+          // Pick a remaining element...
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+
+          // And swap it with the current element.
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+
+        return array;
+      }
+    </script>
+    <style>
+      #generar {
+
+        display: block;
+        width: 10em;
+        margin-left: calc(50% - 5em);
+        margin-right: calc(50% - 5em);
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+
+      #div_resultat {
+        width: 20em;
+        margin: 0 auto;
+      }
+    </style>
+
+  </div>
+  <script>
+    $(document).ready(function () {
+      $('#header').load('header.html', function (responseTxt, statusTxt, xhr) {
+        startSpinner(document.body);
+        setTimeout(function () {
+          destroySpinner();
+          var content = document.getElementById('content');
+          content.style.display = 'block';
+        }, 150);
+      });
+
+
+
+      $('#menu').load('menu.html');
+      $('#footer').load('footer.html');
+    });
+
+  </script>
+
+</body>
+
+</html>

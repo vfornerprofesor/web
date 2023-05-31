@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <base href="../">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vicent Forner - Professor</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <div id="header"></div>
+
+</head>
+
+<body>
+  <div id="menu"></div>
+  <div id="content">
+    <script>
+      var content = document.getElementById('content');
+      content.style.display = 'none';
+    </script>
+    
+
+    <div class="jumbotron">
+      <h1 class="display-4">Generador de QR</h1>
+    </div>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <style>
+      .QRWrapper {
+        text-align: center;
+      }
+
+      #qr-btn {
+        display: block;
+        width: 10em;
+        margin-left: calc(50% - 5em);
+        margin-right: calc(50% - 5em);
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+
+      #qr-text, #qr-title {
+        width: 30em;
+        display: block;
+        margin-left: calc(50% - 15em);
+        margin-right: calc(50% - 15em);
+        margin-top: 1em;
+      }
+
+    </style>
+    <div class="QRWrapper">
+      <div class="QRWrapperInner">
+        <div class="QRfield">
+          <input id="qr-text" type="text" placeholder="Text del QR" />
+          <input id="qr-title" type="text" placeholder="Títol" />
+          <button id="qr-btn" class="btn btn-primary" onclick="generateQRCode()">Crear QR</button>
+        </div>
+        <div class="QRresult">
+          <h2 id="qr-result">QR per defecte</h2>
+          <canvas id="qr-code"></canvas>
+        </div>
+      </div>
+    </div>
+    <script>
+      /* JS comes here */
+      var qr;
+      (function () {
+        qr = new QRious({
+          element: document.getElementById('qr-code'),
+          size: 200,
+          value: 'https://blogs.stackfindover.com/'
+        });
+      })();
+
+      function generateQRCode() {
+        var qrtext = document.getElementById("qr-text").value;
+        document.getElementById("qr-result").innerHTML = document.getElementById('qr-title').value;
+        //alert(qrtext);
+        qr.set({
+          //foreground: '#393939',
+          size: 200,
+          value: qrtext
+        });
+      }
+    </script>
+    <style>
+      
+    </style>
+  </div>
+  <script>
+    $(document).ready(function () {
+      $('#header').load('header.html', function (responseTxt, statusTxt, xhr) {
+        startSpinner(document.body);
+        setTimeout(function () {
+          destroySpinner();
+          var content = document.getElementById('content');
+          content.style.display = 'block';
+        }, 150);
+      });
+
+
+
+      $('#menu').load('menu.html');
+      $('#footer').load('footer.html');
+    });
+
+  </script>
+
+</body>
+
+</html>

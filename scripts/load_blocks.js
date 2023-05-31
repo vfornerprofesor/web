@@ -109,28 +109,31 @@ function createBlockUnit(block) {
 
     var div_c = document.createElement("div");
     div_c.classList.add("col");
+    
+    if(url || img_src || name) {
+      var a = document.createElement("a");
+      a.classList.add("unit-link");
+      a.href = url;
+  
+      var div_u = document.createElement("div");
+      div_u.classList.add("unit");
+  
+      var img = document.createElement("img");
+      img.classList.add("unit-img");
+      img.src = img_src;
+  
+      var th3 = document.createElement("h3");
+      th3.classList.add("btn");
+      th3.classList.add("btn-primary");
+      th3.classList.add("unit-title");
+      th3.textContent = name;
+  
+      div_u.appendChild(img);
+      div_u.appendChild(th3);
+      a.appendChild(div_u);
+      div_c.appendChild(a);
+    }
 
-    var a = document.createElement("a");
-    a.classList.add("unit-link");
-    a.href = url;
-
-    var div_u = document.createElement("div");
-    div_u.classList.add("unit");
-
-    var img = document.createElement("img");
-    img.classList.add("unit-img");
-    img.src = img_src;
-
-    var th3 = document.createElement("h3");
-    th3.classList.add("btn");
-    th3.classList.add("btn-primary");
-    th3.classList.add("unit-title");
-    th3.textContent = name;
-
-    div_u.appendChild(img);
-    div_u.appendChild(th3);
-    a.appendChild(div_u);
-    div_c.appendChild(a);
     div_r.appendChild(div_c);
   }
 

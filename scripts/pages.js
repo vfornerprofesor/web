@@ -13,12 +13,14 @@ const pages = {
       "block_unit",
       ["scratch", "scratch", "Scratch"],
       ["app_inventor", "app_inventor", "App Inventor"],
+      [],
     ],
     ["block_h3", "Python"],
     [
       "block_unit",
       ["python", "python", "Python"],
       ["pythonII", "pythonII", "Python II"],
+      [],
     ],
     ["block_h3", "Web"],
     [
@@ -28,11 +30,11 @@ const pages = {
       ["php", "php", "PHP"],
     ],
     ["block_h3", "Base de dades"],
-    ["block_unit", ["mysql", "mysql", "MySQL"]],
+    ["block_unit", ["mysql", "mysql", "MySQL"], [], []],
     ["block_h3", "Robòtica"],
-    ["block_unit", ["microbit", "microbit", "Microbit"]],
+    ["block_unit", ["microbit", "microbit", "Microbit"], [], []],
     ["block_h2", "APLICACIONS WEB"],
-    ["block_unit", ["wordpress", "wordpress", "Wordpress"]],
+    ["block_unit", ["wordpress", "wordpress", "Wordpress"], [], []],
     ["block_h2", "INTEL·LIGÈNCIA ARTIFICIAL"],
     [
       "block_unit",
@@ -41,10 +43,10 @@ const pages = {
         "inteligencia_artificial",
         "Conceptes bàsics IA",
       ],
-      ["inteligencia_artificial", "inteligencia_artificial", "Ferramentes IA"],
+      ["inteligencia_artificial", "inteligencia_artificial", "Ferramentes IA"], []
     ],
     ["block_h2", "OFIMÀTICA"],
-    ["block_unit", ["google_calcul", "google_calcul", "Full de càlcul"]],
+    ["block_unit", ["google_calcul", "google_calcul", "Full de càlcul"], [], []],
   ],
   microbit: [
     ["block_h1", "MICROBIT"],
@@ -580,11 +582,11 @@ const pages = {
       }, "unitats/programacio/php/php-04-control-structures.html", "Get it!"]
     ],[
       [{
-      "type": "h4"
+      "type": "blank"
     }]
     ],[
       [{
-        "type": "h4"
+        "type": "blank"
       }]
     ]
     ]]
