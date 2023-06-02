@@ -580,14 +580,38 @@ const pages = {
       [{
         "type": "btn"
       }, "unitats/programacio/php/php-04-control-structures.html", "Get it!"]
-    ],[
+    ], [
       [{
-      "type": "blank"
-    }]
-    ],[
+        "type": "h4"
+      }, "Forms and redirection files"],
       [{
-        "type": "blank"
-      }]
+        "type": "text_simple"
+      }, "Forms and handling fields"],
+      [{
+        "type": "text_simple"
+      }, "Redirection to navigate"],
+      [{
+        "type": "text_simple"
+      }, "Session"],
+      [{
+        "type": "btn"
+      }, "unitats/programacio/php/php-05-forms.html", "Get it!"]
+    ], [
+      [{
+        "type": "h4"
+      }, "Work with a Mysql Database"],
+      [{
+        "type": "text_simple"
+      }, "Create and finish connection"],
+      [{
+        "type": "text_simple"
+      }, "Get data from database"],
+      [{
+        "type": "text_simple"
+      }, "Insert, update and delete data from database"],
+      [{
+        "type": "btn"
+      }, "unitats/programacio/php/php-06-mysql.html", "Get it!"]
     ]
     ]]
   ],
@@ -1059,6 +1083,225 @@ const pages = {
       [{
         "type": "text_simple"
       }, "Feel free to define your own functions and call them with different arguments to suit your specific needs. Functions are essential for code organization, reusability, and modularization in PHP."]
+    ]
+  ],
+  'php-05-forms': [
+    ["block_h1", "Forms and redirections"],
+    ["block_h2", "Forms and User Input"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, " In this lesson, we will dive into the topic of Forms and User Input in PHP. Forms play a crucial role in web development, allowing users to interact with websites by submitting data. We will explore how to handle form submissions, retrieve and process user input, and implement form validation and security measures. By the end of this lesson, you'll have a solid understanding of working with forms in PHP and ensuring a secure user experience."],
+      [{
+        "type": "text_simple"
+      }, "Example Code:"],
+      [{
+        "type": "code",
+        "language": "php"
+      }, "<?php\n// Handling form submission\nif ($_SERVER[\"REQUEST_METHOD\"] == \"POST\") {\n // Retrieve user input\n $name = $_POST[\"name\"];\n $email = $_POST[\"email\"];\n $message = $_POST[\"message\"];\n\n // Process user input\n // ... perform desired operations or save data to a database\n\n // Form validation\n $errors = array();\n\n // Validate name field\n if (empty($name)) {\n $errors[] = \"Name is required.\";\n }\n\n // Validate email field\n if (empty($email)) {\n $errors[] = \"Email is required.\";\n } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {\n $errors[] = \"Invalid email format.\";\n }\n\n // Validate message field\n if (empty($message)) {\n $errors[] = \"Message is required.\";\n }\n\n // Display validation errors or success message\n if (!empty($errors)) {\n foreach ($errors as $error) {\n echo $error . \"<br>\";\n }\n } else {\n echo \"Form submitted successfully!\";\n // ... additional actions or redirect to a thank you page\n }\n}\n?>\n\n<!-- HTML Form -->\n<form method=\"POST\" action=\"<?php echo htmlspecialchars($_SERVER[\"PHP_SELF\"]); ?>\">\n <label for=\"name\">Name:</label>\n <input type=\"text\" name=\"name\" required><br>\n\n <label for=\"email\">Email:</label>\n <input type=\"email\" name=\"email\" required><br>\n\n <label for=\"message\">Message:</label>\n <textarea name=\"message\" required></textarea><br>\n\n <input type=\"submit\" value=\"Submit\">\n</form>\n"],
+      [{
+        "type": "text_simple"
+      }, "In this example, we demonstrate the process of handling form submissions, retrieving and processing user input, and implementing form validation and security measures."],
+      [{
+        "type": "olist"
+      },
+      [
+        ["text", "-Handling Form Submission:"],
+        ["text", "--We check if the HTTP request method is POST using $_SERVER[\"REQUEST_METHOD\"]."],
+        ["text", "--If it is a POST request, we retrieve the user input from the $_POST superglobal array."],
+        ["text", "-Processing User Input:"],
+        ["text", "--We can perform desired operations or save the submitted data to a database."],
+        ["text", "-Form Validation:"],
+        ["text", "--We define an empty $errors array to collect validation errors."],
+        ["text", "--We validate each input field and add corresponding error messages to the $errors array if necessary."],
+        ["text", "-Displaying Validation Errors or Success Message:"],
+        ["text", "--If the $errors array is not empty, we iterate through it and display each error message."],
+        ["text", "--If the $errors array is empty, we display a success message indicating that the form was submitted successfully."]
+      ]
+      ],
+      [{
+        "type": "text_complex"
+      },
+      ["text", "The HTML form uses the "],
+      ["bold", "POST"],
+      ["text", "method to submit data to the same PHP script ("],
+      ["bold", "$_SERVER[\"PHP_SELF\"]"],
+      ["text", " for processing. Each input field includes the "],
+      ["bold", "required"],
+      ["text", "attribute to enforce client-side validation. The "],
+      ["bold", "htmlspecialchars()"],
+      ["text", "function is used to prevent cross-site scripting (XSS) attacks by sanitizing user input."]
+      ],
+      [{
+        "type": "text_simple"
+      }, "Feel free to modify the form fields, validation rules, and processing logic to fit your specific requirements. Remember to always validate and sanitize user input to ensure data integrity and enhance security."]
+    ],
+    ["block_h2", "Redirecting and Passing Parameters"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, "In this lesson, we will explore the process of redirecting from one PHP file to another and sending parameters along with the redirection. Redirection is a common technique used to navigate users to different pages within a web application. We will learn how to trigger a redirect using a button click and pass parameters to the destination page. "],
+      [{
+        "type": "text_simple"
+      }, "Example Code redirect.php"],
+      [{
+        "type": "code",
+        "language": "php"
+      }, "<?php\n// Handle button click\nif (isset($_POST['submit'])) {\n $username = $_POST['username'];\n $email = $_POST['email'];\n\n // Redirect with parameters\n header(\"Location: destination.php?username=$username&email=$email\");\n exit();\n}\n?>\n\n<!-- HTML Form -->\n<form method=\"POST\" action=\"<?php echo htmlspecialchars($_SERVER[\"PHP_SELF\"]); ?>\">\n <!-- Form fields -->\n <label for=\"username\">Username:</label>\n <input type=\"text\" name=\"username\"><br>\n\n <label for=\"email\">Email:</label>\n <input type=\"email\" name=\"email\"><br>\n\n <!-- Submit button -->\n <input type=\"submit\" name=\"submit\" value=\"Submit\">\n</form>\n"],
+      [{
+        "type": "text_simple"
+      }, "Example Code destination.php"],
+      [{
+        "type": "code",
+        "language": "php"
+      }, "<?php\n// Retrieve parameters from URL\nif (isset($_GET['username']) && isset($_GET['email'])) {\n $username = $_GET['username'];\n $email = $_GET['email'];\n\n // Display parameter values\n echo \"Welcome, $username! Your email is $email.\";\n}\n?>\n"],
+      [{
+        "type": "text_simple"
+      }, "In this example, we demonstrate how to redirect from one PHP file (redirect.php) to another (destination.php) upon clicking a submit button."],
+      [{
+        "type": "olist"
+      },
+      [
+        ["text", "-redirect.php:"],
+        ["text", "--The form includes input fields for the username and email."],
+        ["text", "--Upon submitting the form, the $_POST superglobal array is used to retrieve the values entered by the user."],
+        ["text", "--The header() function is used to trigger the redirection to the destination.php file."],
+        ["text", "--We pass the username and email as parameters in the URL using the query string format (?username=$username&email=$email)."],
+        ["text", "-destination.php:"],
+        ["text", "--In the destination.php file, we use the $_GET superglobal array to retrieve the parameters from the URL."],
+        ["text", "--We check if the username and email parameters are set and display a personalized message using the retrieved values."]
+      ]
+      ],
+      [{
+        "type": "text_simple"
+      }, "By clicking the submit button on the redirect.php page, the form data is submitted, and the user is redirected to the destination.php page. The username and email parameters are passed in the URL, allowing us to retrieve and use them on the destination page."],
+      [{
+        "type": "text_simple"
+      }, "Feel free to customize the form fields and the destination page logic according to your specific requirements. Redirecting and passing parameters are fundamental techniques for building dynamic web applications in PHP."]
+    ],
+    ["block_h2", "Sessions"], ["block_content", [{
+      "type": "text_simple"
+    }, "In this lesson, we will explore the concept of sessions in PHP. Sessions allow you to store and retrieve user-specific data across multiple requests, enabling personalized and stateful interactions on your website. In this lesson, we will learn how to start a session, set and retrieve session variables, and destroy sessions when they are no longer needed."],
+      [{
+        "type": "text_simple"
+      }, "Example Code:"],
+      [{
+        "type": "code",
+        "language": "php"
+      }, "<?php\n// Start a session\nsession_start();\n\n// Set session variables\n$_SESSION['username'] = 'John';\n$_SESSION['email'] = 'john@example.com';\n\n// Retrieve session variables\n$username = $_SESSION['username'];\n$email = $_SESSION['email'];\n\n// Display session data\necho \"Welcome, $username! Your email is $email.\";\n\n// Destroy the session\nsession_destroy();\n?>\n"],
+      [{
+        "type": "text_simple"
+      }, "In this example, we demonstrate the usage of sessions in PHP to store and retrieve user-specific data."],
+      [{
+        "type": "olist"
+      },
+      [
+        ["text", "-Starting a Session:"],
+        ["text", "--We begin by calling the session_start() function, which initializes a session or resumes an existing one."],
+        ["text", "-Setting Session Variables:"],
+        ["text", "--We assign values to session variables using the $_SESSION superglobal array. In this example, we set the username and email as session variables."],
+        ["text", "-Retrieving Session Variables:"],
+        ["text", "--We can access session variables by using the $_SESSION superglobal array. In this case, we retrieve the username and email and assign them to local variables."],
+        ["text", "-Displaying Session Data:"],
+        ["text", "--We use the retrieved session variables to display a personalized message to the user."],
+        ["text", "-Destroying the Session:"],
+        ["text", "--After we have finished working with the session, we can destroy it using the session_destroy() function. This clears all session data and ends the session."]
+      ]
+      ],
+      [{
+        "type": "text_simple"
+      }, "Sessions allow you to store and access data across multiple pages and requests, making it easier to maintain user-specific information and create personalized experiences. Remember to start the session at the beginning of each PHP file where you want to use session variables."],
+      [{
+        "type": "text_simple"
+      }, "Feel free to utilize sessions for storing other user-related data or custom application-specific information. Sessions are a powerful tool for building dynamic and interactive PHP applications."]
+    ]
+  ],
+  'php-06-mysql': [
+    ["block_h1", "Connect with database"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, "In this lesson, we will dive into various MySQL database operations using PHP. We will cover essential CRUD (Create, Read, Update, Delete) operations, including selecting data, selecting with the WHERE clause, inserting new records, updating existing records, and deleting records from a MySQL database. Understanding these operations is crucial for building dynamic and data-driven PHP applications."]],
+    ["block_h2", "Connection"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, "Example Code:"],
+      [{
+        "type": "code",
+        "language": "php"
+      }, "<?php\n// Establish a database connection\n$servername = \"localhost\";\n$username = \"your_username\";\n$password = \"your_password\";\n$dbname = \"your_database\";\n\n$conn = new mysqli($servername, $username, $password, $dbname);\n\n// Check the connection\nif ($conn->connect_error) {\n die(\"Connection failed: \" . $conn->connect_error);\n}\n>?"],
+      [{
+        "type": "text_simple"
+      }, "Remember to replace the placeholder values (your_username, your_password, and your_database) with your actual MySQL credentials. With this code we can stablish a connection between our PHP files and our database."]
+    ],
+    ["block_h2", "Get data (SELECT)"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, "Example Code:"],
+      [{
+        "type": "code",
+        "language": "php"
+      }, "<?php\n// SELECT - Retrieve all records from a table\n$sql = \"SELECT * FROM users\";\n$result = $conn->query($sql);\n\nif ($result->num_rows > 0) {\n while ($row = $result->fetch_assoc()) {\n echo \"ID: \" . $row[\"id\"] . \"<br>\";\n echo \"Name: \" . $row[\"name\"] . \"<br>\";\n echo \"Email: \" . $row[\"email\"] . \"<br><br>\";\n }\n} else {\n echo \"No results found.\";\n}\n\n// SELECT with WHERE - Retrieve specific records from a table\n$sql = \"SELECT * FROM users WHERE age > 25\";\n$result = $conn->query($sql);\n\nif ($result->num_rows > 0) {\n while ($row = $result->fetch_assoc()) {\n echo \"ID: \" . $row[\"id\"] . \"<br>\";\n echo \"Name: \" . $row[\"name\"] . \"<br>\";\n echo \"Email: \" . $row[\"email\"] . \"<br>\";\n echo \"Age: \" . $row[\"age\"] . \"<br><br>\";\n }\n} else {\n echo \"No results found.\";\n}\n\n?>"],
+      [{
+        "type": "text_simple"
+      }, "With these two examples we can get all information that are stored in a table and filtered data."],
+      [{
+        "type": "olist"
+      },
+      [
+        ["text", "-SELECT - Retrieving All Records:"],
+        ["text", "--We execute a SELECT query to retrieve all records from the \"users\" table."],
+        ["text", "--If there are results, we loop through each row and display the data."],
+        ["text", "-SELECT with WHERE - Retrieving Specific Records:"],
+        ["text", "--We execute a SELECT query with a WHERE clause to retrieve records where the age is greater than 25."],
+        ["text", "--If there are matching results, we display the corresponding data."]
+      ]
+      ]
+    ],
+    ["block_h2", "Insert data into table (INSERT)"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, "Example Code:"],
+      [{
+        "type": "code",
+        "language": "php"
+      }, "<?php\n// INSERT - Insert a new record into a table\n$sql = \"INSERT INTO users (name, email, age) VALUES ('John Doe', 'john@example.com', 30)\";\n\nif ($conn->query($sql) === TRUE) {\n echo \"New record inserted successfully.\";\n} else {\n echo \"Error: \" . $sql . \"<br>\" . $conn->error;\n}\n?>"],
+      [{
+        "type": "text_simple"
+      }, "We execute an INSERT query to add a new record to the \"users\" table. If the query is successful, we display a success message; otherwise, we display an error message."]
+    ],
+    ["block_h2", "Update data from table (UPDATE)"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, "Example Code:"],
+      [{
+        "type": "code",
+        "language": "php"
+      }, "<?php\n// UPDATE - Update an existing record in a table\n$sql = \"UPDATE users SET age = 35 WHERE id = 1\";\n\nif ($conn->query($sql) === TRUE) {\n echo \"Record updated successfully.\";\n} else {\n echo \"Error updating record: \" . $conn->error;\n}\n?>"],
+      [{
+        "type": "text_simple"
+      }, "We execute an UPDATE query to modify the age of a record with a specific ID in the \"users\" table. If the update is successful, we display a success message; otherwise, we display an error message."]
+    ],
+    ["block_h2", "Delete data from table (DELETE)"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, "Example Code:"],
+      [{
+        "type": "code",
+        "language": "php"
+      }, "<?php\n// DELETE - Delete a record from a table\n$sql = \"DELETE FROM users WHERE id = 2\";\n\nif ($conn->query($sql) === TRUE) {\n echo \"Record deleted successfully.\";\n} else {\n echo \"Error deleting record: \" . $conn->error;\n}\n?>"],
+      [{
+        "type": "text_simple"
+      }, "We execute a DELETE query to remove a record with a specific ID from the \"users\" table. If the deletion is successful, we display a success message; otherwise, we display an error message."]
+    ],
+    ["block_h2", "Close connection"],
+    ["block_content", [{
+      "type": "text_simple"
+    }, "When we finish to work with a database we must close connection between PHP and MySQL."],
+      [{
+        "type": "text_simple"
+      }, "Example Code:"],
+      [{
+        "type": "code",
+        "language": "php"
+      }, "<?php\n// Close the database connection\n$conn->close();\n?>"]
     ]
   ],
   'test': [

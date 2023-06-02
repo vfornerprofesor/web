@@ -17,7 +17,7 @@ function loadBlocks(page, element) {
 
   var time2 = new Date();
   wait_time = 150;
-  if(time2 - time > 1000) {
+  if (time2 - time > 1000) {
     wait_time = 0;
   }
 
@@ -109,25 +109,25 @@ function createBlockUnit(block) {
 
     var div_c = document.createElement("div");
     div_c.classList.add("col");
-    
-    if(url || img_src || name) {
+
+    if (url || img_src || name) {
       var a = document.createElement("a");
       a.classList.add("unit-link");
       a.href = url;
-  
+
       var div_u = document.createElement("div");
       div_u.classList.add("unit");
-  
+
       var img = document.createElement("img");
       img.classList.add("unit-img");
       img.src = img_src;
-  
+
       var th3 = document.createElement("h3");
       th3.classList.add("btn");
       th3.classList.add("btn-primary");
       th3.classList.add("unit-title");
       th3.textContent = name;
-  
+
       div_u.appendChild(img);
       div_u.appendChild(th3);
       a.appendChild(div_u);
@@ -161,6 +161,9 @@ function createElementByName(name, block) {
       break;
     case "text_simple":
       new_element = createElementText(block);
+      break;
+    case "br":
+      new_element = createElementBr(block);
       break;
     case "code":
       new_element = createElementCode(block);
@@ -221,7 +224,6 @@ function countLevelLi(li_text) {
   return level;
 }
 function createElementUList(block) {
-  debugger;
   var level = 1;
   var ul = document.createElement("span");
   var ul_html = '<ul>';
@@ -247,7 +249,6 @@ function createElementUList(block) {
 }
 
 function createElementOList(block) {
-  debugger;
   var level = 1;
   var ul = document.createElement("span");
   var ul_html = '<ol>';
@@ -273,7 +274,6 @@ function createElementOList(block) {
 }
 
 function createElementCols(block) {
-  debugger;
   var row = document.createElement("div");
   row.classList.add("row");
 
@@ -283,7 +283,7 @@ function createElementCols(block) {
 
     for (var j = 0; j < block[i].length; j++) {
       var name = block[i][j][0]['type'];
-      if(name != 'blank') {
+      if (name != 'blank') {
         var new_element = createElementByName(name, block[i][j]);
         col.appendChild(new_element);
       }
@@ -313,6 +313,11 @@ function createElementText(block) {
   var p = document.createElement("p");
   p.innerHTML = updateTextChangingLessThanAndGreaterThanSigns(block[1]);
   return p;
+}
+
+function createElementBr(block) {
+  var br = document.createElement("br");
+  return br;
 }
 
 function updateTextChangingLessThanAndGreaterThanSigns(text) {
