@@ -203,7 +203,7 @@ const pages = {
       ],
       [
         { type: "iframe" },
-        "https://drive.google.com/file/d/1HJgy41HMrpjI6miEdyP4SouYEwLJ315u/view?usp=sharing"
+        "https://drive.google.com/file/d/1HJgy41HMrpjI6miEdyP4SouYEwLJ315u/preview"
       ]
 
     ]
