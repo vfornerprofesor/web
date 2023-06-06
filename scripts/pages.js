@@ -145,6 +145,68 @@ const pages = {
       ],
       [{ type: "img_center" }, "img/unitats/robotica/microbit/07.png"],
     ],
+    ["block_h1", "MICROBIT - LED"], 
+    ["block_h2", "Activitat 1"], 
+    ["block_content", [
+      {"type": "text_simple"},
+      "Realitza les següents seqüències en els LEDs de la tauleta microbit. Recorda que l'eix de les X va en horitzontal, l'Y va en vertical i que sempre es comença per la posició 0."
+    ],[{
+      "type": "cols"
+    },
+    [
+      [{
+        "type": "h4"
+      }, "Tasca 1"],
+      [{
+        "type": "img_center"
+      }, "img/unitats/robotica/microbit/microbit_led_1.png"]
+    ],
+    [
+      [{
+        "type": "h4"
+      }, "Tasca 2"],
+      [{
+        "type": "img_center"
+      }, "img/unitats/robotica/microbit/microbit_led_2.png"]
+    ],
+    [
+      [{
+        "type": "h4"
+      }, "Tasca 3"],
+      [{
+        "type": "img_center"
+      }, "img/unitats/robotica/microbit/microbit_led_3.png"]
+    ],
+    [
+      [{
+        "type": "h4"
+      }, "Tasca 4"],
+      [{
+        "type": "img_center"
+      }, "img/unitats/robotica/microbit/microbit_led_4.png"]
+    ]
+    ]],
+    ["block_h2", "Activitat 2"],
+    ["block_content", 
+      [ {"type": "text_simple"},
+      "Fes un cronòmetre en la tauleta microbit amb els LEDs. Les condicions són les següents"
+      ],
+      [
+        { type: "olist" },
+        [
+          [{ type: "text" }, "-Ha de començar mostrant un 0"],
+          [{ type: "text" }, "-Al presionar la tecla A s'ha d'iniciar el temps. Si la tornes a presionar es pararà"],
+          [{ type: "text" }, "-Al presionar la tecla B es reiniciarà el temps a 0"],
+          [{ type: "text" }, "-Si el temps està parat no es sumarà a temps, si NO està parat es sumarà"],
+          [{ type: "text" }, "-PISTA: Necessites dos variables, una per anar sumant el temps i una altra per saber si el cronòmetre està parat o no"],
+        ],
+      ],
+      [
+        { type: "iframe" },
+        "https://drive.google.com/file/d/1HJgy41HMrpjI6miEdyP4SouYEwLJ315u/view?usp=sharing"
+      ]
+
+    ]
   ],
   python: [
     ["block_h1", "Python"],

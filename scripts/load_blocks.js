@@ -189,6 +189,9 @@ function createElementByName(name, block) {
     case "h4":
       new_element = createElementH4(block);
       break;
+    case "iframe":
+      new_element = createElementIframe(block);
+      break;
     default:
       break;
   }
@@ -199,6 +202,12 @@ function createElementH4(block) {
   var th4 = document.createElement("h4");
   th4.textContent = block[1];
   return th4;
+}
+
+function createElementIframe(block) {
+  var iframe = document.createElement("iframe");
+  iframe.src = block[1];
+  return iframe;
 }
 
 function createElementListGroup(block) {
