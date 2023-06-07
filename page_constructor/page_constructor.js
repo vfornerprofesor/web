@@ -65,6 +65,9 @@ function addElementContent(id_content, type) {
     case "code":
       content.appendChild(createContentCode(id_content));
       break;
+    case "iframe":
+      content.appendChild(createContentIframe(id_content));
+      break;
     case "text_simple":
       content.appendChild(createContentTextSimple(id_content));
       break;
@@ -94,6 +97,40 @@ function addElementContent(id_content, type) {
   }
 
   content_ids[id_content] = content_ids[id_content] + 1;
+}
+
+function createExtraProperties(id, element) {
+  var br = document.createElement('br');
+  element.appendChild(br);
+
+  var p = document.createElement('label');
+  p.textContent = 'Centrat';
+  element.appendChild(p);
+
+  var center = document.createElement('input');
+  center.type = 'checkbox';
+  center.style.width = 'min-content';
+  center.name = 'center';
+  element.appendChild(center);
+
+  var br2 = document.createElement('br');
+  element.appendChild(br2);
+
+  var p2 = document.createElement('label');
+  p2.textContent = 'Altura';
+  element.appendChild(p2);
+
+  var height = document.createElement('input');
+  height.type = 'text';
+  height.name = 'height';
+  element.appendChild(height);
+
+  var br3 = document.createElement('br');
+  element.appendChild(br3);
+
+  var btn_delete = createButtonDelete(id);
+  element.appendChild(btn_delete);
+  return element;
 }
 
 function createContentCols(id_content) {
@@ -205,8 +242,24 @@ function createContentH4(id_content) {
 
   var input = createInput("text", "Titol");
   div.appendChild(input);
-  var btn_delete = createButtonDelete(id_block_content);
-  div.appendChild(btn_delete);
+
+  div = createExtraProperties(id_block_content, div);
+
+  return div;
+}
+
+function createContentIframe(id_content) {
+  var id_block_content = id_content + "-" + content_ids[id_content];
+
+  var div = createDiv("iframe", id_block_content);
+
+  var p = createParagraph("Iframe");
+  div.appendChild(p);
+
+  var input = createInput("text", "URL");
+  div.appendChild(input);
+
+  div = createExtraProperties(id_block_content, div);
 
   return div;
 }
@@ -276,6 +329,7 @@ function createBlockContent(id_block) {
   textHtml += '<button onclick="addElementContent(' + "'" + id_block + "', 'list_group')" + '"' + ">List group</button>";
   textHtml += '<button onclick="addElementContent(' + "'" + id_block + "', 'h4')" + '"' + ">Títol h4</button>";
   textHtml += '<button onclick="addElementContent(' + "'" + id_block + "', 'btn')" + '"' + ">Botó</button>";
+  textHtml += '<button onclick="addElementContent(' + "'" + id_block + "', 'iframe')" + '"' + ">IFrame</button>";
   selector.innerHTML = textHtml;
 
   div.appendChild(selector);
@@ -286,6 +340,56 @@ function createBlockContent(id_block) {
   var btnBorrar = createButtonDelete(id_block);
   div.appendChild(btnBorrar);
   return div;
+}
+
+function createBlockUnit(id_block) {
+  var div = createDiv("block_unit", id_block);
+
+  var p = createParagraph("Unitat");
+  div.appendChild(p);
+
+  for (var i = 0; i < 4; i++) {
+    var img_input = createInput("text", "Imatge");
+    var url_input = createInput("text", "URL");
+    var btn_input = createInput("text", "Text botó");
+    var br = document.createElement('br');
+
+    div.appendChild(img_input);
+    div.appendChild(url_input);
+    div.appendChild(btn_input);
+    div.appendChild(br);
+  }
+
+  var btn = createButtonDelete(id_block);
+  div.appendChild(btn);
+  return div;
+}
+
+function createBlockH(id_block, block_type, text, placeholder) {
+  var div = createDiv(block_type, id_block);
+
+  var p = createParagraph(text);
+  div.appendChild(p);
+
+  var input = createInput("text", placeholder);
+  div.appendChild(input);
+
+  var buttondelete = createButtonDelete(id_block);
+  div.appendChild(buttondelete);
+
+  return div;
+}
+
+function createBlockH1(id_block) {
+  return createBlockH(id_block, "block_h1", "Títol 1", "Títol 1");
+}
+
+function createBlockH2(id_block) {
+  return createBlockH(id_block, "block_h2", "Títol 2", "Títol 2");
+}
+
+function createBlockH3(id_block) {
+  return createBlockH(id_block, "block_h3", "Títol 3", "Títol 3");
 }
 
 /*function createBlockContent(id_block) {
@@ -351,29 +455,6 @@ function createInput(type, placeholder) {
   return input;
 }
 
-function createBlockUnit(id_block) {
-  var div = createDiv("block_unit", id_block);
-
-  var p = createParagraph("Unitat");
-  div.appendChild(p);
-
-  for (var i = 0; i < 4; i++) {
-    var img_input = createInput("text", "Imatge");
-    var url_input = createInput("text", "URL");
-    var btn_input = createInput("text", "Text botó");
-    var br = document.createElement('br');
-
-    div.appendChild(img_input);
-    div.appendChild(url_input);
-    div.appendChild(btn_input);
-    div.appendChild(br);
-  }
-
-  var btn = createButtonDelete(id_block);
-  div.appendChild(btn);
-  return div;
-}
-
 function createTextArea() {
   var ta = document.createElement("textarea");
   return ta;
@@ -383,33 +464,6 @@ function createParagraph(text) {
   var p = document.createElement("p");
   p.textContent = text;
   return p;
-}
-
-function createBlockH(id_block, block_type, text, placeholder) {
-  var div = createDiv(block_type, id_block);
-
-  var p = createParagraph(text);
-  div.appendChild(p);
-
-  var input = createInput("text", placeholder);
-  div.appendChild(input);
-
-  var buttondelete = createButtonDelete(id_block);
-  div.appendChild(buttondelete);
-
-  return div;
-}
-
-function createBlockH1(id_block) {
-  return createBlockH(id_block, "block_h1", "Títol 1", "Títol 1");
-}
-
-function createBlockH2(id_block) {
-  return createBlockH(id_block, "block_h2", "Títol 2", "Títol 2");
-}
-
-function createBlockH3(id_block) {
-  return createBlockH(id_block, "block_h3", "Títol 3", "Títol 3");
 }
 
 function createButtonDelete(id_delete) {
@@ -422,6 +476,19 @@ function createButtonDelete(id_delete) {
 function deleteElement(id_delete) {
   var el = document.getElementById(id_delete);
   el.remove();
+}
+
+/* CREATE DATA */
+function createExtraDataProperties(info, child) {
+  if (child.children['height'].value) {
+    info['height'] = child.children['height'].value;
+  }
+
+  if (child.children['center'].checked) {
+    info['center'] = true;
+  }
+
+  return info;
 }
 
 function createData() {
@@ -512,6 +579,9 @@ function createDataContent(id_block, el) {
         case "h4":
           child_list = createDataH4(child);
           break;
+        case "iframe":
+          child_list = createDataIframe(child);
+          break;
         case "cols":
           child_list = createDataCols(child);
           break;
@@ -555,6 +625,8 @@ function createDataCols(child) {
 function createDataTextSimple(child) {
   let data = [];
   data[0] = { type: child.block_type };
+  data[0] = createExtraDataProperties(data[0], child);
+
   data[1] = child.getElementsByTagName("input")[0].value;
   return data;
 }
@@ -569,14 +641,26 @@ function createDataImgCenter(child) {
 function createDataBtn(child) {
   let data = [];
   data[0] = { type: child.block_type };
+  data[0] = createExtraDataProperties(data[0], child);
+
   data[1] = child.getElementsByTagName("input")[0].value;
   data[2] = child.getElementsByTagName("input")[1].value;
   return data;
 }
 
+
 function createDataH4(child) {
   let data = [];
   data[0] = { type: child.block_type };
+  data[0] = createExtraDataProperties(data[0], child);
+  data[1] = child.getElementsByTagName("input")[0].value;
+  return data;
+}
+
+function createDataIframe(child) {
+  let data = [];
+  data[0] = { type: child.block_type };
+  data[0] = createExtraDataProperties(data[0], child);
   data[1] = child.getElementsByTagName("input")[0].value;
   return data;
 }
@@ -608,6 +692,8 @@ function createDataCode(child) {
 function createDataTextComplex(child) {
   let data = [];
   data[0] = { type: child.block_type };
+  data[0] = createExtraDataProperties(data[0], child);
+
   let ta = child.getElementsByTagName("textarea")[0];
   let ta_data = ta.value;
   let negrita = 0;
@@ -634,10 +720,10 @@ function createDataTextComplex(child) {
           text_actual = "";
           index_element++;
         }
-        let tota_url = ta_data.substring(i+2).split('}}')[0];
+        let tota_url = ta_data.substring(i + 2).split('}}')[0];
         tota_url = tota_url.split('|');
         data[index_element] = ["link", tota_url[0], tota_url[1]];
-        i = i + ta_data.substring(i+2).split('}}')[0].length + 4; //4 per els asteriscs
+        i = i + ta_data.substring(i + 2).split('}}')[0].length + 4; //4 per els asteriscs
         index_element++;
 
       } else {
