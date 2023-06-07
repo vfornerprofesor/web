@@ -155,7 +155,8 @@ const pages = {
     },
     [
       [{
-        "type": "h4"
+        "type": "h4",
+        "center": true,
       }, "Tasca 1"],
       [{
         "type": "img_center"
@@ -163,7 +164,8 @@ const pages = {
     ],
     [
       [{
-        "type": "h4"
+        "type": "h4",
+        "center": true,
       }, "Tasca 2"],
       [{
         "type": "img_center"
@@ -171,7 +173,8 @@ const pages = {
     ],
     [
       [{
-        "type": "h4"
+        "type": "h4",
+        "center": true,
       }, "Tasca 3"],
       [{
         "type": "img_center"
@@ -179,7 +182,8 @@ const pages = {
     ],
     [
       [{
-        "type": "h4"
+        "type": "h4",
+        "center": true,
       }, "Tasca 4"],
       [{
         "type": "img_center"
@@ -202,7 +206,9 @@ const pages = {
         ],
       ],
       [
-        { type: "iframe" },
+        { type: "iframe",
+          height: "300px",
+          center: true},
         "https://drive.google.com/file/d/1HJgy41HMrpjI6miEdyP4SouYEwLJ315u/preview"
       ]
 

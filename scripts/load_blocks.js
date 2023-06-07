@@ -33,6 +33,7 @@ function loadBlocks(page, element) {
 
 }
 
+/* CREATE BLOCK FUNCTIONS */
 function createBlock(block) {
   switch (block[0]) {
     case "block_h1":
@@ -198,15 +199,50 @@ function createElementByName(name, block) {
   return new_element;
 }
 
+/* AUXILIAR FUNCTIONS */
+function checkBlockProperties(block, element) {
+  if(block[0]["center"]) {
+    element.classList.add("center");
+  }
+
+  if(block[0]["height"]) {
+    element.style.height = block[0]["height"];
+  }
+  return element;
+}
+
+function updateTextChangingLessThanAndGreaterThanSigns(text) {
+  text = text.replaceAll('<', '&lt;');
+  text = text.replaceAll('>', '&gt;');
+  return text;
+}
+
+function countLevelLi(li_text) {
+  var level = 1;
+  for (var i = 0; i < li_text.length; i++) {
+    if (li_text[i] == '-') {
+      level++;
+    } else { break; }
+  }
+  return level;
+}
+
+/* CONTENT FUNCTIONS */
 function createElementH4(block) {
   var th4 = document.createElement("h4");
+  
   th4.textContent = block[1];
+
+  checkBlockProperties(block, th4);
   return th4;
 }
 
 function createElementIframe(block) {
   var iframe = document.createElement("iframe");
   iframe.src = block[1];
+
+  checkBlockProperties(block, iframe);
+
   return iframe;
 }
 
@@ -223,15 +259,7 @@ function createElementListGroup(block) {
   }
   return ul;
 }
-function countLevelLi(li_text) {
-  var level = 1;
-  for (var i = 0; i < li_text.length; i++) {
-    if (li_text[i] == '-') {
-      level++;
-    } else { break; }
-  }
-  return level;
-}
+
 function createElementUList(block) {
   var level = 1;
   var ul = document.createElement("span");
@@ -315,24 +343,20 @@ function createElementImg(block) {
 function createElementBtn(block) {
   var p = document.createElement('p');
   p.innerHTML += ' <a href="' + block[1] + '" class="btn btn-primary">' + block[2] + "</a>";
+  checkBlockProperties(block, p);
   return p;
 }
 
 function createElementText(block) {
   var p = document.createElement("p");
   p.innerHTML = updateTextChangingLessThanAndGreaterThanSigns(block[1]);
+  checkBlockProperties(block, p);
   return p;
 }
 
 function createElementBr(block) {
   var br = document.createElement("br");
   return br;
-}
-
-function updateTextChangingLessThanAndGreaterThanSigns(text) {
-  text = text.replaceAll('<', '&lt;');
-  text = text.replaceAll('>', '&gt;');
-  return text;
 }
 
 function createElementCode(block) {
@@ -369,5 +393,6 @@ function createElementTextComplex(block) {
         break;
     }
   }
+  checkBlockProperties(block, p);
   return p;
 }
