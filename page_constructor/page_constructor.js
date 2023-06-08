@@ -138,19 +138,19 @@ function createContentCols(id_content) {
 
   var div = createDiv("cols", id_block_content);
 
-  var p = createParagraph("Columna 1");
+  var p = createH4("Columna 1");
   div.appendChild(p);
 
   var id_block_content_col = id_block_content + "-" + 0;
   div.appendChild(createBlockContent(id_block_content_col));
 
-  var p2 = createParagraph("Columna 2");
+  var p2 = createH4("Columna 2");
   div.appendChild(p2);
 
   var id_block_content_col2 = id_block_content + "-" + 1;
   div.appendChild(createBlockContent(id_block_content_col2));
 
-  var p3 = createParagraph("Columna 3");
+  var p3 = createH4("Columna 3");
   div.appendChild(p3);
 
   var id_block_content_col3 = id_block_content + "-" + 2;
@@ -163,7 +163,7 @@ function createContentList(id_content, block_type, paragraph) {
   var id_block_content = id_content + "-" + content_ids[id_content];
   var div = createDiv(block_type, id_block_content);
 
-  var p = createParagraph(paragraph);
+  var p = createH4(paragraph);
   div.appendChild(p);
 
   var input = createTextArea();
@@ -202,7 +202,7 @@ function createContentCode(id_content) {
   var id_block_content = id_content + "-" + content_ids[id_content];
   var div = createDiv("code", id_block_content);
 
-  var p = createParagraph("Code:");
+  var p = createH4("Code:");
   div.appendChild(p);
 
   var input_lang = createInput('text', 'Language');
@@ -221,14 +221,13 @@ function createContentTextComplex(id_content) {
   var id_block_content = id_content + "-" + content_ids[id_content];
   var div = createDiv("text_complex", id_block_content);
 
-  var p = createParagraph("Text complex /// **negreta**  ///  {{enllaç|nom}}");
+  var p = createH4("Text complex /// **negreta**  ///  {{enllaç|nom}}");
   div.appendChild(p);
 
   var input = createTextArea();
   div.appendChild(input);
 
-  var btn_delete = createButtonDelete(id_block_content);
-  div.appendChild(btn_delete);
+  div = createExtraProperties(id_block_content, div);
 
   return div;
 }
@@ -237,7 +236,7 @@ function createContentH4(id_content) {
   var id_block_content = id_content + "-" + content_ids[id_content];
   var div = createDiv("h4", id_block_content);
 
-  var p = createParagraph("Titol 4");
+  var p = createH4("Titol 4");
   div.appendChild(p);
 
   var input = createInput("text", "Titol");
@@ -253,7 +252,7 @@ function createContentIframe(id_content) {
 
   var div = createDiv("iframe", id_block_content);
 
-  var p = createParagraph("Iframe");
+  var p = createH4("Iframe");
   div.appendChild(p);
 
   var input = createInput("text", "URL");
@@ -268,7 +267,7 @@ function createContentBtn(id_content) {
   var id_block_content = id_content + "-" + content_ids[id_content];
   var div = createDiv("btn", id_block_content);
 
-  var p = createParagraph("Botó");
+  var p = createH4("Botó");
   div.appendChild(p);
 
   var input = createInput("text", "URL");
@@ -276,8 +275,8 @@ function createContentBtn(id_content) {
   var input2 = createInput("text", "Nom botó");
   div.appendChild(input2);
 
-  var btn_delete = createButtonDelete(id_block_content);
-  div.appendChild(btn_delete);
+  div = createExtraProperties(id_block_content, div);
+
 
   return div;
 }
@@ -286,7 +285,7 @@ function createContentImgCenter(id_content) {
   var id_block_content = id_content + "-" + content_ids[id_content];
   var div = createDiv("img_center", id_block_content);
 
-  var p = createParagraph("Imatge");
+  var p = createH4("Imatge");
   div.appendChild(p);
 
   var input = createInput("text", "URL");
@@ -301,13 +300,14 @@ function createContentTextSimple(id_content) {
   var id_block_content = id_content + "-" + content_ids[id_content];
   var div = createDiv("text_simple", id_block_content);
 
-  var p = createParagraph("Text");
+  var p = createH4("Text");
   div.appendChild(p);
 
   var input = createInput("text", "Text");
   div.appendChild(input);
-  var btn_delete = createButtonDelete(id_block_content);
-  div.appendChild(btn_delete);
+
+  div = createExtraProperties(id_block_content, div);
+
 
   return div;
 }
@@ -315,7 +315,7 @@ function createContentTextSimple(id_content) {
 function createBlockContent(id_block) {
   var div = createDiv("block_content", id_block);
 
-  var p = createParagraph("Contingut");
+  var p = createH4("Contingut");
   div.appendChild(p);
 
   var selector = document.createElement("div");
@@ -345,7 +345,7 @@ function createBlockContent(id_block) {
 function createBlockUnit(id_block) {
   var div = createDiv("block_unit", id_block);
 
-  var p = createParagraph("Unitat");
+  var p = createH4("Unitat");
   div.appendChild(p);
 
   for (var i = 0; i < 4; i++) {
@@ -368,7 +368,7 @@ function createBlockUnit(id_block) {
 function createBlockH(id_block, block_type, text, placeholder) {
   var div = createDiv(block_type, id_block);
 
-  var p = createParagraph(text);
+  var p = createH4(text);
   div.appendChild(p);
 
   var input = createInput("text", placeholder);
@@ -466,6 +466,12 @@ function createParagraph(text) {
   return p;
 }
 
+function createH4(text) {
+  var p = document.createElement("h4");
+  p.textContent = text;
+  return p;
+}
+
 function createButtonDelete(id_delete) {
   var button = document.createElement("span");
   button.innerHTML =
@@ -545,7 +551,8 @@ function createData() {
   console.log(elements);
   var final = document.getElementById("final");
   var page_name = document.getElementById("nom_pagina").value;
-  var text_final = "'" + page_name + "':" + JSON.stringify(elements);
+  var text_final = "'" + page_name + "':" + JSON.stringify(elements, null, 2);
+  debugger;
   final.innerText = text_final;
 }
 
