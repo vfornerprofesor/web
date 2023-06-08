@@ -54,9 +54,102 @@ function createBlock(block) {
     case "block_content":
       return createBlockContent(block);
       break;
+    case "accordeon":
+      return createBlockAccordeon(block);
+      break;
     default:
       break;
   }
+}
+/*
+<div class="accordion" id="unitats">
+  <div class="card">
+    <div class="card-header" id="title-programacio">
+      <h2 data-toggle="collapse" data-target="#programacio" aria-expanded="true" aria-controls="programacio">
+        Programació
+      </h2>
+    </div>
+    <div id="programacio" class="collapse show" aria-labelledby="title-programacio" data-parent="#unitats">
+      <div class="card-body">
+        Contingut programacio
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="accordion" id="unitats">
+
+  <div class="card-header" id="PROGRAMACIÓ">
+    <div class="block_colored block_h2" data-toggle="collapse" data-target="#PROGRAMACIÓ-content" aria-expanded="true" aria-controls="PROGRAMACIÓ-content">
+      <h2>PROGRAMACIÓ</h2>
+    </div>
+  </div>
+  <div id="PROGRAMACIÓ-content" class="collapse show" aria-labelledby="PROGRAMACIÓ" data-parent="unitats">
+    <div class="card-body">
+      asdf
+    </div>
+  </div>
+  
+  <div class="card-header" id="PROGRAMACIÓ2">
+    <div class="block_colored block_h2" data-toggle="collapse" data-target="#PROGRAMACIÓ2-content" aria-expanded="true" aria-controls="PROGRAMACIÓ2-content">
+      <h2>PROGRAMACIÓ2</h2>
+    </div>
+  </div>
+  <div id="PROGRAMACIÓ2-content" class="collapse show" aria-labelledby="PROGRAMACIÓ2" data-parent="unitats">
+    <div class="card-body">
+      asdf
+    </div>
+  </div>
+</div>
+*/
+function createBlockAccordeon(block) {
+  var div = document.createElement("div");
+  div.classList.add('accordion');
+  let id_accordion = block[1];
+  div.id = id_accordion;
+
+  let elements_accordion = block[2];
+  for(el of elements_accordion) {
+    var header = el[0];
+    var id_header = el[0][1];
+    var content = el[1];
+    
+    /* DIV CARD */
+    var div_card = document.createElement('div');
+    div_card.classList.add('card-header');
+    div_card.id = id_header;
+
+    var el_header = createBlock(header);
+    el_header.setAttribute('data-toggle', 'collapse');
+    el_header.setAttribute('data-target', '#'+id_header+'-content');
+    el_header.setAttribute('aria-expanded', 'true');
+    el_header.setAttribute('aria-controls', id_header+'-content');
+    div_card.appendChild(el_header);
+    div.appendChild(div_card);
+
+    /* DIV CARD BODY */
+    var div_content = document.createElement('div');
+    div_content.id = id_header+'-content';
+    div_content.classList.add('collapse');
+    //div_content.classList.add('show');
+    div_content.setAttribute('aria-labelledby', id_header);
+    div_content.setAttribute('data-parent', '#'+id_accordion);
+
+    var div_card_body = document.createElement('div');
+    div_card_body.classList.add('card-body');
+    
+    //Afegir elements
+    for(c of content) {
+      var el_c = createBlock(c);
+      div_card_body.appendChild(el_c);
+    }
+
+    div_content.appendChild(div_card_body);
+    div.appendChild(div_content);
+
+  }
+
+  return div;
 }
 
 function createBlockH1(block) {
@@ -201,11 +294,11 @@ function createElementByName(name, block) {
 
 /* AUXILIAR FUNCTIONS */
 function checkBlockProperties(block, element) {
-  if(block[0]["center"]) {
+  if (block[0]["center"]) {
     element.classList.add("center");
   }
 
-  if(block[0]["height"]) {
+  if (block[0]["height"]) {
     element.style.height = block[0]["height"];
   }
   return element;
@@ -230,7 +323,7 @@ function countLevelLi(li_text) {
 /* CONTENT FUNCTIONS */
 function createElementH4(block) {
   var th4 = document.createElement("h4");
-  
+
   th4.textContent = block[1];
 
   checkBlockProperties(block, th4);
