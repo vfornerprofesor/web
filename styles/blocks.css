@@ -33,6 +33,10 @@
     background-color: var(--black-color);
   }
 
+  .block_colored.block_h2 {
+    color: #fff;
+  }
+
   .block_black > h1, .block_black > h2, .block_black > h3 {
     color: #fff;
   }
