@@ -2,6 +2,28 @@
 block_h1 --> titol
 block_h2 --> titol
 block_unit --> [img, url, text botó], [img, url, text botó]...
+
+['accordeon',
+    'id_accordeon',
+    [
+      [
+        ["block_h2", "PrimerObjecte"], 
+        [
+          ["block_h3", "Element1"],
+          ["block_h3", "Element2"],
+          ["block_h3", "Element3"]
+        ]
+      ],
+      [
+        ["block_h2", "SegonObjecte"], 
+        [
+          ["block_h3", "Element4"],
+          ["block_h3", "Element5"],
+          ["block_h3", "Element6"]
+        ]
+      ]
+    ]
+  ],
 */
 
 const pages = {
@@ -49,74 +71,95 @@ const pages = {
     ["block_unit", ["google_calcul", "google_calcul", "Full de càlcul"], [], []],
   ],
   unitats2: [
+
+    ["block_h1", "Unitats"],
     ['accordeon',
-    'unitats',
+      'unitats',
       [
         [
-          ["block_h2", "PROGRAMACIÓ"], 
-          [["block_h3", "Blocs"],
-            [
-              "block_unit",
-              ["scratch", "scratch", "Scratch"],
-              ["app_inventor", "app_inventor", "App Inventor"],
-              [],
+          ["block_h2", "PROGRAMACIÓ"],
+          [
+            ['accordeon',
+              'programacio_accordeon',
+              [
+                [
+                  ["block_h3", "Blocs"],
+                  [
+                    [
+                      "block_unit",
+                      ["scratch", "scratch", "Scratch"],
+                      ["app_inventor", "app_inventor", "App Inventor"],
+                      [],
+                    ]
+                  ]
+                ],
+                [
+                  ["block_h3", "Python"],
+                  [
+                    [
+                      "block_unit",
+                      ["python", "python", "Python"],
+                      ["pythonII", "pythonII", "Python II"],
+                      [],
+                    ]
+                  ]
+                ],
+                [
+                  ["block_h3", "Web"],
+                  [
+                    [
+                      "block_unit",
+                      ["html", "html", "HTML"],
+                      ["css", "css", "CSS"],
+                      ["php", "php", "PHP"],
+                    ]
+                  ]
+                ],
+                [
+                  ["block_h3", "Base de dades"],
+                  [
+                    ["block_unit", ["mysql", "mysql", "MySQL"], [], []],
+                  ]
+                ],
+                [
+                  ["block_h3", "Robòtica"],
+                  [
+                    ["block_unit", ["microbit", "microbit", "Microbit"], [], []],
+                  ]
+                ]
+              ]
             ]
           ]
         ],
         [
-          ["block_h2", "PROGRAMACIÓ2"], 
-          [["block_h3", "Blocs2"],
+          ["block_h2", "APLICACIONS WEB"],
+          [
+            ["block_unit", ["wordpress", "wordpress", "Wordpress"], [], []],
+          ]
+        ],
+        [
+          ["block_h2", "INTEL·LIGÈNCIA ARTIFICIAL"],
+          [
             [
               "block_unit",
-              ["scratch", "scratch", "Scratch2"],
-              ["app_inventor", "app_inventor", "App Inventor2"],
-              [],
+              [
+                "inteligencia_artificial",
+                "inteligencia_artificial",
+                "Conceptes bàsics IA",
+              ],
+              ["inteligencia_artificial", "inteligencia_artificial", "Ferramentes IA"], []
             ]
+          ]
+        ],
+        [
+          ["block_h2", "OFIMÀTICA"],
+          [
+            ["block_unit", ["google_calcul", "google_calcul", "Full de càlcul"], [], []],
           ]
         ]
       ]
     ],
-    ["block_h1", "Unitats"],
-    ["block_h2", "PROGRAMACIÓ"],
-    ["block_h3", "Blocs"],
-    [
-      "block_unit",
-      ["scratch", "scratch", "Scratch"],
-      ["app_inventor", "app_inventor", "App Inventor"],
-      [],
-    ],
-    ["block_h3", "Python"],
-    [
-      "block_unit",
-      ["python", "python", "Python"],
-      ["pythonII", "pythonII", "Python II"],
-      [],
-    ],
-    ["block_h3", "Web"],
-    [
-      "block_unit",
-      ["html", "html", "HTML"],
-      ["css", "css", "CSS"],
-      ["php", "php", "PHP"],
-    ],
-    ["block_h3", "Base de dades"],
-    ["block_unit", ["mysql", "mysql", "MySQL"], [], []],
-    ["block_h3", "Robòtica"],
-    ["block_unit", ["microbit", "microbit", "Microbit"], [], []],
-    ["block_h2", "APLICACIONS WEB"],
-    ["block_unit", ["wordpress", "wordpress", "Wordpress"], [], []],
-    ["block_h2", "INTEL·LIGÈNCIA ARTIFICIAL"],
-    [
-      "block_unit",
-      [
-        "inteligencia_artificial",
-        "inteligencia_artificial",
-        "Conceptes bàsics IA",
-      ],
-      ["inteligencia_artificial", "inteligencia_artificial", "Ferramentes IA"], []
-    ],
-    ["block_h2", "OFIMÀTICA"],
-    ["block_unit", ["google_calcul", "google_calcul", "Full de càlcul"], [], []],
+    
   ],
   microbit: [
     ["block_h1", "MICROBIT"],
@@ -215,12 +258,12 @@ const pages = {
       ],
       [{ type: "img_center" }, "img/unitats/robotica/microbit/07.png"],
     ],
-    ["block_h1", "MICROBIT - LED"], 
-    ["block_h2", "Activitat 1"], 
+    ["block_h1", "MICROBIT - LED"],
+    ["block_h2", "Activitat 1"],
     ["block_content", [
-      {"type": "text_simple"},
+      { "type": "text_simple" },
       "Realitza les següents seqüències en els LEDs de la tauleta microbit. Recorda que l'eix de les X va en horitzontal, l'Y va en vertical i que sempre es comença per la posició 0."
-    ],[{
+    ], [{
       "type": "cols"
     },
     [
@@ -259,11 +302,11 @@ const pages = {
         "type": "img_center"
       }, "img/unitats/robotica/microbit/microbit_led_4.png"]
     ]
-    ]],
+      ]],
     ["block_h2", "Activitat 2"],
-    ["block_content", 
-      [ {"type": "text_simple"},
-      "Fes un cronòmetre en la tauleta microbit amb els LEDs. Les condicions són les següents"
+    ["block_content",
+      [{ "type": "text_simple" },
+        "Fes un cronòmetre en la tauleta microbit amb els LEDs. Les condicions són les següents"
       ],
       [
         { type: "olist" },
@@ -276,9 +319,11 @@ const pages = {
         ],
       ],
       [
-        { type: "iframe",
+        {
+          type: "iframe",
           height: "300px",
-          center: true},
+          center: true
+        },
         "https://drive.google.com/file/d/1HJgy41HMrpjI6miEdyP4SouYEwLJ315u/preview"
       ]
 

@@ -111,7 +111,7 @@ function createBlockAccordeon(block) {
   let elements_accordion = block[2];
   for(el of elements_accordion) {
     var header = el[0];
-    var id_header = el[0][1];
+    var id_header = el[0][1].replaceAll(' ', '_');
     var content = el[1];
     
     /* DIV CARD */
