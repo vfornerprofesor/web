@@ -117,14 +117,44 @@ function createBlockAccordeon(block) {
     /* DIV CARD */
     var div_card = document.createElement('div');
     div_card.classList.add('card-header');
+
+    //Canviar icona al fer click
+    div_card.onclick = function() {
+      if(this.children && this.children.length > 0) {
+        var children = this.children[0].children;
+        for(ch of children) {
+          if(ch.tagName = 'I' && ch.classList.contains('fa-chevron-down')) {
+            ch.classList.remove('fa-chevron-down');
+            ch.classList.add('fa-chevron-up');
+          } else {
+            if(ch.tagName = 'I' && ch.classList.contains('fa-chevron-up')) {
+              ch.classList.remove('fa-chevron-up');
+              ch.classList.add('fa-chevron-down');
+            }
+          }
+        }
+      }
+    };
     div_card.id = id_header;
 
     var el_header = createBlock(header);
     el_header.setAttribute('data-toggle', 'collapse');
     el_header.setAttribute('data-target', '#'+id_header+'-content');
-    el_header.setAttribute('aria-expanded', 'true');
+    el_header.setAttribute('aria-expanded', 'false');
     el_header.setAttribute('aria-controls', id_header+'-content');
+    el_header.style.display = 'flex';
+    el_header.style.alignItems = 'center';
+    el_header.style.gap = '1em';
+    
+    //Añadir icon
+    var icon = document.createElement('i');
+    icon.classList.add('fa');
+    icon.classList.add('fa-chevron-down');
+    icon.style.color = 'white';
+    el_header.appendChild(icon);
     div_card.appendChild(el_header);
+    
+
     div.appendChild(div_card);
 
     /* DIV CARD BODY */
