@@ -6,6 +6,7 @@ const imgs = {
     'html': 'img/html.png',
     'inteligencia_artificial': 'img/inteligencia_artificial.jpeg',
     'mysql': 'img/mysql.png',
+    'pensament-computacional': 'img/pensament-computacional.jpg',
     'php': 'img/php.png',
     'python': 'img/python.png',
     'pythonII': 'img/pythonII.png',
