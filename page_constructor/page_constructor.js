@@ -765,10 +765,11 @@ function createDataTextComplex(child) {
         }
       }
     }
+    
     if (text_actual != "") {
       data[index_element] = ['text', text_actual];
-      datas.push(data);
     }
+    datas.push(data);
   }
 
 

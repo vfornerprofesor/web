@@ -221,9 +221,9 @@ function createBlockUnit(block) {
   for (let i = 1; i < block.length; i++) {
 
     //Agafa la url del fitxer urls.js
-    var url = urls[block[i][0]];
+    var url = block[i][0];
     //Agafa la imatge del fitxer imgs.js
-    var img_src = imgs[block[i][1]];
+    var img_src = block[i][1];
     var name = block[i][2];
 
     //Crea una columna per cada element

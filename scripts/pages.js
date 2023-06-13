@@ -64,7 +64,7 @@ const pages = {
                   [
                     [
                       "block_unit",
-                      ["pensament-computacional", "pensament-computacional", "Pensament computacional"],
+                      ["unitats/programacio/basic/pensament-computacional.html", "img/pensament-computacional.jpg", "Pensament computacional"],
                       [],
                       [],
                     ]
@@ -75,8 +75,8 @@ const pages = {
                   [
                     [
                       "block_unit",
-                      ["scratch", "scratch", "Scratch"],
-                      ["app_inventor", "app_inventor", "App Inventor"],
+                      ["unitats/programacio/scratch/scratch.html", "img/scratch.png", "Scratch"],
+                      ["unitats/programacio/app-inventor/app-inventor.html", "img/app_inventor.png", "App Inventor"],
                       [],
                     ]
                   ]
@@ -86,8 +86,8 @@ const pages = {
                   [
                     [
                       "block_unit",
-                      ["python", "python", "Python"],
-                      ["pythonII", "pythonII", "Python II"],
+                      ["unitats/programacio/python/python.html", "img/python.png", "Python"],
+                      ["unitats/programacio/pythonII/pythonII.html", "img/pythonII.png", "Python II"],
                       [],
                     ]
                   ]
@@ -97,22 +97,22 @@ const pages = {
                   [
                     [
                       "block_unit",
-                      ["html", "html", "HTML"],
-                      ["css", "css", "CSS"],
-                      ["php", "php", "PHP"],
+                      ["unitats/programacio/html/html.html", "img/html.png", "HTML"],
+                      ["unitats/programacio/css/css.html", "img/css.png", "CSS"],
+                      ["unitats/programacio/php/php.html", "img/php.png", "PHP"],
                     ]
                   ]
                 ],
                 [
                   ["block_h3", "Base de dades"],
                   [
-                    ["block_unit", ["mysql", "mysql", "MySQL"], [], []],
+                    ["block_unit", ["unitats/programacio/mysql/mysql.html", "img/mysql.png", "MySQL"], [], []],
                   ]
                 ],
                 [
                   ["block_h3", "Robòtica"],
                   [
-                    ["block_unit", ["microbit", "microbit", "Microbit"], [], []],
+                    ["block_unit", ["unitats/robotica/microbit/microbit.html", "img/microbit.jpg", "Microbit"], [], []],
                   ]
                 ]
               ]
@@ -122,7 +122,7 @@ const pages = {
         [
           ["block_h2", "APLICACIONS WEB"],
           [
-            ["block_unit", ["wordpress", "wordpress", "Wordpress"], [], []],
+            ["block_unit", ["unitats/aplicacions-web/wordpress/wordpress.html", "img/wordpress.png", "Wordpress"], [], []],
           ]
         ],
         [
@@ -131,18 +131,18 @@ const pages = {
             [
               "block_unit",
               [
-                "inteligencia_artificial",
-                "inteligencia_artificial",
+                "unitats/ia/basics/ia.html",
+                "img/inteligencia_artificial.jpeg",
                 "Conceptes bàsics IA",
               ],
-              ["inteligencia_artificial", "inteligencia_artificial", "Ferramentes IA"], []
+              ["unitats/ia/ferramentes/ferramentes.html", "img/inteligencia_artificial.jpeg", "Ferramentes IA"], []
             ]
           ]
         ],
         [
           ["block_h2", "OFIMÀTICA"],
           [
-            ["block_unit", ["google_calcul", "google_calcul", "Full de càlcul"], [], []],
+            ["block_unit", ["unitats/ofimatica/google-spreadsheet/google-spreadsheet.html", "img/google_calcul.png", "Full de càlcul"], [], []],
           ]
         ]
       ]
