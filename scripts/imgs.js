@@ -1,3 +1,4 @@
+//Nom que s'assigna en unitats + url imatge
 const imgs = {
     'microbit': 'img/microbit.jpg',
     'app_inventor': 'img/app_inventor.png',

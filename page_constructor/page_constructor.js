@@ -560,6 +560,7 @@ function createDataContent(id_block, el) {
   var new_element = [];
   new_element[0] = el.block_type;
   let num_children = content_ids[id_block];
+  let cont = 1;
   for (let j = 0; j < num_children; j++) {
     let child = document.getElementById(id_block + "-" + j);
     let child_list = [];
@@ -567,41 +568,64 @@ function createDataContent(id_block, el) {
       switch (child.block_type) {
         case "text_simple":
           child_list = createDataTextSimple(child);
+          new_element[cont] = child_list;
+          cont++;
           break;
         case "text_complex":
           child_list = createDataTextComplex(child);
+          for(ch_l of child_list) {
+            new_element[cont] = ch_l;
+            cont++;
+          }
           break;
         case "code":
           child_list = createDataCode(child);
+          new_element[cont] = child_list;
+          cont++;
           break;
         case "list_group":
           child_list = createDataList(child);
+          new_element[cont] = child_list;
+          cont++;
           break;
         case "ulist":
           child_list = createDataList(child);
+          new_element[cont] = child_list;
+          cont++;
           break;
         case "olist":
           child_list = createDataList(child);
+          new_element[cont] = child_list;
+          cont++;
           break;
         case "h4":
           child_list = createDataH4(child);
+          new_element[cont] = child_list;
+          cont++;
           break;
         case "iframe":
           child_list = createDataIframe(child);
+          new_element[cont] = child_list;
+          cont++;
           break;
         case "cols":
           child_list = createDataCols(child);
+          new_element[cont] = child_list;
+          cont++;
           break;
         case "img_center":
           child_list = createDataImgCenter(child);
+          new_element[cont] = child_list;
+          cont++;
           break;
         case "btn":
           child_list = createDataBtn(child);
+          new_element[cont] = child_list;
+          cont++;
           break;
         default:
           break;
       }
-      new_element[j + 1] = child_list;
     }
   }
   new_element = new_element.filter(n => n);
@@ -697,51 +721,58 @@ function createDataCode(child) {
 }
 
 function createDataTextComplex(child) {
-  let data = [];
-  data[0] = { type: child.block_type };
-  data[0] = createExtraDataProperties(data[0], child);
-
   let ta = child.getElementsByTagName("textarea")[0];
   let ta_data = ta.value;
-  let negrita = 0;
-  let url = 0;
-  let text_actual = "";
-  let index_element = 1;
-  for (let i = 0; i < ta_data.length; i++) {
 
-    if (ta_data[i] == '*' && ta_data.length >= (i + 1) && ta_data[i + 1] == '*') {
-      //Afegir actual
-      if (text_actual != "") {
-        data[index_element] = ['text', text_actual];
-        text_actual = "";
-        index_element++;
-      }
-      data[index_element] = ['bold', ta_data.substring(i + 2).split('**')[0]];
-      i = i + data[index_element][1].length + 4; //4 per els asteriscs
-      index_element++;
-    } else {
-      if (ta_data[i] == '{' && ta_data.length >= (i + 1) && ta_data[i + 1] == '{') {
+  
+  let lines = ta_data.split('\n');
+  let datas = [];
+  for(l of lines) {
+    let data = [];
+    data[0] = { type: child.block_type };
+    data[0] = createExtraDataProperties(data[0], child);
+  
+    let text_actual = "";
+    let index_element = 1;
+    for (let i = 0; i < l.length; i++) {
+  
+      if (l[i] == '*' && l.length >= (i + 1) && l[i + 1] == '*') {
         //Afegir actual
         if (text_actual != "") {
           data[index_element] = ['text', text_actual];
           text_actual = "";
           index_element++;
         }
-        let tota_url = ta_data.substring(i + 2).split('}}')[0];
-        tota_url = tota_url.split('|');
-        data[index_element] = ["link", tota_url[0], tota_url[1]];
-        i = i + ta_data.substring(i + 2).split('}}')[0].length + 4; //4 per els asteriscs
+        data[index_element] = ['bold', l.substring(i + 2).split('**')[0]];
+        i = i + data[index_element][1].length + 4; //4 per els asteriscs
         index_element++;
-
       } else {
-        text_actual += ta_data[i];
+        if (l[i] == '{' && l.length >= (i + 1) && l[i + 1] == '{') {
+          //Afegir actual
+          if (text_actual != "") {
+            data[index_element] = ['text', text_actual];
+            text_actual = "";
+            index_element++;
+          }
+          let tota_url = l.substring(i + 2).split('}}')[0];
+          tota_url = tota_url.split('|');
+          data[index_element] = ["link", tota_url[0], tota_url[1]];
+          i = i + l.substring(i + 2).split('}}')[0].length + 4; //4 per els asteriscs
+          index_element++;
+  
+        } else {
+          text_actual += l[i];
+        }
       }
     }
+    if (text_actual != "") {
+      data[index_element] = ['text', text_actual];
+      datas.push(data);
+    }
   }
-  if (text_actual != "") {
-    data[index_element] = ['text', text_actual];
-  }
-  return data;
+
+
+  return datas;
 }
 
 /*function createDataTextComplex(child) {
