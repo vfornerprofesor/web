@@ -128,6 +128,18 @@ function createExtraProperties(id, element) {
   var br3 = document.createElement('br');
   element.appendChild(br3);
 
+  var p3 = document.createElement('label');
+  p3.textContent = 'Amplada';
+  element.appendChild(p3);
+
+  var width = document.createElement('input');
+  width.type = 'text';
+  width.name = 'width';
+  element.appendChild(width);
+
+  var br4 = document.createElement('br');
+  element.appendChild(br4);
+
   var btn_delete = createButtonDelete(id);
   element.appendChild(btn_delete);
   return element;
@@ -488,6 +500,10 @@ function deleteElement(id_delete) {
 function createExtraDataProperties(info, child) {
   if (child.children['height'].value) {
     info['height'] = child.children['height'].value;
+  }
+
+  if (child.children['width'].value) {
+    info['width'] = child.children['width'].value;
   }
 
   if (child.children['center'].checked) {

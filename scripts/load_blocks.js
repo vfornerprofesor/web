@@ -554,6 +554,10 @@ function checkBlockProperties(block, element) {
   if (block[0]["height"]) {
     element.style.height = block[0]["height"];
   }
+
+  if (block[0]["width"]) {
+    element.style.width = block[0]["width"];
+  }
   return element;
 }
 

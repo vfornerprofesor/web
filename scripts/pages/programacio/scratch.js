@@ -705,5 +705,16 @@ pages['scr-01-laberint'] = [
             ]
           ]
         ]
+      ],
+      [
+        "block_content",
+        [
+          {
+            "type": "iframe",
+            "height": "80vh",
+            "width": "100%"
+          },
+          "https://learningapps.org/watch?app=30998038"
+        ]
       ]
 ];
